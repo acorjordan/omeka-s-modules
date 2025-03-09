@@ -14,3 +14,7 @@ for url in $modules; do
 done
 
 echo "All modules downloaded and extracted."
+
+echo "Removing .git directories..."
+find modules -type d -name ".git" -exec rm -rf {} +
+echo "Cleanup complete."
