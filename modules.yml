@@ -134,6 +134,11 @@ modules:
   version: 3.1.0
   updated: June 16, 2023
   download: true
+- name: Collecting
+  link: https://github.com/omeka-s-modules/Collecting/releases/download/v1.12.0/Collecting-1.12.0.zip
+  version: 1.12.0
+  updated: June 20, 2024
+  download: true
 - name: Comment
   link: https://github.com/Daniel-KM/Omeka-S-module-Comment/releases/download/3.4.13/Comment-3.4.13.zip
   version: 3.4.13
@@ -159,15 +164,45 @@ modules:
   version: 3.4.11
   updated: February 05, 2024
   download: true
+- name: Copy Resources
+  link: https://github.com/omeka-s-modules/CopyResources/releases/download/v1.0.1/CopyResources-1.0.1.zip
+  version: 1.0.1
+  updated: June 24, 2024
+  download: true
 - name: Create Missing Thumbnails
   link: https://github.com/biblibre/omeka-s-module-CreateMissingThumbnails/releases/download/v0.3.0/CreateMissingThumbnails-0.3.0.zip
   version: 0.3.0
   updated: June 14, 2023
   download: true
+- name: CSSEditor
+  link: https://github.com/omeka-s-modules/CSSEditor/releases/download/v1.3.1/CSSEditor-1.3.1.zip
+  version: 1.3.1
+  updated: December 14, 2022
+  download: true
+- name: CSV Import
+  link: https://github.com/omeka-s-modules/CSVImport/releases/download/v2.6.2/CSVImport-2.6.2.zip
+  version: 2.6.2
+  updated: October 22, 2024
+  download: true
 - name: Custom Ontology
   link: https://github.com/Daniel-KM/Omeka-s-module-CustomOntology/releases/download/3.4.6/CustomOntology-3.4.6.zip
   version: 3.4.6
   updated: March 25, 2024
+  download: true
+- name: Custom Vocab
+  link: https://github.com/omeka-s-modules/CustomVocab/releases/download/v2.0.2/CustomVocab-2.0.2.zip
+  version: 2.0.2
+  updated: October 22, 2023
+  download: true
+- name: Data Cleaning
+  link: https://github.com/omeka-s-modules/DataCleaning/releases/download/v1.1.0/DataCleaning-1.1.0.zip
+  version: 1.1.0
+  updated: December 13, 2022
+  download: true
+- name: Data Repository Connector
+  link: https://github.com/omeka-s-modules/DataRepositoryConnector/releases/download/v1.3.0/DataRepositoryConnector-1.3.0.zip
+  version: 1.3.0
+  updated: June 20, 2023
   download: true
 - name: DataScribe
   link: https://github.com/chnm/Datascribe-module/releases/download/v1.1.0/Datascribe.zip
@@ -184,6 +219,11 @@ modules:
   version: 3.4.14
   updated: February 01, 2025
   download: true
+- name: Data Visualization
+  link: https://github.com/omeka-s-modules/Datavis/releases/download/v1.4.0/Datavis-1.4.0.zip
+  version: 1.4.0
+  updated: February 21, 2025
+  download: true
 - name: Deduplicate resources based on properties
   link: https://github.com/Daniel-KM/Omeka-S-module-Deduplicate/releases/download/3.4.3/Deduplicate-3.4.3.zip
   version: 3.4.3
@@ -198,6 +238,11 @@ modules:
   link: https://github.com/Daniel-KM/Omeka-s-module-DerivativeMedia/releases/download/3.4.12/DerivativeMedia-3.4.12.zip
   version: 3.4.12
   updated: July 29, 2024
+  download: true
+- name: Dspace Connector
+  link: https://github.com/omeka-s-modules/DspaceConnector/releases/download/v1.6.1/DspaceConnector-1.6.1.zip
+  version: 1.6.1
+  updated: March 27, 2023
   download: true
 - name: Dynamic Item Sets
   link: https://github.com/Daniel-KM/Omeka-S-module-DynamicItemSets/releases/download/3.4.2/DynamicItemSets-3.4.2.zip
@@ -229,10 +274,30 @@ modules:
   version: 1.5.0
   updated: October 28, 2020
   download: true
+- name: Extract Metadata
+  link: https://github.com/omeka-s-modules/ExtractMetadata/releases/download/v1.2.0/ExtractMetadata-1.2.0.zip
+  version: 1.2.0
+  updated: October 25, 2024
+  download: true
 - name: Extract Ocr
   link: https://github.com/symac/Omeka-S-module-ExtractOcr/releases/download/v3.4.6/ExtractOcr-3.4.6.zip
   version: 3.4.6
   updated: February 06, 2024
+  download: true
+- name: Extract Text
+  link: https://github.com/omeka-s-modules/ExtractText/releases/download/v2.1.0/ExtractText-2.1.0.zip
+  version: 2.1.0
+  updated: June 20, 2024
+  download: true
+- name: Faceted Browse
+  link: https://github.com/omeka-s-modules/FacetedBrowse/releases/download/v1.6.0/FacetedBrowse-1.6.0.zip
+  version: 1.6.0
+  updated: February 18, 2025
+  download: true
+- name: Fedora Connector
+  link: https://github.com/omeka-s-modules/FedoraConnector/releases/download/v1.6.0/FedoraConnector-1.6.0.zip
+  version: 1.6.0
+  updated: March 27, 2023
   download: true
 - name: Feed (rss/atom)
   link: https://github.com/Daniel-KM/Omeka-S-module-Feed/releases/download/3.4.4/Feed-3.4.4.zip
@@ -243,6 +308,11 @@ modules:
   link: https://github.com/Libnamic/Omeka-S-FieldAsTags/releases/download/1.1.0/FieldsAsTags.zip
   version: 1.1.0
   updated: August 31, 2023
+  download: true
+- name: File Sideload
+  link: https://github.com/omeka-s-modules/FileSideload/releases/download/v1.7.1/FileSideload-1.7.1.zip
+  version: 1.7.1
+  updated: March 29, 2023
   download: true
 - name: Folksonomy
   link: https://github.com/Daniel-KM/Omeka-S-module-Folksonomy/releases/download/3.4.12/Folksonomy-3.4.12.zip
@@ -289,15 +359,45 @@ modules:
   version: 1.3.1
   updated: January 19, 2023
   download: true
+- name: Hierarchy
+  link: https://github.com/omeka-s-modules/Hierarchy/releases/download/v1.1.1/Hierarchy-1.1.1.zip
+  version: 1.1.1
+  updated: November 27, 2024
+  download: true
+- name: ID Resolver
+  link: https://github.com/omeka-s-modules/IdResolver/releases/download/v1.0.0/IdResolver-1.0.0.zip
+  version: 1.0.0
+  updated: June 12, 2024
+  download: true
+- name: IIIF Presentation
+  link: https://github.com/omeka-s-modules/IiifPresentation/releases/download/v1.0.2/IiifPresentation-1.0.2.zip
+  version: 1.0.2
+  updated: July 31, 2023
+  download: true
 - name: IIIF Server
   link: https://github.com/Daniel-KM/Omeka-S-module-IiifServer/releases/download/3.6.24/IiifServer-3.6.24.zip
   version: 3.6.24
   updated: January 06, 2025
   download: true
+- name: Image Annotate
+  link: https://github.com/omeka-s-modules/ImageAnnotate/releases/download/v1.0.0/ImageAnnotate-1.0.0.zip
+  version: 1.0.0
+  updated: July 16, 2024
+  download: true
 - name: Image Server
   link: https://github.com/Daniel-KM/Omeka-S-module-ImageServer/releases/download/3.6.19/ImageServer-3.6.19.zip
   version: 3.6.19
   updated: October 07, 2024
+  download: true
+- name: Inverse Properties
+  link: https://github.com/omeka-s-modules/InverseProperties/releases/download/v1.1.1/InverseProperties-1.1.1.zip
+  version: 1.1.1
+  updated: March 06, 2025
+  download: true
+- name: Item Carousel Block
+  link: https://github.com/omeka-s-modules/ItemCarouselBlock/releases/download/v1.3.0/ItemCarouselBlock-1.3.0.zip
+  version: 1.3.0
+  updated: June 20, 2024
   download: true
 - name: ItemCopy
   link: https://github.com/gegedenice/ItemCopy/releases/download/1.0.1/ItemCopy.zip
@@ -349,6 +449,11 @@ modules:
   version: 3.4.26
   updated: February 03, 2025
   download: true
+- name: Mapping
+  link: https://github.com/omeka-s-modules/Mapping/releases/download/v2.1.0/Mapping-2.1.0.zip
+  version: 2.1.0
+  updated: January 28, 2025
+  download: true
 - name: MarcXml Export
   link: https://github.com/biblibre/omeka-s-module-MarcXmlExport/releases/download/v0.2.0/MarcXmlExport-0.2.0.zip
   version: 0.2.0
@@ -359,10 +464,20 @@ modules:
   version: 3.4.9
   updated: July 01, 2024
   download: true
+- name: Metadata Browse
+  link: https://github.com/omeka-s-modules/MetadataBrowse/releases/download/v1.6.0/MetadataBrowse-1.6.0.zip
+  version: 1.6.0
+  updated: December 14, 2022
+  download: true
 - name: Mirador Viewer
   link: https://github.com/Daniel-KM/Omeka-s-module-Mirador/releases/download/3.4.8/Mirador-3.4.8.zip
   version: 3.4.8
   updated: January 01, 2024
+  download: true
+- name: NDE Termennetwerk
+  link: https://github.com/omeka-s-modules/NdeTermennetwerk/releases/download/v1.1.0/NdeTermennetwerk-1.1.0.zip
+  version: 1.1.0
+  updated: August 09, 2023
   download: true
 - name: Necropolis
   link: https://github.com/biblibre/omeka-s-module-Necropolis/releases/download/v0.2.0/Necropolis-0.2.0.zip
@@ -373,6 +488,11 @@ modules:
   link: https://github.com/Daniel-KM/Omeka-S-module-NoGoogleChromeFlockTracking/releases/download/3.4.1/NoGoogleChromeFlockTracking-3.4.1.zip
   version: 3.4.1
   updated: January 23, 2023
+  download: true
+- name: Numeric Data Types
+  link: https://github.com/omeka-s-modules/NumericDataTypes/releases/download/v1.11.4/NumericDataTypes-1.11.4.zip
+  version: 1.11.4
+  updated: June 24, 2024
   download: true
 - name: OAI-PMH Repository
   link: https://github.com/Daniel-KM/Omeka-S-module-OaiPmhRepository/releases/download/3.4.11/OaiPmhRepository-3.4.11.zip
@@ -389,6 +509,21 @@ modules:
   version: 0.8.2
   updated: November 29, 2024
   download: true
+- name: OHMS Embed
+  link: https://github.com/omeka-s-modules/OhmsEmbed/releases/download/v1.0.0/OhmsEmbed-1.0.0.zip
+  version: 1.0.0
+  updated: October 25, 2024
+  download: true
+- name: Omeka Classic Importer
+  link: https://github.com/omeka-s-modules/Omeka2Importer/releases/download/v1.5.1/Omeka2Importer-1.5.1.zip
+  version: 1.5.1
+  updated: January 19, 2023
+  download: true
+- name: Omeka S Item Importer
+  link: https://github.com/omeka-s-modules/Osii/releases/download/v1.4.0/Osii-1.4.0.zip
+  version: 1.4.0
+  updated: March 18, 2024
+  download: true
 - name: Page Blocks
   link: https://github.com/ivyrze/omeka-s-module-pageblocks/releases/download/1.3/PageBlocks.zip
   version: '1.3'
@@ -398,6 +533,11 @@ modules:
   link: https://github.com/zerocrates/PdfEmbedS/releases/download/v1.3.0/PdfEmbed-1.3.0.zip
   version: 1.3.0
   updated: June 23, 2024
+  download: true
+- name: Persistent Identifiers
+  link: https://github.com/omeka-s-modules/PersistentIdentifiers/releases/download/v1.1.1/PersistentIdentifiers-1.1.1.zip
+  version: 1.1.1
+  updated: February 13, 2023
   download: true
 - name: PersonalNotebook
   link: https://github.com/biblibre/omeka-s-module-PersonalNotebook/releases/download/v0.1.0/PersonalNotebook-0.1.0.zip
@@ -414,6 +554,11 @@ modules:
   version: 3.0.4.2
   updated: September 19, 2022
   download: false
+- name: Redact Values
+  link: https://github.com/omeka-s-modules/RedactValues/releases/download/v1.1.0/RedactValues-1.1.0.zip
+  version: 1.1.0
+  updated: December 13, 2022
+  download: true
 - name: Redirect After Login
   link: https://github.com/biblibre/omeka-s-module-RedirectAfterLogin/releases/download/v0.4.0/RedirectAfterLogin-0.4.0.zip
   version: 0.4.0
@@ -428,6 +573,11 @@ modules:
   link: https://github.com/Daniel-KM/Omeka-S-module-Reference/releases/download/3.4.52/Reference-3.4.52.zip
   version: 3.4.52
   updated: February 01, 2025
+  download: true
+- name: Resource Meta
+  link: https://github.com/omeka-s-modules/ResourceMeta/releases/download/v1.1.0/ResourceMeta-1.1.0.zip
+  version: 1.1.0
+  updated: June 24, 2024
   download: true
 - name: RestrictedSites
   link: https://github.com/ManOnDaMoon/omeka-s-module-RestrictedSites/releases/download/v2.3/RestrictedSites-2.3.zip
@@ -449,6 +599,11 @@ modules:
   version: '1.2'
   updated: December 21, 2022
   download: true
+- name: Scripto
+  link: https://github.com/omeka-s-modules/Scripto/releases/download/v1.5.0/Scripto-1.5.0.zip
+  version: 1.5.0
+  updated: June 20, 2024
+  download: true
 - name: Scripto IIIF
   link: https://github.com/biblibre/omeka-s-module-ScriptoIiif/releases/download/v0.2.0/ScriptoIiif-0.2.0.zip
   version: 0.2.0
@@ -458,6 +613,11 @@ modules:
   link: https://github.com/biblibre/omeka-s-module-Search/releases/download/v0.17.0/Search-0.17.0.zip
   version: 0.17.0
   updated: December 17, 2024
+  download: true
+- name: Sharing
+  link: https://github.com/omeka-s-modules/Sharing/releases/download/v1.5.0/Sharing-1.5.0.zip
+  version: 1.5.0
+  updated: June 20, 2024
   download: true
 - name: Shibboleth (archived, replaced by Single Sign-On)
   link: https://github.com/Daniel-KM/Omeka-s-module-Shibboleth/releases/download/3.4.11/Shibboleth-3.4.11.zip
@@ -534,6 +694,11 @@ modules:
   version: 0.4.1
   updated: May 23, 2023
   download: true
+- name: unAPI
+  link: https://github.com/omeka-s-modules/UnApi/releases/download/v1.3.0/UnApi-1.3.0.zip
+  version: 1.3.0
+  updated: December 13, 2022
+  download: true
 - name: UniqueProperties
   link: https://github.com/indic-archive/omeka-unique-properties/releases/download/v0.0.1/UniqueProperties-v0.0.1.zip
   version: 0.0.1
@@ -543,6 +708,11 @@ modules:
   link: https://github.com/Daniel-KM/Omeka-S-module-UniversalViewer/releases/download/3.6.9/UniversalViewer-3.6.9.zip
   version: 3.6.9
   updated: January 29, 2024
+  download: true
+- name: URI Dereferencer
+  link: https://github.com/omeka-s-modules/UriDereferencer/releases/download/v1.4.2/UriDereferencer-1.4.2.zip
+  version: 1.4.2
+  updated: October 31, 2024
   download: true
 - name: UserNames
   link: https://github.com/ManOnDaMoon/omeka-s-module-UserNames/releases/download/v1.2/UserNames-1.2.zip
@@ -554,10 +724,20 @@ modules:
   version: 3.4.9
   updated: December 09, 2024
   download: true
+- name: Value Suggest
+  link: https://github.com/omeka-s-modules/ValueSuggest/releases/download/v1.17.1/ValueSuggest-1.17.1.zip
+  version: 1.17.1
+  updated: March 18, 2024
+  download: true
 - name: Verovio MEI Viewer
   link: https://github.com/Daniel-KM/Omeka-s-module-Verovio/releases/download/3.3.0.7/Verovio-3.3.0.7.zip
   version: 3.3.0.7
   updated: June 14, 2021
+  download: true
+- name: View Private Resources
+  link: https://github.com/omeka-s-modules/ViewPrivateResources/releases/download/v1.0.2/ViewPrivateResources-1.0.2.zip
+  version: 1.0.2
+  updated: March 29, 2023
   download: true
 - name: Web Monetization
   link: https://github.com/chnm/WebMonetization-module/releases/download/v1.0.0/WebMonetization-1.0.0.zip
@@ -568,4 +748,14 @@ modules:
   link: https://github.com/nishad/omeka-s-wikidata/releases/download/v1.4.2/Wikidata.zip
   version: 1.4.2
   updated: January 09, 2025
+  download: true
+- name: Zotero Citations
+  link: https://github.com/omeka-s-modules/ZoteroCitations/releases/download/v1.0.0/ZoteroCitations-1.0.0.zip
+  version: 1.0.0
+  updated: December 13, 2022
+  download: true
+- name: Zotero Import
+  link: https://github.com/omeka-s-modules/ZoteroImport/releases/download/v1.3.0/ZoteroImport-1.3.0.zip
+  version: 1.3.0
+  updated: December 13, 2022
   download: true

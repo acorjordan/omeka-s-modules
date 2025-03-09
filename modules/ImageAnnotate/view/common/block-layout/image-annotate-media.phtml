@@ -1,0 +1,21 @@
+<?php
+$this->headLink()->appendStylesheet('//cdn.jsdelivr.net/npm/@recogito/annotorious@2.7.13/dist/annotorious.min.css');
+$this->headScript()->appendFile('//cdn.jsdelivr.net/npm/@recogito/annotorious@2.7.13/dist/annotorious.min.js');
+$this->headScript()->appendFile($this->assetUrl('js/image-annotate.js', 'ImageAnnotate'));
+$this->headScript()->appendFile($this->assetUrl('js/image-annotate/show-annotations.js', 'ImageAnnotate'));
+
+echo $this->partial('common/image-annotate', [
+    'imageSrc' => $imageSrc,
+    'annotations' => $annotations,
+]);
+?>
+
+<?php if ($item && 'item' === $data['title']): ?>
+<h3><?php echo $item->link($item->displayTitle()); ?></h3>
+<?php elseif ($media && 'media' === $data['title']): ?>
+<h3><?php echo $media->link($media->displayTitle()); ?></h3>
+<?php endif; ?>
+
+<?php if ($caption): ?>
+<div class="caption"><?php echo $caption; ?></div>
+<?php endif; ?>

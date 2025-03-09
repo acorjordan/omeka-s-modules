@@ -12,7 +12,7 @@ soup = BeautifulSoup(response.text, 'html.parser')
 modules = []
 
 # Extract module data
-div_entries = soup.find_all("div", class_="module addon-entry")
+div_entries = soup.find_all("div", class_="addon-entry")
 for entry in div_entries:
     title_tag = entry.find("h4")
     download_tag = entry.find("a", class_="button")

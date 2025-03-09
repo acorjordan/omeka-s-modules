@@ -1,0 +1,34 @@
+.image-annotate-media-annotations,
+button.image-annotate-view-media {
+    display: none;
+}
+
+/*
+Make images fit without overflow.
+*/
+.image-annotate-image {
+    width: 100%;
+}
+
+/* 
+Make 'view annotations' button margins consistent.
+*/
+
+.image-annotate-image-wrapper > div,
+.image-annotate-media-render img {
+    vertical-align: bottom;
+}
+
+.image-annotate-media-wrapper button {
+    margin: .5rem 0;
+}
+
+/*
+Remove comment replies from the Annotorious editor. We must use CSS to remove
+replies because the COMMENT widget has no configuration to disable them.
+
+@see https://github.com/annotorious/annotorious/discussions/404
+*/
+div.r6o-widget.comment:nth-of-type(n+2) {
+    display: none;
+}

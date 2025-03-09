@@ -1,0 +1,25 @@
+.breadcrumbs > *:not(:last-child):after {
+    content: none;
+}
+
+.breadcrumbs .separator {
+    display: inline-block;
+    margin: 0 6px;
+    color: #000;
+}
+
+.breadcrumbs .separator:after {
+    content: "\f0da";
+    font-family: "Font Awesome 5 Free";
+    margin: 0;
+    font-weight: 900;
+}
+
+.browse th:first-child, .browse td:first-child {
+    width: 25%;
+}
+
+.browse th:nth-child(2), .browse td:nth-child(2) {
+    width: 35%;
+    word-break: break-all;
+}

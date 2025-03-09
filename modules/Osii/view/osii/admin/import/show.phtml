@@ -1,0 +1,418 @@
+<?php
+$this->headLink()->appendStylesheet($this->assetUrl('css/admin/osii.css', 'Osii'));
+$this->htmlElement('body')->appendAttribute('class', 'osii import show');
+
+$localDataTypeSelect = $this->osii()->getLocalDataTypeSelect();
+$localTemplateSelect = $this->osii()->getLocalTemplateSelect();
+$remoteDataTypes = $this->osii()->prepareSnapshotData($import->snapshotDataTypes());
+$remoteTemplates = $this->osii()->prepareSnapshotData($import->snapshotTemplates());
+$remoteMediaIngesters = $this->osii()->prepareSnapshotData($import->snapshotMediaIngesters());
+$remoteProperties = $this->osii()->prepareSnapshotMembers($import->snapshotProperties());
+$remoteClasses = $this->osii()->prepareSnapshotMembers($import->snapshotClasses());
+?>
+
+<?php echo $this->pageTitle($this->translate('Manage import'), 1, $this->translate('Omeka S Item Importer'), $import->label()); ?>
+
+<?php echo $this->form()->openTag($form); ?>
+
+<div id="page-actions">
+    <?php if ($import->canEditImport()): ?>
+    <?php echo $import->link($this->translate('Edit import'), 'edit', ['class' => 'button']); ?>
+    <?php endif; ?>
+    <?php if ($import->canPrepareImport()): ?>
+    <input type="submit" value="<?php echo $this->escapeHtml($this->translate('Submit')); ?>">
+    <?php endif; ?>
+</div>
+
+<div class="breadcrumbs">
+    <?php echo $this->hyperlink($this->translate('Imports'), $this->url('admin/osii-import', ['action' => 'browse'], true)); ?>
+    <div class="separator"></div>
+    <?php echo $this->translate('Manage'); ?>
+</div>
+
+<?php if ($import->canPrepareImport()): ?>
+
+<p><?php echo $this->translate('Prepare the import below. Remember to click the Submit button to save your changes.'); ?></p>
+
+<?php
+echo $this->sectionNav([
+    'snapshot-resources' => $this->translate('Resources'),
+    'snapshot-data-types' => $this->translate('Data types'),
+    'snapshot-templates' => $this->translate('Templates'),
+    'snapshot-media-ingesters' => $this->translate('Media ingesters'),
+    'snapshot-properties' => $this->translate('Properties'),
+    'snapshot-classes' => $this->translate('Classes'),
+]);
+?>
+
+<div id="snapshot-resources" class="section active">
+    <table class="tablesaw" data-tablesaw-mode="stack">
+        <thead>
+        <tr>
+            <th></th>
+            <th><?php echo $this->translate('Remote'); ?></th>
+            <th><?php echo $this->translate('Local'); ?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><?php echo $this->translate('Items'); ?></td>
+            <td><?php echo count($import->snapshotItems()); ?></td>
+            <td><?php echo $import->localItemCount(); ?></td>
+        </tr>
+        <tr>
+            <td><?php echo $this->translate('Media'); ?></td>
+            <td><?php echo count($import->snapshotMedia()); ?></td>
+            <td><?php echo $import->localMediaCount(); ?></td>
+        </tr>
+        <tr>
+            <td><?php echo $this->translate('Item sets'); ?></td>
+            <td><?php echo count($import->snapshotItemSets()); ?></td>
+            <td><?php echo $import->localItemSetCount(); ?></td>
+        </tr>
+        <tbody>
+    </table>
+</div>
+
+<div id="snapshot-data-types" class="section">
+    <?php if ($remoteDataTypes): ?>
+    <table class="tablesaw" data-tablesaw-mode="stack">
+        <thead>
+            <tr>
+                <th><?php echo $this->translate('Remote data type'); ?></th>
+                <th><?php echo $this->translate('Remote value count'); ?></th>
+                <th><?php echo $this->translate('Local data type'); ?></th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php $index = 0; ?>
+        <?php foreach ($remoteDataTypes as $remoteDataTypeId => $remoteDataType): ?>
+            <tr>
+                <td>
+                    <?php if ($remoteDataType['label']): ?>
+                    <?php echo sprintf('%s — %s', $remoteDataTypeId, $remoteDataType['label']); ?>
+                    <?php else: ?>
+                    <?php echo $remoteDataTypeId; ?>
+                    <?php endif; ?>
+                    <input type="hidden"
+                        name="<?php echo $this->escapeHtml(sprintf('data_type_map[%s][remote]', $index)); ?>"
+                        value="<?php echo $this->escapeHtml($remoteDataTypeId); ?>">
+                </td>
+                <td><?php echo $remoteDataType['count']; ?></td>
+                <td>
+                    <?php
+                    $localDataTypeSelect->setName(sprintf('data_type_map[%s][local]', $index));
+                    $localDataType = $import->dataTypeMap()[$remoteDataTypeId] ?? null;
+                    $localDataTypeSelect->setValue($localDataType);
+                    ?>
+                    <?php echo $this->formElement($localDataTypeSelect); ?>
+                </td>
+            </tr>
+        <?php $index++; ?>
+        <?php endforeach; ?>
+        <tbody>
+    </table>
+    <?php else: ?>
+    <div class="no-resources">
+        <p><?php echo $this->translate('No data types in snapshot.'); ?></p>
+    </div>
+    <?php endif; ?>
+</div>
+
+<div id="snapshot-templates" class="section">
+    <?php if ($remoteTemplates): ?>
+    <table class="tablesaw" data-tablesaw-mode="stack">
+        <thead>
+            <tr>
+                <th><?php echo $this->translate('Remote template'); ?></th>
+                <th><?php echo $this->translate('Remote resource count'); ?></th>
+                <th><?php echo $this->translate('Local template'); ?></th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php $index = 0; ?>
+        <?php foreach ($remoteTemplates as $remoteTemplateId => $remoteTemplate): ?>
+            <tr>
+                <td>
+                    <?php echo $remoteTemplate['label']; ?>
+                    <input type="hidden"
+                        name="<?php echo $this->escapeHtml(sprintf('template_map[%s][remote]', $index)); ?>"
+                        value="<?php echo $this->escapeHtml($remoteTemplateId); ?>">
+                </td>
+                <td><?php echo $remoteTemplate['count']; ?></td>
+                <td>
+                    <?php
+                    $localTemplateSelect->setName(sprintf('template_map[%s][local]', $index));
+                    $localTemplate = $import->templateMap()[$remoteTemplateId] ?? null;
+                    $localTemplateSelect->setValue($localTemplate);
+                    ?>
+                    <?php echo $this->formElement($localTemplateSelect); ?>
+                </td>
+            </tr>
+        <?php $index++; ?>
+        <?php endforeach; ?>
+        <tbody>
+    </table>
+    <?php else: ?>
+    <div class="no-resources">
+        <p><?php echo $this->translate('No templates in snapshot.'); ?></p>
+    </div>
+    <?php endif; ?>
+</div>
+
+<div id="snapshot-media-ingesters" class="section">
+    <?php if ($remoteMediaIngesters): ?>
+    <table class="tablesaw" data-tablesaw-mode="stack">
+        <thead>
+            <tr>
+                <th><?php echo $this->translate('Remote media ingester'); ?></th>
+                <th><?php echo $this->translate('Remote media count'); ?></th>
+                <th><?php echo $this->translate('Mapper available?'); ?></th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($remoteMediaIngesters as $remoteMediaIngesterId => $remoteMediaIngester): ?>
+            <tr>
+                <td><?php echo $remoteMediaIngesterId; ?></td>
+                <td><?php echo $remoteMediaIngester['count']; ?></td>
+                <td><?php echo $this->osii()->hasMediaIngesterMapper($remoteMediaIngesterId) ? sprintf('<span style="color: green">%s</span>', $this->translate('Yes')) : sprintf('<span style="color: red">%s</span>', $this->translate('No')); ?></td>
+            </tr>
+        <?php endforeach; ?>
+        <tbody>
+    </table>
+    <?php else: ?>
+    <div class="no-resources">
+        <p><?php echo $this->translate('No media ingesters in snapshot.'); ?></p>
+    </div>
+    <?php endif; ?>
+</div>
+
+<div id="snapshot-properties" class="section">
+    <?php if ($remoteProperties): ?>
+    <?php foreach ($remoteProperties as $vocabularyId => $properties): ?>
+    <?php $vocabulary = $import->snapshotVocabularies()[$vocabularyId]; ?>
+    <ul>
+        <li><?php echo sprintf($this->translate('Vocabulary label: %s'), $vocabulary['label']); ?></li>
+        <li><?php echo sprintf($this->translate('Vocabulary namespace URI: %s'), $vocabulary['namespace_uri']); ?></li>
+    </ul>
+    <table class="tablesaw" data-tablesaw-mode="stack">
+        <thead>
+            <tr>
+                <th><?php echo $this->translate('Remote local name'); ?></th>
+                <th><?php echo $this->translate('Remote label'); ?></th>
+                <th><?php echo $this->translate('Remote value count'); ?></th>
+                <th><?php echo $this->translate('On local install?'); ?></th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($properties as $propertyId => $property): ?>
+            <?php $propertyUri = sprintf('%s%s', $vocabulary['namespace_uri'], $property['local_name']); ?>
+            <tr>
+                <td><?php echo $property['local_name']; ?></td>
+                <td><?php echo $property['label']; ?></td>
+                <td><?php echo $property['count']; ?></td>
+                <td><?php echo $this->osii()->hasProperty($propertyUri) ? sprintf('<span style="color: green">%s</span>', $this->translate('Yes')) : sprintf('<span style="color: red">%s</span>', $this->translate('No')); ?></td>
+            </tr>
+        <?php endforeach; ?>
+        <tbody>
+    </table>
+    <?php endforeach; ?>
+    <?php else: ?>
+    <div class="no-resources">
+        <p><?php echo $this->translate('No properties in snapshot.'); ?></p>
+    </div>
+    <?php endif; ?>
+</div>
+
+<div id="snapshot-classes" class="section">
+    <?php if ($remoteClasses): ?>
+    <?php foreach ($remoteClasses as $vocabularyId => $classes): ?>
+    <?php $vocabulary = $import->snapshotVocabularies()[$vocabularyId]; ?>
+    <ul>
+        <li><?php echo sprintf($this->translate('Vocabulary label: %s'), $vocabulary['label']); ?></li>
+        <li><?php echo sprintf($this->translate('Vocabulary namespace URI: %s'), $vocabulary['namespace_uri']); ?></li>
+    </ul>
+    <table class="tablesaw" data-tablesaw-mode="stack">
+        <thead>
+            <tr>
+                <th><?php echo $this->translate('Remote local name'); ?></th>
+                <th><?php echo $this->translate('Remote label'); ?></th>
+                <th><?php echo $this->translate('Remote resource count'); ?></th>
+                <th><?php echo $this->translate('On local install?'); ?></th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($classes as $classId => $class): ?>
+            <?php $classUri = sprintf('%s%s', $vocabulary['namespace_uri'], $class['local_name']); ?>
+            <tr>
+                <td><?php echo $class['local_name']; ?></td>
+                <td><?php echo $class['label']; ?></td>
+                <td><?php echo $class['count']; ?></td>
+                <td><?php echo $this->osii()->hasClass($classUri) ? sprintf('<span style="color: green">%s</span>', $this->translate('Yes')) : sprintf('<span style="color: red">%s</span>', $this->translate('No')); ?></td>
+            </tr>
+        <?php endforeach; ?>
+        <tbody>
+    </table>
+    <?php endforeach; ?>
+    <?php else: ?>
+    <div class="no-resources">
+        <p><?php echo $this->translate('No classes in snapshot.'); ?></p>
+    </div>
+    <?php endif; ?>
+</div>
+
+<?php else: ?>
+<p><?php echo $this->translate('Prepare import is not available now.'); ?></p>
+<?php endif; ?>
+
+<?php echo $this->formHidden($form->get('csrf')); ?>
+<?php echo $this->form()->closeTag(); ?>
+
+<div id="import-metadata" class="sidebar always-open">
+    <h3><?php echo $this->translate('Import actions'); ?></h3>
+    <div class="meta-group">
+        <h4><?php echo $this->translate('Snapshot'); ?></h4>
+        <div class="value">
+            <?php echo sprintf($this->translate('Status: %s'), $this->translate($import->snapshotStatusLabel())); ?>
+        </div>
+        <div class="value">
+            <?php echo sprintf($this->translate('Last completed: %s'), $import->snapshotCompleted() ? $this->i18n()->dateFormat($import->snapshotCompleted(), 'medium', 'short') : $this->translate('[n/a]')); ?>
+        </div>
+        <div class="value">
+            <?php
+            $actionsMarkup = [];
+            if ($import->canDoSnapshot()) {
+                $actionsMarkup[] = $this->hyperlink($this->translate('Take snapshot'), '#', [
+                    'class' => 'sidebar-content',
+                    'data-sidebar-selector' => '#do-snapshot',
+                ]);
+            }
+            if ($import->canStopSnapshot()) {
+                $actionsMarkup[] = $this->hyperlink($this->translate('Stop snapshot'), '#', [
+                    'class' => 'sidebar-content',
+                    'data-sidebar-selector' => '#stop-snapshot',
+                ]);
+            }
+            if ($import->canRefreshSnapshotStatus()) {
+                $actionsMarkup[] = $this->hyperlink($this->translate('Refresh status'), $this->url(null, [], true));
+            }
+            if ($import->canViewSnapshotJob()) {
+                $actionsMarkup[] = $this->hyperlink($this->translate('View job'), $this->url('admin/id', ['controller' => 'job', 'id' => $import->snapshotJob()->id()]));
+            }
+            ?>
+            <?php echo implode(' | ', $actionsMarkup); ?>
+        </div>
+    </div>
+    <div class="meta-group">
+        <h4><?php echo $this->translate('Import'); ?></h4>
+        <div class="value">
+            <?php echo sprintf($this->translate('Status: %s'), $this->translate($import->importStatusLabel())); ?>
+        </div>
+        <div class="value">
+            <?php echo sprintf($this->translate('Last completed: %s'), $import->importCompleted() ? $this->i18n()->dateFormat($import->importCompleted(), 'medium', 'short') : $this->translate('[n/a]')); ?>
+        </div>
+        <div class="value">
+            <?php
+            $actionsMarkup = [];
+            if ($import->canDoImport()) {
+                $actionsMarkup[] = $this->hyperlink($this->translate('Import snapshot'), '#', [
+                    'class' => 'sidebar-content',
+                    'data-sidebar-selector' => '#do-import',
+                ]);
+            }
+            if ($import->canStopImport()) {
+                $actionsMarkup[] = $this->hyperlink($this->translate('Stop import'), '#', [
+                    'class' => 'sidebar-content',
+                    'data-sidebar-selector' => '#stop-import',
+                ]);
+            }
+            if ($import->canRefreshImportStatus()) {
+                $actionsMarkup[] = $this->hyperlink($this->translate('Refresh status'), $this->url(null, [], true));
+            }
+            if ($import->canViewImportJob()) {
+                $actionsMarkup[] = $this->hyperlink($this->translate('View job'), $this->url('admin/id', ['controller' => 'job', 'id' => $import->importJob()->id()]));
+            }
+            if ($import->canViewResources()) {
+                $actionsMarkup[] = $this->hyperlink($this->translate('View items'), $this->url('admin/default', ['controller' => 'item', 'action' => 'browse'], ['query' => ['osii_import_id' => $import->id()]]));
+                $actionsMarkup[] = $this->hyperlink($this->translate('View media'), $this->url('admin/default', ['controller' => 'media', 'action' => 'browse'], ['query' => ['osii_import_id' => $import->id()]]));
+                $actionsMarkup[] = $this->hyperlink($this->translate('View item sets'), $this->url('admin/default', ['controller' => 'item-set', 'action' => 'browse'], ['query' => ['osii_import_id' => $import->id()]]));
+            }
+            ?>
+            <?php echo implode(' | ', $actionsMarkup); ?>
+        </div>
+    </div>
+    <h3><?php echo $this->translate('Import metadata'); ?></h3>
+    <div class="meta-group">
+        <h4><?php echo $this->translate('Root endpoint'); ?></h4>
+        <div class="value"><?php echo $import->rootEndpoint(); ?></div>
+    </div>
+    <div class="meta-group">
+        <h4><?php echo $this->translate('Query'); ?></h4>
+        <div class="value"><?php echo $import->remoteQuery() ?: $this->translate('[n/a]'); ?></div>
+    </div>
+    <div class="meta-group">
+        <h4><?php echo $this->translate('Key identity'); ?></h4>
+        <div class="value"><?php echo $import->keyIdentity() ?: $this->translate('[n/a]'); ?></div>
+    </div>
+    <div class="meta-group">
+        <h4><?php echo $this->translate('Key credential'); ?></h4>
+        <div class="value"><?php echo $import->keyCredential() ?: $this->translate('[n/a]'); ?></div>
+    </div>
+    <div class="meta-group">
+        <h4><?php echo $this->translate('Import label'); ?></h4>
+        <div class="value"><?php echo $import->label(); ?></div>
+    </div>
+    <div class="meta-group">
+        <?php $localItemSet = $import->localItemSet(); ?>
+        <h4><?php echo $this->translate('Item set'); ?></h4>
+        <div class="value"><?php echo $localItemSet ? $localItemSet->title() : $this->translate('[n/a]'); ?></div>
+    </div>
+    <div class="meta-group">
+        <h4><?php echo $this->translate('Exclude media'); ?></h4>
+        <div class="value"><?php echo $import->excludeMedia() ? $this->translate('[yes]') : $this->translate('[no]'); ?></div>
+    </div>
+    <div class="meta-group">
+        <h4><?php echo $this->translate('Exclude item sets'); ?></h4>
+        <div class="value"><?php echo $import->excludeItemSets() ? $this->translate('[yes]') : $this->translate('[no]'); ?></div>
+    </div>
+    <div class="meta-group">
+        <h4><?php echo $this->translate('Keep removed resources'); ?></h4>
+        <div class="value"><?php echo $import->keepRemovedResources() ? $this->translate('[yes]') : $this->translate('[no]'); ?></div>
+    </div>
+    <div class="meta-group">
+        <h4><?php echo $this->translate('Add remote site URL'); ?></h4>
+        <div class="value"><?php echo $import->sourceSite() ?: $this->translate('[no]'); ?></div>
+    </div>
+    <div class="meta-group">
+        <h4><?php echo $this->translate('Add remote resource URL'); ?></h4>
+        <div class="value"><?php echo $import->addSourceResource() ? $this->translate('[yes]') : $this->translate('[no]'); ?></div>
+    </div>
+</div>
+
+<div id="do-snapshot" class="sidebar">
+    <?php echo $this->hyperlink('', '#', ['class' => 'sidebar-close o-icon-close', 'title' => $this->translate('Close')]); ?>
+    <h3><?php echo $this->translate('Snapshot'); ?></h3>
+    <p><?php echo $this->translate('Take a snapshot of the remote resources in their current state. This will gather the data needed to import the resources and reconcile the local installation with the remote one.'); ?></p>
+    <?php echo $this->form($formDoSnapshot); ?>
+</div>
+
+<div id="stop-snapshot" class="sidebar">
+    <?php echo $this->hyperlink('', '#', ['class' => 'sidebar-close o-icon-close', 'title' => $this->translate('Close')]); ?>
+    <h3><?php echo $this->translate('Snapshot'); ?></h3>
+    <p><?php echo $this->translate('Stop the currently running snapshot.'); ?></p>
+    <?php echo $this->form($formStopSnapshot); ?>
+</div>
+
+<div id="do-import" class="sidebar">
+    <?php echo $this->hyperlink('', '#', ['class' => 'sidebar-close o-icon-close', 'title' => $this->translate('Close')]); ?>
+    <h3><?php echo $this->translate('Import'); ?></h3>
+    <p><?php echo $this->translate('Import the current snapshot. This will add new resources and update existing resources. Before you confirm, be sure to submit mapping changes and reconcile differences between the remote and local installations, to the extent desired.'); ?></p>
+    <?php echo $this->form($formDoImport); ?>
+</div>
+
+<div id="stop-import" class="sidebar">
+    <?php echo $this->hyperlink('', '#', ['class' => 'sidebar-close o-icon-close', 'title' => $this->translate('Close')]); ?>
+    <h3><?php echo $this->translate('Import'); ?></h3>
+    <p><?php echo $this->translate('Stop the currently running import.'); ?></p>
+    <?php echo $this->form($formStopImport); ?>
+</div>

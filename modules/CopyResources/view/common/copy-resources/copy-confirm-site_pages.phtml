@@ -1,0 +1,20 @@
+<div id="sidebar-confirm">
+    <h3><?php echo $this->translate('Copy page'); ?></h3>
+    <p><?php echo $this->translate('Are you sure you would like to copy this page?'); ?></p>
+    <?php echo $this->form($form); ?>
+</div>
+<div class="resource-details">
+    <h3><?php echo $resource->link($resource->title(), null, ['target' => '_blank']); ?></h3>
+    <div class="meta-group">
+        <h4><?php echo $this->translate('Slug'); ?></h4>
+        <div class="value"><?php echo $this->escapeHtml($resource->slug()); ?></div>
+    </div>
+    <div class="meta-group">
+        <h4><?php echo $this->translate('Visibility'); ?></h4>
+        <div class="value"><?php echo $resource->isPublic() ? $this->translate('Public') : $this->translate('Private'); ?></div>
+    </div>
+    <div class="meta-group">
+        <h4><?php echo $this->translate('Modified'); ?></h4>
+        <div class="value"><?php echo $this->escapeHtml($this->i18n()->dateFormat($resource->modified(), 'long')); ?></div>
+    </div>
+</div>

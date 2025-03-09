@@ -1,0 +1,77 @@
+<?php
+$form->prepare();
+$this->htmlElement('body')->appendAttribute('class', 'no-section-hashes');
+$escapeHtml = $this->plugin('escapeHtml');
+$this->headLink()->appendStylesheet($this->assetUrl('css/dspace-connector.css', 'DspaceConnector'));
+$this->headScript()->appendFile($this->assetUrl('js/dspace-connector.js', 'DspaceConnector'));
+?>
+
+<?php echo $this->pageTitle($this->translate('Dspace Connector'), 1, $this->translate('Import options')); ?>
+
+<nav class="section-nav">
+    <ul>
+        <li class="active"><a href="#basic-settings"><?php echo $this->translate('Basic import settings'); ?></a></li>
+        <li><a href="#collections"><?php echo $this->translate('Collections'); ?></a></li>
+    </ul>
+</nav>
+<?php echo $this->form()->openTag($form); ?>
+<fieldset id="basic-settings" class="section active">
+    <?php echo $this->formCollection($form, false); ?>
+</fieldset>
+
+<fieldset id="collections" class="section">
+    <div class="repository">
+        <?php echo $this->translate('Import all items in the DSpace repository, without separating by community or collection'); ?>
+        <button class='import-repository' name='collection_link' value='<?php echo $repository; ?>'><?php echo $this->escapeHtml($this->translate('Import entire repository')); ?></button>
+    </div>
+    <div class="communities">
+        <div class="expand-collapse-all">
+            <button type="button" id="expand-all"><?php echo $this->translate('Expand all'); ?></button>
+            <button type="button" id="collapse-all"><?php echo $this->translate('Collapse all'); ?></button>
+        </div>
+        <?php foreach($communities as $community): ?>
+        <div class="community">
+            <span class="name"><?php echo($community['name']); ?></span>
+            <?php if (!empty($community['shortDescription']) || !empty($community['introductoryText'])): ?>
+                <a href="#" class="expand" aria-label=" <?php echo $this->escapeHtml($this->translate('Expand')); ?>"></a>
+                <div class="description collapsible">
+                    <?php if (!empty($community['shortDescription'])): ?>
+                    <?php echo $community['shortDescription']; ?>
+                    <?php elseif (!empty($community['introductoryText'])): ?>
+                    <?php echo $community['introductoryText']; ?>
+                    <?php endif;?>
+                </div>
+            <?php endif; ?>
+            <?php if (isset($community['collections']) && count($community['collections']) > 0): ?>
+                <div class="collections">
+                <?php foreach($community['collections'] as $collection): ?>
+                    <div class="collection">
+                        <span class="name"><?php echo $collection['name']; ?></span>
+                        <?php if (!empty($community['shortDescription']) || !empty($community['introductoryText'])): ?>
+                        <a href="#" class="expand" aria-label=" <?php echo $this->escapeHtml($this->translate('Expand')); ?>"></a>
+                        <div class="description collapsible">
+                            <?php if (!empty($collection['shortDescription'])): ?>
+                            <?php echo $collection['shortDescription']; ?></td>
+                            <?php elseif (!empty($collection['introductoryText'])): ?>
+                            <?php echo $collection['introductoryText']; ?>
+                            <?php endif; ?>
+                        </div>
+                        <?php endif; ?>
+                        <button class='import-collection' name='collection_link' value='<?php echo $collection['link']; ?>'><?php echo $this->escapeHtml($this->translate('Import collection')); ?></button>
+                    </div>
+                <?php endforeach; ?>
+                </div>
+            <?php else: ?>
+                <div class="no-results collection"><?php echo $this->translate('No collections.'); ?></div>
+            <?php endif; ?>
+        </div>
+        <?php endforeach; ?>
+        </div>
+</fieldset>
+
+<input type='hidden' name='api_url' value='<?php echo $dspace_url; ?>' ></input>
+<input type='hidden' name='limit' value='<?php echo $limit; ?>' ></input>
+<input type='hidden' name='test_import' value='<?php echo $test_import; ?>' ></input>
+<input type='hidden' name='newAPI' value='<?php echo $newAPI; ?>' ></input>
+
+<?php echo $this->form()->closeTag($form); ?>
