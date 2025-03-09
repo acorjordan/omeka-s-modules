@@ -1,0 +1,38 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var \Omeka\Api\Representation\AbstractResourceEntityRepresentation $resource
+ * @var string $policy
+ */
+
+// This shoud returns a brief machine- and eye-readable metadata record (not the full Dublin Core).
+$title = $resource->displayTitle();
+$creators = $resource->value('dcterms:creator', ['type' => 'literal', 'all' => true]);
+$publisher = $resource->value('dcterms:publisher', ['type' => 'literal']);
+$date = $resource->value('dcterms:date', ['type' => 'literal']);
+$description = $resource->displayDescription();
+
+?>
+erc:
+<?php if (!empty($creators)): ?>
+<?php foreach ($creators as $creator): ?>
+who:    <?= trim($creator) . PHP_EOL ?>
+<?php endforeach; ?>
+<?php endif; ?>
+
+<?php if ($publisher): ?>
+who:    <?= trim($publisher) . PHP_EOL ?>
+<?php endif; ?>
+<?php if (empty($creators) && empty($publisher)): ?>
+who:    <?= '(:unkn) anonymous' . PHP_EOL ?>
+<?php endif; ?>
+what:   <?= ($title ?: '(:unas) value unassigned') . PHP_EOL ?>
+when:   <?= ($date ?: '(:unav) value unavailable, possibly unknown') . PHP_EOL ?>
+where:  <?= $this->ark($resource)->url(['force_canonical' => true], false) . PHP_EOL ?>
+<?php if ($description): ?>
+about-how:    <?= trim($description) . PHP_EOL ?>
+<?php endif; ?>
+<?php if ($note = $this->setting('ark_note')): ?>
+note:   <?= trim($note) . PHP_EOL ?>
+<?php endif; ?>
+<?= (isset($policy) && $policy) ? $this->setting('ark_policy_statement') : '' ?>

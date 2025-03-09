@@ -1,0 +1,23 @@
+{
+    "packages": [
+        {
+            "name": "daniel-km/noid4php",
+            "version": "1.1.2",
+            "version_normalized": "1.1.2.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://gitlab.com/Daniel-KM/Noid4Php/-/archive/1.1.2/Noid4Php-1.1.2.tar.gz"
+            },
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "classmap": [
+                    "lib/"
+                ]
+            },
+            "install-path": "../daniel-km/noid4php"
+        }
+    ],
+    "dev": false,
+    "dev-package-names": []
+}

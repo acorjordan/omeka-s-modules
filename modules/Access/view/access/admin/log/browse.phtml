@@ -1,0 +1,70 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var \Access\Entity\AccessLog[] $accessLogs
+ */
+
+$plugins = $this->getHelperPluginManager();
+$url = $plugins->get('url');
+$api = $plugins->get('api');
+$i18n = $plugins->get('i18n');
+$escape = $plugins->get('escapeHtml');
+$translate = $plugins->get('translate');
+$hyperlink= $plugins->get('hyperlink');
+
+$this->headLink()
+    ->appendStylesheet($this->assetUrl('css/access-admin.css', 'Access'));
+
+$this->htmlElement('body')->appendAttribute('class', 'sites browse');
+?>
+
+<?= $this->pageTitle($translate('Access logs')) ?>
+
+<?php if (count($accessLogs)): ?>
+    <div class="browse-controls">
+        <?= $this->pagination() ?>
+    </div>
+    <?php $this->trigger('view.browse.before'); ?>
+
+    <table class="tablesaw" data-tablesaw-mode="stack">
+        <thead>
+        <tr>
+            <th><?= $escape($translate('User')) ?></th>
+            <th><?= $escape($translate('Action')) ?></th>
+            <th><?= $escape($translate('Record Id')) ?></th>
+            <th><?= $escape($translate('Type')) ?></th>
+            <th><?= $escape($translate('Date')) ?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($accessLogs as $accessLog): ?>
+            <?php
+                if ($userId = $accessLog->getUserId()):
+                    try {
+                        $user = $api->read('users', $userId)->getContent();
+                        $userText = $hyperlink($user->name(), $url('admin/id', ['controller' => 'user', 'action' => 'show', 'id' => $user->id()]));
+                    } catch (Exception $e) {
+                        $userText = $translate('[no user]');
+                    }
+                else:
+                    $userText = $translate('[no user]');
+                endif;
+            ?>
+            <tr>
+                <td><?= $userText ?></td>
+                <td><?= $accessLog->getAction() ?></td>
+                <td><?= $accessLog->getAccessId() ?></td>
+                <td><?= $accessLog->getAccessType() ?></td>
+                <td><?= $i18n->dateFormat($accessLog->getDate(), 'medium', 'medium') ?></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+
+    <?php $this->trigger('view.browse.after'); ?>
+
+<?php else: ?>
+
+    <p><?= $escape($translate('No access records yet.')); ?> <a href="<?= $this->url(null, [], true); ?>"><?= $escape($translate('Refresh page')); ?></a></p>
+
+<?php endif; ?>

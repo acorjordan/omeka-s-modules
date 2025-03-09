@@ -1,0 +1,44 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, BibLibre
+# This file is distributed under the same license as the ItemSetParty
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ItemSetParty \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-10 10:36+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../interface-with-other-modules.rst:2
+msgid "Interface with other modules"
+msgstr "Interaction avec d'autres modules"
+
+#: ../../interface-with-other-modules.rst:4
+msgid ""
+"EADImport_ is a module which allows to import resources from a XML file "
+"(\"ead\" formatted)."
+msgstr ""
+"EADImport_ est un module permettant d'importer des ressources depuis un "
+"fichier XML (format \"ead\")."
+
+#: ../../interface-with-other-modules.rst:6
+msgid "When an import is performed, an item set is created with this new items."
+msgstr "Quand un import est effectué, une collection est créee avec ces nouveaux contenus."
+
+#: ../../interface-with-other-modules.rst:8
+msgid ""
+"Simply add this item set to the ItemSetParty configuration, and then "
+"check the import by browsing the tree structure."
+msgstr "Ajouter simplement la collection à la configuration d'ItemSetParty, et ensuite vérifier l'import en parcourant la hiérarchie."
+

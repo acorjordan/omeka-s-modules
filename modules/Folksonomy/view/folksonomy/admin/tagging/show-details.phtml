@@ -1,0 +1,69 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var \Folksonomy\Api\Representation\TaggingRepresentation $resource
+ */
+
+$translate = $this->plugin('translate');
+$escape = $this->plugin('escapeHtml');
+
+$tagging = $resource;
+?>
+
+<div class="resource-details" data-resource-values="<?php //echo $escape($values); ?>">
+    <h3 class="o-module-folksonomy-tagging"><?= $tagging->link(sprintf($translate('Tagging #%d'), $tagging->id())) ?></h3>
+    <div class="meta-group">
+        <h4><?= $escape($translate('Tag')) ?></h4>
+        <div class="value">
+        <?php if ($tag = $tagging->tag()): ?>
+            <span class="tag-name"><?= $this->hyperlink($tag->name(), $tag->urlResources()) ?></span>
+            <span class="tag-internal-id">(#<?= $tag->internalId() ?>)</span>
+        <?php else: ?>
+            <span class="tag-name no-tag"><?= $translate('[Removed]') ?></span>
+        <?php endif;?>
+        </div>
+    </div>
+    <div class="meta-group">
+        <?php $resource = $tagging->resource(); ?>
+        <h4><?= $escape($translate('Resource')) ?> <span class="fa resource-name <?= $resource ? $resource->getControllerName() : 'no-resource' ?>"></span></h4>
+        <div class="value">
+        <?php if ($resource): ?>
+        <span class="resource-name">
+            <?= $resource->link($resource->displayTitle()) ?>
+        </span>
+            <?php if (!$resource->isPublic()): ?>
+        <span class="o-icon-private"></span>
+            <?php endif; ?>
+        <?php else: ?>
+        <span class="resource-name no-resource">
+            [<?= $translate('Removed') ?>]
+        </span>
+        <?php endif; ?>
+        </div>
+    </div>
+    <div class="meta-group">
+        <h4><?= $escape($translate('Tagger')) ?></h4>
+        <div class="value"><?php
+        if ($owner = $tagging->owner()) {
+            echo $this->hyperlink(
+                $owner->name(),
+                $this->url('admin/id', ['controller' => 'user', 'action' => 'show', 'id' => $owner->id()])
+            );
+        } else {
+            echo $translate('[no owner]');
+        }
+        ?></div>
+    </div>
+    <div class="meta-group">
+        <h4><?= $escape($translate('Status')) ?></h4>
+        <div class="value"><?= $tagging->statusLabel() . ' (' . ($tagging->isPublic() ? $translate('Public') : $translate('Private')) . ')' ?></div>
+    </div>
+    <div class="meta-group">
+        <h4><?= $translate('Date Created') ?></h4>
+        <div class="value"><?= $escape($this->i18n()->dateFormat($tagging->created())) ?></div>
+    </div>
+    <div class="meta-group">
+        <h4><?= $translate('Date Modified'); ?></h4>
+        <div class="value"><?= $escape($this->i18n()->dateFormat($tagging->modified())) ?></div>
+    </div>
+</div>

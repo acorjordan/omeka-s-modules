@@ -1,0 +1,69 @@
+#pdf-container {
+    position: relative;
+    height: 60vh;
+}
+
+#pdfjs-container {
+    position: absolute;
+    width: 100%;
+    height: 60vh;
+    overflow: auto;
+    background: #565656;
+    box-shadow: inset 0 5px 10px #4A4A4A;
+}
+
+#pdfjs-container .textLayer ::selection {
+    background: rgba(0, 145, 255, 1);
+}
+
+#pdfjs-container .textLayer ::moz-selection {
+    background: rgba(0, 145, 255, 1);
+}
+
+#pdfjs-container .pdfViewer {
+    width: max-content;
+    margin: 0 auto;
+}
+
+#pdfjs-container .pdfViewer .page {
+    margin: 15px;
+    border: none;
+    border-image: none;
+}
+
+#pdf-controls {
+    background: #3F3F3F;
+    color: #EEE;
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#pdf-controls input {
+    width: 5ch;
+    height: 34px;
+    background: #2E2E2E;
+    color: #EEE;
+    vertical-align: middle;
+    border: none;
+    border-radius: 6px;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+#pdf-controls button {
+    color: #FFF;
+    padding: 6px;
+    background: none;
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    box-shadow: none;
+    margin: 0 2px;
+    opacity: 0.75;
+    transition: opacity 0.3s ease;
+}
+
+#pdf-controls button:hover {
+    opacity: 1;
+}

@@ -1,0 +1,1228 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-06 00:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/scripts/upgrade_vocabulary.php:19
+#, php-format
+msgid "This module requires module %1$s version %2$s or greater."
+msgstr ""
+
+#: data/scripts/upgrade.php:36 Module.php:43
+#, php-format
+msgid "The module %1$s should be upgraded to version %2$s or later."
+msgstr ""
+
+#: Module.php:84
+msgid ""
+"To be automatically upgraded and replaced by this module, the module "
+"\"Access Resource\" should be upgraded first to version 3.4.17.1. Else "
+"uninstall it first, but you will lose access statuses and requests."
+msgstr ""
+
+#: Module.php:90
+msgid ""
+"To be automatically upgraded and replaced by this module, the module "
+"\"Access Resource\" should be downgraded first to version 3.4.17.1. Else "
+"uninstall it first, but you will lose access statuses and requests."
+msgstr ""
+
+#: Module.php:458
+msgid ""
+"When properties are used, three properties should be defined for \"level\", "
+"\"embargo start\" and \"embargo end\"."
+msgstr ""
+
+#: Module.php:473
+msgid "Job is not launched: no option was set."
+msgstr ""
+
+#: Module.php:1353
+msgid "Access"
+msgstr ""
+
+#: Module.php:1375 view/access/admin/request/browse.phtml:30
+#: view/access/admin/request/edit.phtml:29
+#: view/access/admin/request/edit.phtml:31
+#: view/access/admin/request/show.phtml:24
+#: view/access/site/request/browse.phtml:38
+msgid "Access requests"
+msgstr ""
+
+#: src/Api/Representation/AccessRequestRepresentation.php:191
+#, php-format
+msgid "Request #%d"
+msgstr ""
+
+#: src/Api/Representation/AccessRequestRepresentation.php:203
+#, php-format
+msgid "User: %s"
+msgstr ""
+
+#: src/Api/Representation/AccessRequestRepresentation.php:206
+#, php-format
+msgid "Visitor: %s"
+msgstr ""
+
+#: src/Api/Representation/AccessRequestRepresentation.php:210
+#, php-format
+msgid "Token: %s"
+msgstr ""
+
+#: src/Api/Representation/AccessRequestRepresentation.php:212
+msgid "Undefined"
+msgstr ""
+
+#: src/Api/Representation/AccessRequestRepresentation.php:250
+#: src/Api/Representation/AccessStatusRepresentation.php:156
+#, php-format
+msgid "from %s"
+msgstr ""
+
+#: src/Api/Representation/AccessRequestRepresentation.php:254
+#: src/Api/Representation/AccessStatusRepresentation.php:160
+#, php-format
+msgid "until %s"
+msgstr ""
+
+#: src/Api/Representation/AccessRequestRepresentation.php:260
+#: src/Api/Representation/AccessStatusRepresentation.php:166
+#, php-format
+msgid "from %1$s until %2$s"
+msgstr ""
+
+#: src/Controller/Admin/RequestController.php:217
+#: src/Controller/Admin/RequestController.php:237
+#: src/Controller/Admin/RequestController.php:367
+#: src/Controller/Site/RequestController.php:256
+msgid ""
+"The request was sent, but an issue occurred when sending the confirmation "
+"email."
+msgstr ""
+
+#: src/Controller/Admin/RequestController.php:308
+#: src/Controller/Admin/RequestController.php:350
+#, php-format
+msgid "The request #%s is invalid or unavailable."
+msgstr ""
+
+#: src/Controller/Admin/RequestController.php:331
+#: src/Controller/Admin/RequestController.php:389
+#: src/Controller/Site/RequestController.php:81
+msgid "Method should be post."
+msgstr ""
+
+#: src/Controller/Site/RequestController.php:100
+msgid "Individual access requests are not allowed."
+msgstr ""
+
+#: src/Controller/Site/RequestController.php:120
+msgid "No resources were requested."
+msgstr ""
+
+#: src/Controller/Site/RequestController.php:140
+msgid "An email is required."
+msgstr ""
+
+#: src/Controller/Site/RequestController.php:158
+msgid "A valid email is required."
+msgstr ""
+
+#: src/Controller/Site/RequestController.php:222
+msgid "An error occurred when saving message."
+msgstr ""
+
+#: src/Controller/Site/RequestController.php:243
+msgid "The request was submitted successfully."
+msgstr ""
+
+#: src/Service/ViewHelper/IsAccessRequestableFactory.php:16
+msgid "Full access is not supported currently"
+msgstr ""
+
+#: src/Site/BlockLayout/AccessRequest.php:84
+msgid ""
+"Append a form to allow visitors to access request to a resource. The id of "
+"the resource should be passed as url argument."
+msgstr ""
+
+#: view/access/admin/log/browse.phtml:21
+msgid "Access logs"
+msgstr ""
+
+#: view/access/admin/log/browse.phtml:33
+msgid "Action"
+msgstr ""
+
+#: view/access/admin/log/browse.phtml:34
+msgid "Record Id"
+msgstr ""
+
+#: view/access/admin/log/browse.phtml:47 view/access/admin/log/browse.phtml:50
+msgid "[no user]"
+msgstr ""
+
+#: view/access/admin/log/browse.phtml:68
+msgid "No access records yet."
+msgstr ""
+
+#: view/access/admin/log/browse.phtml:68
+#: view/access/site/request/browse.phtml:75
+msgid "Refresh page"
+msgstr ""
+
+#: view/access/admin/request/browse.phtml:39
+msgid "Add new request"
+msgstr ""
+
+#: view/access/admin/request/browse.phtml:53
+msgid "Id"
+msgstr ""
+
+#: view/access/admin/request/browse.phtml:55
+#: view/access/admin/request/show-details.phtml:27
+#: view/access/admin/request/show.phtml:35
+msgid "Requester"
+msgstr ""
+
+#: view/access/admin/request/browse.phtml:57
+#: view/access/admin/request/show-details.phtml:37
+#: view/access/admin/request/show.phtml:43
+#: view/access/site/request/browse.phtml:52
+msgid "Recursive"
+msgstr ""
+
+#: view/access/admin/request/browse.phtml:59
+#: view/access/admin/request/show-details.phtml:48
+#: view/access/admin/request/show.phtml:52
+#: view/access/site/request/browse.phtml:54
+msgid "Dates"
+msgstr ""
+
+#: view/access/admin/request/browse.phtml:71
+#, php-format
+msgid "#%s"
+msgstr ""
+
+#: view/access/admin/request/browse.phtml:123
+#: view/access/admin/request/browse.phtml:141
+msgid "Delete access requests"
+msgstr ""
+
+#: view/access/admin/request/browse.phtml:124
+msgid "Are you sure you would like to delete the selected access requests?"
+msgstr ""
+
+#: view/access/admin/request/browse.phtml:126
+#: view/access/admin/request/browse.phtml:144
+#, php-format
+msgid ""
+"%1$s: this action will permanently delete %2$s access requests and cannot be "
+"undone."
+msgstr ""
+
+#: view/access/admin/request/browse.phtml:142
+msgid ""
+"Are you sure you would like to delete all access requests on all pages of "
+"this result?"
+msgstr ""
+
+#: view/access/admin/request/browse.phtml:182
+msgid "No access requests."
+msgstr ""
+
+#: view/access/admin/request/edit.phtml:31
+msgid "New access request"
+msgstr ""
+
+#: view/access/admin/request/show-details.phtml:62
+#: view/access/admin/request/show.phtml:64
+msgid "Message"
+msgstr ""
+
+#: view/access/admin/request/show-details.phtml:69
+#: view/access/admin/request/show.phtml:70
+msgid "Fields"
+msgstr ""
+
+#: view/access/admin/request/show.phtml:28
+msgid "Edit access request"
+msgstr ""
+
+#: view/access/site/request/browse.phtml:75
+msgid "No access requests yet."
+msgstr ""
+
+#: view/common/access-request-block.phtml:13
+msgid ""
+"You already have access to the resource. Go back to the previous page to see "
+"it."
+msgstr ""
+
+#: view/common/access-request-block.phtml:78
+#: view/common/access-request-block.phtml:92
+#: view/common/access-request.phtml:84 view/common/access-request.phtml:98
+#, php-format
+msgid "To request access please %1$slogin%2$s or contact the publisher!"
+msgstr ""
+
+#: view/common/access-request-block.phtml:84
+#: view/common/access-request.phtml:90
+#, php-format
+msgid "To request access please %1$slogin%3$s or %2$sregister%3$s!"
+msgstr ""
+
+#: view/common/access-request-form.phtml:32
+msgid "Give access"
+msgstr ""
+
+#: view/common/access-request-form.phtml:37
+msgid "Free access"
+msgstr ""
+
+#: view/common/access-request-form.phtml:43
+msgid "Forbidden access"
+msgstr ""
+
+#: view/common/access-request-form.phtml:49
+msgid "Access settings don't allow individual requests."
+msgstr ""
+
+#: view/common/access-request-form.phtml:57
+msgid "The access to this item is free, so the request should include medias."
+msgstr ""
+
+#: view/common/access-request-form.phtml:61
+msgid ""
+"The access to this item set is free, so the request should include items and "
+"medias."
+msgstr ""
+
+#: view/common/access-request-list.phtml:29
+msgid "Requests"
+msgstr ""
+
+#: view/common/access-request-list.phtml:34
+msgid "There are no requests for this resource."
+msgstr ""
+
+#: view/common/access-request-list.phtml:62
+#: view/common/access-request-list.phtml:63
+msgid "Enable or disable"
+msgstr ""
+
+#: view/common/access-request-list.phtml:69
+#: view/common/access-request-list.phtml:70
+msgid "Remove request"
+msgstr ""
+
+#: view/common/access-request.phtml:56 view/common/access-request.phtml:62
+msgid "Request access"
+msgstr ""
+
+#: view/common/access-status.phtml:20
+msgid "Access status"
+msgstr ""
+
+#: view/error/403-access-resource.phtml:1
+msgid "Access Forbidden"
+msgstr ""
+
+#: view/guest/site/guest/widget/access-requests.phtml:15
+msgid "Dashboard"
+msgstr ""
+
+#: data/scripts/upgrade_from_accessresource.php:90
+#, php-format
+msgid "The module \"%1$s\" was upgraded by module \"%2$s\" and uninstalled."
+msgstr ""
+
+#: data/scripts/upgrade_vocabulary.php:36
+msgid "The vocabulary \"{vocabulary}\" was updated successfully."
+msgstr ""
+
+#: data/scripts/upgrade.php:136
+msgid "It is now possible to add a page block to request an access."
+msgstr ""
+
+#: data/scripts/upgrade.php:141
+msgid ""
+"New messages were added to make a distinction between user/visitor and "
+"accepted/rejected. Check main settings to adapt them."
+msgstr ""
+
+#: data/scripts/upgrade.php:156
+msgid ""
+"The module manages now http requests \"Content Range\" that allow to read "
+"files faster."
+msgstr ""
+
+#: data/scripts/upgrade.php:178
+msgid ""
+"A new access mode allows to limit access to medias to users with a specific "
+"email via regex."
+msgstr ""
+
+#: data/scripts/upgrade.php:253
+msgid ""
+"The settings \"heading\" was removed from block Access request. New blocks "
+"\"Heading\" or \"Html\" were prepended to all blocks that had a filled "
+"heading. You may check pages for styles: {json}"
+msgstr ""
+
+#: data/scripts/upgrade.php:263
+msgid ""
+"The setting \"template\" was moved to the new block layout settings "
+"available since Omeka S v4.1. You may check pages for styles: {json}"
+msgstr ""
+
+#: data/scripts/upgrade.php:270
+msgid ""
+"The template files for the block Access request should be moved from \"view/"
+"common/block-layout\" to \"view/common/block-template\" in your themes. You "
+"may check your themes for pages: {json}"
+msgstr ""
+
+#: data/scripts/upgrade.php:282
+msgid "It is now possible to define accesses by sso idps and item sets."
+msgstr ""
+
+#: data/scripts/upgrade.php:287
+msgid ""
+"It is now possible to define excluded item sets for accesses by ip and sso "
+"idp."
+msgstr ""
+
+#: data/scripts/upgrade.php:295
+msgid ""
+"The key \"accessresource\" in the file config/local.config.php at the root "
+"of Omeka can be removed."
+msgstr ""
+
+#: Module.php:99
+msgid ""
+"An error occurred during migration of module \"{module}\". Check the config "
+"and uninstall it manually."
+msgstr ""
+
+#: Module.php:125
+msgid ""
+"It is recommenced to run the job in config form to initialize all access "
+"statuses."
+msgstr ""
+
+#: Module.php:597
+msgid ""
+"Cleaned params used for Access:\n"
+"{json}"
+msgstr ""
+
+#: Module.php:1010 src/Controller/Admin/RequestController.php:182
+msgid "You should set either a user or an email or check box for token."
+msgstr ""
+
+#: Module.php:1033 src/Controller/Admin/RequestController.php:208
+msgid "Access request successfully created."
+msgstr ""
+
+#: Module.php:1108 src/Form/Admin/BatchEditFieldset.php:48
+msgid "Free"
+msgstr ""
+
+#: Module.php:1109 src/Form/Admin/BatchEditFieldset.php:49
+msgid "Reserved"
+msgstr ""
+
+#: Module.php:1110 src/Form/Admin/BatchEditFieldset.php:50
+msgid "Protected"
+msgstr ""
+
+#: Module.php:1125 src/ColumnType/AccessLevel.php:13
+msgid "Access level"
+msgstr ""
+
+#: Module.php:1139 src/Form/Admin/BatchEditFieldset.php:87
+msgid "Embargo start"
+msgstr ""
+
+#: Module.php:1156 Module.php:1164 src/Form/Admin/BatchEditFieldset.php:132
+msgid "Embargo end"
+msgstr ""
+
+#: Module.php:1174
+#, php-format
+msgid "Access level (managed via property %s)"
+msgstr ""
+
+#: Module.php:1177
+#, php-format
+msgid "Embargo start (managed via property %s)"
+msgstr ""
+
+#: Module.php:1180
+#, php-format
+msgid "Embargo end (managed via property %s)"
+msgstr ""
+
+#: Module.php:1191 src/Form/Admin/BatchEditFieldset.php:186
+msgid "Apply access level and embargo to items and medias"
+msgstr ""
+
+#: Module.php:1192 src/Form/Admin/BatchEditFieldset.php:187
+msgid "Apply access level and embargo to medias"
+msgstr ""
+
+#: Module.php:1474
+msgid ""
+"To control access to files, you must add a rule in file .htaccess at the "
+"root of Omeka. See {link}readme{link_end}."
+msgstr ""
+
+#: Module.php:1536
+msgid ""
+"A job was launched in background to update access statuses according to "
+"parameters: ({link_job}job #{job_id}{link_end}, {link_log}logs{link_end})."
+msgstr ""
+
+#: Module.php:1580
+msgid "The ip \"{ip}\" is empty or invalid."
+msgstr ""
+
+#: Module.php:1590
+msgid ""
+"The item sets list \"{input}\" for ip {ip} is invalid: they should be "
+"numeric ids, optionaly prepended with a \"-\"."
+msgstr ""
+
+#: Module.php:1601
+msgid ""
+"The item sets list \"{input}\" for ip {ip} contains duplicate item sets "
+"({list})."
+msgstr ""
+
+#: Module.php:1613
+msgid ""
+"The item sets list \"{input}\" for ip {ip} contains unknown item sets "
+"({list})."
+msgstr ""
+
+#: Module.php:1697
+msgid "No idps are defined. Check the config of module Single Sign-On first."
+msgstr ""
+
+#: Module.php:1714
+msgid "The idp \"{idp}\" is empty or not defined in module Single Sign-On."
+msgstr ""
+
+#: Module.php:1724
+msgid ""
+"The item sets list \"{input}\" for idp {idp} is invalid: they should be "
+"numeric ids, optionaly prepended with a \"-\"."
+msgstr ""
+
+#: Module.php:1735
+msgid ""
+"The item sets list \"{input}\" for idp {idp} contains duplicate item sets "
+"({list})."
+msgstr ""
+
+#: Module.php:1747
+msgid ""
+"The item sets list \"{input}\" for idp {idp} contains unknown item sets "
+"({list})."
+msgstr ""
+
+#: src/Mvc/Controller/Plugin/MailerHtml.php:50
+msgid "Email not sent: the subject is missing."
+msgstr ""
+
+#: src/Mvc/Controller/Plugin/MailerHtml.php:56
+#, php-format
+msgid "Email not sent: content is missing (subject: %1$s)."
+msgstr ""
+
+#: src/Mvc/Controller/Plugin/MailerHtml.php:62
+#, php-format
+msgid "Email not sent: no recipient (subject: %1$s)."
+msgstr ""
+
+#: src/Mvc/Controller/Plugin/MailerHtml.php:119
+#, php-format
+msgid "An email was sent to %1$s with subject: %2$s"
+msgstr ""
+
+#: src/Job/AccessStatusUpdate.php:110
+msgid "Sync mode {mode} is invalid."
+msgstr ""
+
+#: src/Job/AccessStatusUpdate.php:129
+msgid "Missing mode {mode} is invalid."
+msgstr ""
+
+#: src/Job/AccessStatusUpdate.php:142
+msgid "These recursive processes are unknown: {names}."
+msgstr ""
+
+#: src/Job/AccessStatusUpdate.php:153
+msgid ""
+"Synchronization and missing modes are set as \"skip\" and no recursive "
+"processes are set."
+msgstr ""
+
+#: src/Job/AccessStatusUpdate.php:161
+msgid ""
+"Synchronization of property values and index is set, but the config for "
+"access mode does not use properties."
+msgstr ""
+
+#: src/Job/AccessStatusUpdate.php:173
+msgid "Starting indexation of access statuses of all resources."
+msgstr ""
+
+#: src/Job/AccessStatusUpdate.php:218
+msgid "End of indexation."
+msgstr ""
+
+#: src/Job/AccessStatusRecursive.php:84
+msgid "No resource to process."
+msgstr ""
+
+#: src/Job/AccessStatusRecursive.php:117
+msgid "End of indexation of access statuses in properties."
+msgstr ""
+
+#: src/Job/AccessStatusRecursive.php:127
+msgid "No resource \"{resource_id}\" to process."
+msgstr ""
+
+#: src/Job/AccessStatusRecursive.php:136
+#, php-format
+msgid "Resource #%d is not an item or an item set."
+msgstr ""
+
+#: src/Job/AccessStatusRecursive.php:146
+#, php-format
+msgid "No access status for resource #%d."
+msgstr ""
+
+#: src/Job/AccessPropertiesTrait.php:106
+#, php-format
+msgid "Property \"%1$s\" for level does not exist."
+msgstr ""
+
+#: src/Job/AccessPropertiesTrait.php:114
+msgid "Property to set access level is not defined."
+msgstr ""
+
+#: src/Job/AccessPropertiesTrait.php:126
+#, php-format
+msgid "Property \"%1$s\" for embargo start does not exist."
+msgstr ""
+
+#: src/Job/AccessPropertiesTrait.php:134
+msgid "Property to set embargo start is not defined."
+msgstr ""
+
+#: src/Job/AccessPropertiesTrait.php:146
+#, php-format
+msgid "Property \"%1$s\" for embargo end does not exist."
+msgstr ""
+
+#: src/Job/AccessPropertiesTrait.php:154
+msgid "Property to set embargo end is not defined."
+msgstr ""
+
+#: src/Job/AccessPropertiesTrait.php:164
+#, php-format
+msgid "List of property levels is incomplete, missing \"%s\"."
+msgstr ""
+
+#: src/Job/AccessPropertiesTrait.php:182
+#, php-format
+msgid ""
+"The data type for property level is not set, so \"%s\" will be used by "
+"default when it is not set in metadata."
+msgstr ""
+
+#: src/Form/SettingsFieldset.php:28
+msgid "Send email to admin and user or visitor on access request or update"
+msgstr ""
+
+#: src/Form/SettingsFieldset.php:40
+msgid "Admin email subject"
+msgstr ""
+
+#: src/Form/SettingsFieldset.php:51
+msgid "Message to admin for new request"
+msgstr ""
+
+#: src/Form/SettingsFieldset.php:52 src/Form/SettingsFieldset.php:64
+msgid ""
+"{main_title}, {main_url}, {site_title}, {site_url}, {email}, {name}, "
+"{message}, {resource} , {resources} and specific fields wrapped with \"{}\"."
+msgstr ""
+
+#: src/Form/SettingsFieldset.php:63
+msgid "Message to admin for updated request"
+msgstr ""
+
+#: src/Form/SettingsFieldset.php:76
+msgid "User email subject"
+msgstr ""
+
+#: src/Form/SettingsFieldset.php:87
+msgid "Message to user for new request"
+msgstr ""
+
+#: src/Form/SettingsFieldset.php:88 src/Form/SettingsFieldset.php:100
+#: src/Form/SettingsFieldset.php:112
+msgid ""
+"{main_title}, {main_url}, {site_title}, {site_url}, {email}, {name}, "
+"{message}, {resource}, {resources} and specific fields wrapped with \"{}\"."
+msgstr ""
+
+#: src/Form/SettingsFieldset.php:99
+msgid "Message to user for request accepted"
+msgstr ""
+
+#: src/Form/SettingsFieldset.php:111
+msgid "Message to user for request rejected"
+msgstr ""
+
+#: src/Form/SettingsFieldset.php:124
+msgid "Visitor email subject"
+msgstr ""
+
+#: src/Form/SettingsFieldset.php:135
+msgid "Message to visitor for new request"
+msgstr ""
+
+#: src/Form/SettingsFieldset.php:136 src/Form/SettingsFieldset.php:148
+#: src/Form/SettingsFieldset.php:160
+msgid ""
+"{main_title}, {main_url}, {site_title}, {site_url}, {email}, {name}, "
+"{message}, {resource}, {resources}, {session_url} and specific fields "
+"wrapped with \"{}\"."
+msgstr ""
+
+#: src/Form/SettingsFieldset.php:147
+msgid "Message to visitor for request accepted"
+msgstr ""
+
+#: src/Form/SettingsFieldset.php:159
+msgid "Message to visitor for request rejected"
+msgstr ""
+
+#: src/Form/SettingsFieldset.php:172
+msgid ""
+"Message for the block \"Access request text\" when a resource is not "
+"available"
+msgstr ""
+
+#: src/Form/ConfigForm.php:19
+msgid "Protection"
+msgstr ""
+
+#: src/Form/ConfigForm.php:21
+msgid "Protect media content only (files)"
+msgstr ""
+
+#: src/Form/ConfigForm.php:22
+msgid "Protect records and content (not supported currently)"
+msgstr ""
+
+#: src/Form/ConfigForm.php:39
+msgid "Access modes"
+msgstr ""
+
+#: src/Form/ConfigForm.php:41
+msgid ""
+"IP: visitors with specified ips have access to a list of reserved media by "
+"item sets"
+msgstr ""
+
+#: src/Form/ConfigForm.php:42
+msgid "Guest: all users, included guests, have access to all reserved medias"
+msgstr ""
+
+#: src/Form/ConfigForm.php:43
+msgid ""
+"External: users externally authenticated (cas, ldap, sso) have access to all "
+"reserved medias"
+msgstr ""
+
+#: src/Form/ConfigForm.php:44
+msgid "CAS: users authenticated by cas have access to all reserved medias"
+msgstr ""
+
+#: src/Form/ConfigForm.php:45
+msgid "LDAP: users authenticated by ldap have access to all reserved medias"
+msgstr ""
+
+#: src/Form/ConfigForm.php:46
+msgid "SSO: users authenticated by sso have access to all reserved medias"
+msgstr ""
+
+#: src/Form/ConfigForm.php:47
+msgid ""
+"SSO / IDP: users authenticated by specified identity providers have access "
+"to a list of reserved media by item sets"
+msgstr ""
+
+#: src/Form/ConfigForm.php:48
+msgid ""
+"Users authenticated with a specific email have access to all reserved medias"
+msgstr ""
+
+#: src/Form/ConfigForm.php:49
+msgid ""
+"User: authenticated users should request access to specific reserved medias"
+msgstr ""
+
+#: src/Form/ConfigForm.php:50
+msgid ""
+"Email: A visitor identified by email should request access to specific "
+"reserved medias"
+msgstr ""
+
+#: src/Form/ConfigForm.php:51
+msgid ""
+"Token: A user or visitor with a token have access to specific reserved medias"
+msgstr ""
+
+#: src/Form/ConfigForm.php:68
+msgid "List of ips with open access, eventually limited to selected item sets"
+msgstr ""
+
+#: src/Form/ConfigForm.php:69
+msgid ""
+"These ips will have unrestricted access to all resources or only resources "
+"of the specified item sets. List them separated by a \"=\", one by line. "
+"Range ip are allowed (formatted as cidr). An item set prepended with a \"-\" "
+"means an excluded item set, in particular when a global item set is defined "
+"to identify all reserved resources."
+msgstr ""
+
+#: src/Form/ConfigForm.php:85
+msgid "Check forwarded ip first (in proxy environment)"
+msgstr ""
+
+#: src/Form/ConfigForm.php:97
+msgid ""
+"List of sso idp with open access, eventually limited to selected item sets"
+msgstr ""
+
+#: src/Form/ConfigForm.php:98
+msgid ""
+"These identity providers will have unrestricted access to all resources or "
+"only resources of the specified item sets. List them separated by a \"=\", "
+"one by line. The idp name is the domain name or the value used in the login "
+"form. \"federation\" can be used for all users authenticated via a federated "
+"idp. An item set prepended with a \"-\" means an excluded item set, in "
+"particular when a global item set is defined to identify all reserved "
+"resources."
+msgstr ""
+
+#: src/Form/ConfigForm.php:115
+msgid ""
+"Regex on email of users allowed to access reserved medias (option above)"
+msgstr ""
+
+#: src/Form/ConfigForm.php:126
+msgid "Set access level and embargo via a property"
+msgstr ""
+
+#: src/Form/ConfigForm.php:130
+msgid "required"
+msgstr ""
+
+#: src/Form/ConfigForm.php:162
+msgid "Set property when access uses property"
+msgstr ""
+
+#: src/Form/ConfigForm.php:177
+msgid "Labels for the four levels for mode property/level"
+msgstr ""
+
+#: src/Form/ConfigForm.php:195
+msgid "Data type to use for the level"
+msgstr ""
+
+#: src/Form/ConfigForm.php:196
+msgid ""
+"A data type like \"literal\" (default) or \"customvocab:X\" (recommended), "
+"where X is the custom vocab id to set. This value is used for batch "
+"processes."
+msgstr ""
+
+#: src/Form/ConfigForm.php:209
+msgid "Set property to use for embargo start"
+msgstr ""
+
+#: src/Form/ConfigForm.php:224
+msgid "Set property to use for embargo end"
+msgstr ""
+
+#: src/Form/ConfigForm.php:240
+msgid ""
+"Show the access status in advanced tab of resource form when properties are "
+"used"
+msgstr ""
+
+#: src/Form/ConfigForm.php:252
+msgid "Bypass embargo dates for reserved resources"
+msgstr ""
+
+#: src/Form/ConfigForm.php:266
+msgid "Jobs to create missing access status of all resources"
+msgstr ""
+
+#: src/Form/ConfigForm.php:276
+msgid "Copy level and embargo"
+msgstr ""
+
+#: src/Form/ConfigForm.php:278
+msgid "From item sets to items and medias"
+msgstr ""
+
+#: src/Form/ConfigForm.php:279
+msgid "From items to medias"
+msgstr ""
+
+#: src/Form/ConfigForm.php:291
+msgid "Copy access level and embargo"
+msgstr ""
+
+#: src/Form/ConfigForm.php:293 src/Form/ConfigForm.php:308
+msgid "Skip"
+msgstr ""
+
+#: src/Form/ConfigForm.php:294
+msgid "Copy data from property values into indexes"
+msgstr ""
+
+#: src/Form/ConfigForm.php:295
+msgid "Copy data from indexes into property values"
+msgstr ""
+
+#: src/Form/ConfigForm.php:306
+msgid "Fill missing statuses"
+msgstr ""
+
+#: src/Form/ConfigForm.php:309
+msgid "Set access level free for all resources without status"
+msgstr ""
+
+#: src/Form/ConfigForm.php:310
+msgid "Set access level reserved for all resources without status"
+msgstr ""
+
+#: src/Form/ConfigForm.php:311
+msgid "Set access level protected for all resources without status"
+msgstr ""
+
+#: src/Form/ConfigForm.php:312
+msgid "Set access level forbidden for all resources without status"
+msgstr ""
+
+#: src/Form/ConfigForm.php:313
+msgid "Set access level free when public and reserved when private"
+msgstr ""
+
+#: src/Form/ConfigForm.php:314
+msgid "Set access level free when public and protected when private"
+msgstr ""
+
+#: src/Form/ConfigForm.php:315
+msgid "Set access level free when public and forbidden when private"
+msgstr ""
+
+#: src/Form/ConfigForm.php:326
+msgid "Process reindexation"
+msgstr ""
+
+#: src/Form/ConfigForm.php:330
+msgid "Process"
+msgstr ""
+
+#: src/Form/Admin/BatchEditFieldset.php:70
+msgid "New level"
+msgstr ""
+
+#: src/Form/Admin/BatchEditFieldset.php:72
+#: src/Form/Admin/BatchEditFieldset.php:89
+#: src/Form/Admin/BatchEditFieldset.php:134
+msgid "No change"
+msgstr ""
+
+#: src/Form/Admin/BatchEditFieldset.php:91
+#: src/Form/Admin/BatchEditFieldset.php:136
+msgid "Set date below"
+msgstr ""
+
+#: src/Form/Admin/BatchEditFieldset.php:105
+msgid "Embargo start date"
+msgstr ""
+
+#: src/Form/Admin/BatchEditFieldset.php:150
+msgid "Embargo end date"
+msgstr ""
+
+#: src/Form/Admin/AccessRequestForm.php:54
+msgid "New"
+msgstr ""
+
+#: src/Form/Admin/AccessRequestForm.php:55
+msgid "Renew"
+msgstr ""
+
+#: src/Form/Admin/AccessRequestForm.php:56
+msgid "Accepted"
+msgstr ""
+
+#: src/Form/Admin/AccessRequestForm.php:57
+msgid "Rejected"
+msgstr ""
+
+#: src/Form/Admin/AccessRequestForm.php:91
+msgid "Include medias"
+msgstr ""
+
+#: src/Form/Admin/AccessRequestForm.php:92
+msgid "Include items and medias"
+msgstr ""
+
+#: src/Form/Admin/AccessRequestForm.php:93
+msgid "Include items and media"
+msgstr ""
+
+#: src/Form/Admin/AccessRequestForm.php:132
+msgid "multiple"
+msgstr ""
+
+#: src/Form/Admin/AccessRequestForm.php:141
+msgid "Or email"
+msgstr ""
+
+#: src/Form/Admin/AccessRequestForm.php:151
+msgid "Or token"
+msgstr ""
+
+#: src/Form/Admin/AccessRequestForm.php:181
+msgid "value"
+msgstr ""
+
+#: src/Form/Admin/AccessRequestForm.php:236
+msgid "Start date"
+msgstr ""
+
+#: src/Form/Admin/AccessRequestForm.php:257
+msgid "End date"
+msgstr ""
+
+#: src/Form/Admin/AccessRequestForm.php:280
+msgid "Add access"
+msgstr ""
+
+#: src/Form/AccessRequestFieldset.php:23
+msgid "Label for the consent checkbox"
+msgstr ""
+
+#: src/Form/AccessRequestFieldset.php:33
+msgid "Other fields"
+msgstr ""
+
+#: src/Form/AccessRequestFieldset.php:34
+msgid ""
+"Set the name (ascii only and no space) and the label separated by a \"=\", "
+"one by line. The elements may be adapted via the theme."
+msgstr ""
+
+#: src/Form/AccessRequestFieldset.php:39
+msgid "phone = Phone"
+msgstr ""
+
+#: src/Form/Site/AccessRequestForm.php:210
+msgid "Send"
+msgstr ""
+
+#: src/Api/Adapter/AccessRequestAdapter.php:246
+msgid "The requested resources must be an array"
+msgstr ""
+
+#: src/Api/Adapter/AccessRequestAdapter.php:252
+msgid "The requested resources cannot be empty."
+msgstr ""
+
+#: src/Api/Adapter/AccessRequestAdapter.php:258
+#: src/Api/Adapter/AccessRequestAdapter.php:431
+msgid "The status must be one of the list of statuses."
+msgstr ""
+
+#: src/Api/Adapter/AccessRequestAdapter.php:427
+msgid "At least one resource must be requested."
+msgstr ""
+
+#: src/Api/Representation/AccessRequestRepresentation.php:15
+#: src/Entity/AccessRequest.php:32
+msgid "new"
+msgstr ""
+
+#: src/Api/Representation/AccessRequestRepresentation.php:16
+#: src/Entity/AccessRequest.php:33
+msgid "renew"
+msgstr ""
+
+#: src/Api/Representation/AccessRequestRepresentation.php:17
+#: src/Entity/AccessRequest.php:34
+msgid "accepted"
+msgstr ""
+
+#: src/Api/Representation/AccessRequestRepresentation.php:18
+#: src/Entity/AccessRequest.php:35
+msgid "rejected"
+msgstr ""
+
+#: src/Entity/AccessLog.php:24
+msgid "access"
+msgstr ""
+
+#: src/Entity/AccessLog.php:25
+msgid "request"
+msgstr ""
+
+#: src/ColumnType/IsUnderEmbargo.php:13
+msgid "Is under embargo"
+msgstr ""
+
+#: src/ColumnType/EmbargoDate.php:13
+msgid "Embargo date"
+msgstr ""
+
+#: src/Controller/Admin/RequestController.php:125
+#, php-format
+msgid "Access request record with id #%s does not exist"
+msgstr ""
+
+#: src/Controller/Admin/RequestController.php:228
+msgid "Access request successfully updated."
+msgstr ""
+
+#: src/Controller/Admin/RequestController.php:267
+msgid "access request"
+msgstr ""
+
+#: src/Controller/Admin/RequestController.php:286
+msgid "Access request successfully deleted"
+msgstr ""
+
+#: src/Controller/AccessFileController.php:78
+msgid "The file {file} (derivative: {derivative}) is invalid or not available."
+msgstr ""
+
+#: src/Controller/AccessFileController.php:91
+msgid ""
+"The user #{user_id} ({user_email}) has no rights to get the file {file} or "
+"the file is invalid."
+msgstr ""
+
+#: src/Controller/AccessFileController.php:96
+msgid ""
+"The visitor has no rights to get the file {file} or the file is invalid."
+msgstr ""
+
+#: src/Site/ResourcePageBlockLayout/AccessRequest.php:13
+msgid "Access request form"
+msgstr ""
+
+#: src/Site/ResourcePageBlockLayout/AccessRequestText.php:13
+msgid "Access request text"
+msgstr ""
+
+#: src/Site/BlockLayout/AccessRequest.php:27
+msgid "Access request"
+msgstr ""
+
+#: src/Site/BlockLayout/AccessRequest.php:48
+msgid ""
+"To append fields, each row must contain a name and a label separated by a "
+"\"=\"."
+msgstr ""
+
+#: config/module.config.php:222
+msgid "Accesses"
+msgstr ""
+
+#: config/module.config.php:241
+msgid "Logs"
+msgstr ""
+
+#: config/module.config.php:281
+msgid "The resource or the access doesn’t exist."
+msgstr ""
+
+#: config/module.config.php:354 config/module.config.php:357
+#: config/module.config.php:361
+msgid "New request status!"
+msgstr ""
+
+#: config/module.config.php:355
+msgid ""
+"A user or visitor requested to access resource {resource}. Please, check "
+"request dashboard."
+msgstr ""
+
+#: config/module.config.php:356
+msgid ""
+"A user or visitor updated the request to access a resource {resource}. "
+"Please, check request dashboard."
+msgstr ""
+
+#: config/module.config.php:358
+msgid ""
+"Your request to access resource {resource} is sent to administrator. You "
+"will be informed soon about it."
+msgstr ""
+
+#: config/module.config.php:359
+msgid "Your request to access resource {resource} was accepted."
+msgstr ""
+
+#: config/module.config.php:360 config/module.config.php:364
+msgid "Your request to access resource {resource} was rejected."
+msgstr ""
+
+#: config/module.config.php:362
+msgid ""
+"Your request to access resource {resource} is sent to administrator. You "
+"will be inform when your request will change."
+msgstr ""
+
+#: config/module.config.php:363
+msgid ""
+"Your request to access resource {resource} was accepted. You will be able to "
+"access it after clicking {session_url}."
+msgstr ""
+
+#: config/module.config.php:365
+msgid "This resource is not available for now. Contact the webmaster."
+msgstr ""
+
+#: config/module.config.php:369
+msgid ""
+"By submitting this form, I accept the policy for processing my personal data."
+msgstr ""

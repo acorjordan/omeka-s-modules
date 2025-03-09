@@ -1,0 +1,57 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var \Omeka\Api\Representation\SitePageBlockRepresentation $block
+ * @var array $options
+ *
+ * @see https://timeline.knightlab.com/docs/options.html
+ */
+
+$plugins = $this->getHelperPluginManager();
+$url = $plugins->get('url');
+$setting = $plugins->get('setting');
+$assetUrl = $plugins->get('assetUrl');
+$siteSetting = $plugins->get('siteSetting');
+$escapeAttr = $plugins->get('escapeHtmlAttr');
+
+$language = substr($siteSetting('locale', ''), 0, 2) ?: (substr($setting('locale', ''), 0, 2) ?: 'en');
+
+// The container size is required inline to avoid 0-height issues with some themes.
+$containerStyle = 'width: 100%; height: 80vh;';
+
+$timelineId = 'timeline-' . $block->id();
+$timelineUrl = json_encode($url('api/timeline', ['block-id' => $block->id()]), 320);
+$timelineParamsString = $options;
+$timelineParams = json_decode($timelineParamsString, true);
+if (is_array($timelineParams)) {
+    // The container size is required inline to avoid 0-height issues with some themes.
+    if (array_key_exists('container_style', $timelineParams)) {
+        $containerStyle = $timelineParams['container_style'];
+        unset($timelineParams['container_style']);
+    }
+    $timelineParams['centerDate'] = $options['center_date'] ?? '';
+    // Slide 0 is slide title.
+    $timelineParams['start_at_slide'] = $timelineParams['start_at_slide'] ?? 0;
+    $timelineParams['language'] = $timelineParams['language'] ?? $language;
+    $timelineParamsString = json_encode($timelineParams, 448);
+}
+
+$script = <<<JS
+if (typeof timelines === 'undefined') {
+    timelines = {};
+}
+timelines['$timelineId'] = {
+    id: '$timelineId',
+    type: 'knightlab',
+    url: $timelineUrl,
+    isExhibit: true,
+    params: $timelineParamsString,
+};
+JS;
+
+$this->headScript()
+    ->appendFile($assetUrl('js/timeline-knightlab.js', 'Timeline'), 'text/javascript', ['defer' => 'defer'])
+    ->appendScript($script);
+?>
+
+<div id="<?= $timelineId ?>" class="timeline" style="<?= $escapeAttr($containerStyle) ?>"></div>

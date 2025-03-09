@@ -1,0 +1,1041 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-03 00:00+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Daniel Berthereau <Daniel.fr@Berthereau.net>\n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#: Module.php:42
+#, php-format
+msgid "The module %1$s should be upgraded to version %2$s or later."
+msgstr "Le module %1$s doit être mis à niveau à la version %2$s ou supérieure."
+
+#: Module.php:53
+msgid ""
+"If present, the module requires module \"{module}\" version \"{version}\" or "
+"greater."
+msgstr ""
+"Certaines fonctionnalités nécessitent que le module {module} soit mis à "
+"niveau à la version {version} ou supérieure."
+
+#: Module.php:225 Module.php:265
+msgid "Is dynamic"
+msgstr "Est dynamique"
+
+#: view/common/advanced-search/item-set-is-dynamic.phtml:26
+msgid "Search dynamic item sets"
+msgstr "Rechercher les collections dynamiques"
+
+#: Module.php:437
+msgid "The query to attach items cannot contain the item set itself."
+msgstr ""
+"La requête pour attacher les contenus ne peut pas contenir la collection "
+"elle-même."
+
+#: Module.php:461
+msgid ""
+"The query for the item set was changed: a job is run in background to detach "
+"and to attach items (job {link_job}#{job_id}{link_end}, {link_log}"
+"logs{link_end})."
+msgstr ""
+"La requête pour la collection a changé : une tâche a été lancée en arrière-"
+"plan pour détacher et attacher les contenus ({link_job}tâche #{job_id}"
+"{link_end}, {link_log}journaux{link_end})."
+
+#: Module.php:547
+msgid "Query to attach items dynamically to this item set"
+msgstr "Requête pour placer dynamiquement les contenus dans cette collection"
+
+#: view/common/advanced-search/item-set-is-dynamic.phtml:13
+msgid "Is dynamic item set"
+msgstr "Est une collection dynamique"
+
+#: view/common/advanced-search/item-set-is-dynamic.phtml:17
+msgid "Is not dynamic"
+msgstr "N’est pas dynamique"
+
+#: view/common/advanced-search/item-set-is-dynamic.phtml:19
+msgid "Any"
+msgstr "Tous"
+
+#: src/Job/AttachItemsToItemSet.php:29
+msgid "No item set defined."
+msgstr "Aucune collection définie."
+
+#: src/Job/AttachItemsToItemSet.php:37
+msgid "The item set #{item_set_id} does not exist."
+msgstr "La collection #{item_set_id} n’existe pas."
+
+#: src/Job/AttachItemsToItemSet.php:61
+msgid "{count}/{total} items detached from item set #{item_set_id}."
+msgstr "{count}/{total} contenus détachés de la collection #{item_set_id}."
+
+#: src/Job/AttachItemsToItemSet.php:96
+msgid "{count}/{total} new items attached to item set #{item_set_id}."
+msgstr ""
+"{count}/{total} nouveaux contenus attachés à la collection #{item_set_id}."
+
+#: src/Job/AttachItemsToItemSet.php:103
+msgid ""
+"Process ended for item set #{item_set_id}: {count} items were attached, "
+"{count_2} items were detached, {count_3} new items were attached."
+msgstr ""
+"Process terminé pour la collection #{item_set_id} : {count} contenus étaient "
+"attachés, {count_2} contenus ont été détachés, {count_3} nouveaux contenus "
+"ont été attachés."
+
+#~ msgid "Search this value"
+#~ msgstr "Rechercher cette valeur"
+
+#~ msgid "Show this item"
+#~ msgstr "Voir ce contenu"
+
+#~ msgid "Show this media"
+#~ msgstr "Voir ce média"
+
+#~ msgid "Show this resource"
+#~ msgstr "Voir cette ressource"
+
+#~ msgid "Open this external uri in a new tab"
+#~ msgstr "Ouvrir cette uri externe dans un nouvel onglet"
+
+#, php-format
+#~ msgid "Add new %s"
+#~ msgstr "Ajouter un nouveau %s"
+
+#~ msgid "[Result]"
+#~ msgstr "[Résultat]"
+
+#~ msgid "The query is empty."
+#~ msgstr "La requête est vide."
+
+#~ msgid "An error occurred."
+#~ msgstr "Une erreur est survenue."
+
+#~ msgid "Other metadata"
+#~ msgstr "Autres métadonnées"
+
+#~ msgid "Default language?"
+#~ msgstr "Langue par défaut ?"
+
+#, php-format
+#~ msgid "Browse %d items"
+#~ msgstr "Parcourir %d contenus"
+
+#, php-format
+#~ msgid "Browse %d media"
+#~ msgstr "Parcourir %d médias"
+
+#~ msgid "As csv"
+#~ msgstr "En csv"
+
+#~ msgid "As tsv"
+#~ msgstr "En tsv"
+
+#~ msgid "As json"
+#~ msgstr "En json"
+
+#~ msgid "Other settings"
+#~ msgstr "Autres paramètres"
+
+#~ msgid "Advanced settings"
+#~ msgstr "Paramètres avancés"
+
+#~ msgid "Table of labels"
+#~ msgstr "Table des libellés"
+
+#~ msgid "Select resource templates above to compare their labels."
+#~ msgstr ""
+#~ "Choisir les modèles de ressources ci-dessus pour comparer leurs libellés."
+
+#~ msgid "New settings were added to the resource templates."
+#~ msgstr "De nouveaux paramètres ont été ajoutés aux modèles de ressources."
+
+#~ msgid ""
+#~ "Values are now validated against settings in all cases, included "
+#~ "background or direct api process."
+#~ msgstr ""
+#~ "Les valeurs sont désormais vérifiées en fonction du modèle dans tous les "
+#~ "cas, y compris pour les tâches en arrière-plan et les appels api."
+
+#~ msgid "New settings were added to the template."
+#~ msgstr "De nouveaux paramètres ont été ajoutés aux modèles."
+
+#~ msgid ""
+#~ "New settings were added to the {link}main settings{link_end} to simplify "
+#~ "resource form."
+#~ msgstr ""
+#~ "De nouvelles options ont été ajoutées aux {link}paramètres "
+#~ "généraux{link_end} pour simplifier le formulaire des ressources."
+
+#~ msgid "It’s now possible to group a long list of template properties."
+#~ msgstr ""
+#~ "Il est désormais possible de grouper une longue liste de propriétés."
+
+#~ msgid "It’s now possible to set a control input for literal values."
+#~ msgstr ""
+#~ "Il est désormais possible de définir un contrôle de saisie sur les "
+#~ "valeurs texte."
+
+#~ msgid ""
+#~ "It’s now possible to set a custom vocab open, so the user can complete "
+#~ "the authority list when filiing data for a resource."
+#~ msgstr ""
+#~ "Il est désormais possible de définir une liste d’autorité ouverte via le "
+#~ "module Custom Vocab, ce qui permet à l’utilisateur de compléter la liste "
+#~ "lors de l’édition d’une ressource."
+
+#~ msgid ""
+#~ "It’s now possible to set resource template for annotations on each "
+#~ "property."
+#~ msgstr ""
+#~ "Il est désormais possible de définir des modèles pour les annotations "
+#~ "pour chaque propriété."
+
+#~ msgid ""
+#~ "The format for automatic value and autofilling has changed slightly and "
+#~ "upgrade is not automatic. You should check them if you use this feature. "
+#~ "See {link}readme{link_end} for more info."
+#~ msgstr ""
+#~ "Le format pour les valeurs automatiques et le remplissage automatique a "
+#~ "légèrement changé et la mise à niveau n’est pas automatique. Vous devez "
+#~ "les vérifier si vous les utiliser. Consulter {link}lisezmoi{link_end} "
+#~ "pour plus d’info."
+
+#~ msgid ""
+#~ "It’s now possible to order linked resources by another property than "
+#~ "title (require Omeka S v4.1)."
+#~ msgstr ""
+#~ "Il est désormais possible de trier les ressources liées par une autre "
+#~ "propriété que le titre (nécessite Omeka S v4.1)."
+
+#~ msgid ""
+#~ "It’s now possible to limit templates available by resource, for example "
+#~ "the template \"Incunable\" for items only and the template \"Folio\" for "
+#~ "medias only."
+#~ msgstr ""
+#~ "Il est désormais possible de limiter les modèles disponibles par "
+#~ "ressource, par exemple le modèle « Incunable » pour les contenus seuls et "
+#~ "le modèle « Folio » pour les médias seuls."
+
+#~ msgid ""
+#~ "It’s now possible to specify templates by property for value annotations."
+#~ msgstr ""
+#~ "Il est désormais possible de définir des modèles par propriété pour les "
+#~ "annotations de valeur."
+
+#~ msgid ""
+#~ "All existing templates are made available by items only. Check your "
+#~ "templates if you need."
+#~ msgstr ""
+#~ "Les modèles existants sont désormais disponibles uniquement par les "
+#~ "contenus. Vérifiez vos modèles si besoin."
+
+#~ msgid ""
+#~ "If you use specific templates, you may have to check this new parameter."
+#~ msgstr ""
+#~ "Si vous utilisez des modèles spécifiques, vous devez vérifier ce nouveau "
+#~ "paramètre."
+
+#~ msgid ""
+#~ "It’s now possible to specify templates for annotations of module Annotate."
+#~ msgstr ""
+#~ "Il est désormais possible de définir des modèles pour les annotations du "
+#~ "module Annotate."
+
+#~ msgid "A new main setting was added to hide private values in public sites."
+#~ msgstr ""
+#~ "Un nouveau paramètre a été ajouté pour cacher les valeurs privées sur les "
+#~ "sites publics."
+
+#~ msgid ""
+#~ "Value annotations can now have a resource class and an alternative label "
+#~ "or comment."
+#~ msgstr ""
+#~ "Les annotations de valeurs peuvent désormais avoir une classe et un "
+#~ "libellé et commentaire alternatifs."
+
+#~ msgid ""
+#~ "A job is added in tasks of the module {link}Easy Admin{link_end} to fill "
+#~ "the annotation templates and classes when needed."
+#~ msgstr ""
+#~ "Une tâche a été ajouté dans le module {link}Easy Admin{link_end} pour "
+#~ "remplir les modèles et les classes des annotations de valeur."
+
+#~ msgid ""
+#~ "The feature to display the property select with all alternative labels of "
+#~ "templates was moved to a new module {link}Alternative Label "
+#~ "Select{link_end}. You should install it if you need it."
+#~ msgstr ""
+#~ "La fonctionnalité permettant d’ajouter les libellés alternatifs au "
+#~ "sélecteur de propriétés a été déplacée dans un nouveau module {link}"
+#~ "Sélecteur avec libellés alternatifs{link_end}. Vous devez l’installer si "
+#~ "vous en avez besoin."
+
+#~ msgid ""
+#~ "A new option allows to display property values as search links, or to add "
+#~ "a search icon to values, compatible with module {link}Advanced "
+#~ "search{link_end}."
+#~ msgstr ""
+#~ "Une nouvelle option permet d’afficher les valeurs des propriétés en tant "
+#~ "que lien de recherche ou d’ajouter une icône de recherche, compatible "
+#~ "avec le module {link}Advanced search{link_end}."
+
+#~ msgid ""
+#~ "A new resource block was added to display selected metadata, for example "
+#~ "for a short record."
+#~ msgstr ""
+#~ "Un nouveau bloc de ressource a été ajouté pour afficher des métadonnées "
+#~ "spécifiques, par exemple pour une notice abrégée."
+
+#~ msgid "This template cannot be used for this resource."
+#~ msgstr "Ce modèle ne peut pas être utilisé pour cette ressource."
+
+#~ msgid "A class is required."
+#~ msgstr "Une classe est requise."
+
+#~ msgid "The class should be {resource_class}."
+#~ msgstr "La classe doit être {resource_class}."
+
+#~ msgid "The class should be one of {resource_classes}."
+#~ msgstr "La classe doit être l’une parmi {resource_classes}."
+
+#~ msgid ""
+#~ "The html input pattern \"{pattern}\" for template {template} cannot be "
+#~ "processed."
+#~ msgstr ""
+#~ "Le contrôle de saisie « {pattern} » pour le modèle de ressource "
+#~ "{template} ne peut pas être traité."
+
+#~ msgid ""
+#~ "The value \"{value}\" for term {property} does not follow the input "
+#~ "pattern \"{pattern}\"."
+#~ msgstr ""
+#~ "La valeur « {value} » pour la propriété {property} ne correspond pas au "
+#~ "format demandé « {pattern} »."
+
+#~ msgid ""
+#~ "The value for term {property} is shorter ({length} characters) than the "
+#~ "minimal size ({number} characters)."
+#~ msgstr ""
+#~ "La valeur pour la propriété {property} est plus courte ({length} "
+#~ "caractères) que la taille minimale ({number} caractères)."
+
+#~ msgid ""
+#~ "The value for term {property} is longer ({length} characters) than the "
+#~ "maximal size ({number} characters)."
+#~ msgstr ""
+#~ "La valeur pour la propriété {property} est plus longue ({length} "
+#~ "caractères) que la taille maximale ({number} caractères)."
+
+#~ msgid ""
+#~ "The number of values ({count}) for term {property} is lower than the "
+#~ "minimal number of {number}."
+#~ msgstr ""
+#~ "Le nombre de valeur ({count}) pour la propriété {property} est plus petit "
+#~ "que le nombre minimum de {number}."
+
+#~ msgid ""
+#~ "The number of values ({count}) for term {property} is greater than the "
+#~ "maximal number of {number}."
+#~ msgstr ""
+#~ "Le nombre de valeur ({count}) pour la propriété {property} est plus grand "
+#~ "que le nombre maximum de {number}."
+
+#~ msgid ""
+#~ "The value for term {property} should be unique, but already set for "
+#~ "resource #{resource_id}."
+#~ msgstr ""
+#~ "La valeur pour le terme {property} doit être unique, mais elle est déjà "
+#~ "utilisée pour la ressource #{resource_id}."
+
+#~ msgid "New descriptor appended to custom vocab \"{custom_vocab}\": {value}."
+#~ msgstr ""
+#~ "Un nouveau descripteur a été ajouté au vocabulaire personnalisé "
+#~ "« {custom_vocab} » : {value}."
+
+#~ msgid ""
+#~ "New descriptors appended to custom vocab \"{custom_vocab}\": {values}."
+#~ msgstr ""
+#~ "De nouveaux descripteurs ont été ajoutés au vocabulaire personnalisé "
+#~ "« {custom_vocab} » : {values}."
+
+#~ msgid ""
+#~ "Unable to append new descriptors to custom vocab \"{custom_vocab}\":  "
+#~ "{error}"
+#~ msgstr ""
+#~ "Impossible d’ajouter de nouveaux descripteurs au vocabulaire personnalisé "
+#~ "« {custom_vocab} » : {error}"
+
+#~ msgid "Advanced Resource Template"
+#~ msgstr "Modèle de ressources avancé"
+
+#~ msgid "Block Resource metadata"
+#~ msgstr "Bloc Métadonnées de la ressource"
+
+#~ msgid "Resource metadata display"
+#~ msgstr "Affichage des métadonnées de ressource"
+
+#~ msgid "Mode of display of property values"
+#~ msgstr "Mode d’affichage des valeurs de propriété"
+
+#~ msgid "Default display"
+#~ msgstr "Affichage par défaut"
+
+#~ msgid "Use main settings"
+#~ msgstr "Utiliser les paramètres généraux"
+
+#~ msgid "Use site settings below"
+#~ msgstr "Utiliser les paramètres de site ci-dessous"
+
+#~ msgid "Metadata for resource block Metadata"
+#~ msgstr "Métadonnées pour le bloc de ressource Métadonnées"
+
+#~ msgid ""
+#~ "This option may be used to display a short record. Each line is the term "
+#~ "and the optional alternatif label. A specific label can be set on each "
+#~ "line, separated with a \"=\". A division to group a list of properties "
+#~ "may be added with \"# div-class\" and an optional label separated with a "
+#~ "\"=\"."
+#~ msgstr ""
+#~ "Cette option peut être utilisée pour afficher une notice abrégée. Chaque "
+#~ "ligne est un terme et un libellé alternatif facultative. Un libellé "
+#~ "spécifique peut être ajouté pour chaque ligne, séparée avec un « = ». Une "
+#~ "division pour grouper une liste de propriétés peut être ajoutée avec « # "
+#~ "div-class » et un libellé facultatif séparé par un « = »."
+
+#~ msgid "Element for block Metadata"
+#~ msgstr "Élément pour le bloc Métadonnées"
+
+#~ msgid "Metadata label"
+#~ msgstr "Libellé des métadonnées"
+
+#~ msgid "Property term"
+#~ msgstr "Terme de propriété"
+
+#~ msgid "Locale of the value"
+#~ msgstr "Langue de la valeur"
+
+#~ msgid "Resource edition"
+#~ msgstr "Modification de la ressource"
+
+#~ msgid ""
+#~ "Skip checking advanced template settings to allow to save an invalid "
+#~ "record"
+#~ msgstr ""
+#~ "Ignorer la vérification des paramètres avancés des modèles afin de "
+#~ "permettre d’enregistrer des notices invalides"
+
+#~ msgid ""
+#~ "For example if a value is longer than the specified length, it will be "
+#~ "saved anyway.\n"
+#~ "This option should be used only during a migration process or to simplify "
+#~ "a complex batch edition or import.\n"
+#~ "It does not skip core checks, in particular required properties."
+#~ msgstr ""
+#~ "Par exemple, si une valeur est plus longue que la longueur indiquée, la "
+#~ "ressource sera enregistrée malgré tout.\n"
+#~ "Cette option devrait être utilisée seulement pendant une migration ou "
+#~ "pour simplifier un traitement en lot ou un import.\n"
+#~ "Elle ne désactive pas les vérifications internes à Omeka, en particulier "
+#~ "le contrôle des propriétés obligatoires."
+
+#~ msgid "Elements of resource form to display"
+#~ msgstr "Éléments de la ressource à afficher"
+
+#~ msgid "Collapse Metadata description by default"
+#~ msgstr "Plier la description des métadonnées par défaut"
+
+#~ msgid "Button Metadata description"
+#~ msgstr "Bouton Description des métadonnées"
+
+#~ msgid "Button Language"
+#~ msgstr "Bouton Langue"
+
+#~ msgid "Button Visibility"
+#~ msgstr "Bouton Visibilité"
+
+#~ msgid "Button Value annotation"
+#~ msgstr "Bouton Annoter la valeur"
+
+#~ msgid "Button More actions"
+#~ msgstr "Bouton Autres actions"
+
+#~ msgid "Append properties to resource form"
+#~ msgstr "Ajouter des propriétés au formulaire"
+
+#~ msgid ""
+#~ "When no template is selected in resource form, the property selector may "
+#~ "be available or not to force to select a template.\n"
+#~ "Warning: you may have to set each resource template as open/close to "
+#~ "addition according to this setting."
+#~ msgstr ""
+#~ "Quand aucun modèle n’est sélectionné dans le formulaire de ressource, la "
+#~ "sélecteur de propriété peut être affiché ou non pour forcer le choix d’un "
+#~ "modèle.\n"
+#~ "Attention : vous devez indiquer chaque modèle de ressource ouvert ou "
+#~ "fermé en accord avec ce paramètre."
+
+#~ msgid "Allow"
+#~ msgstr "Autoriser"
+
+#~ msgid "Forbid"
+#~ msgstr "Interdir"
+
+#~ msgid "Autofillers"
+#~ msgstr "Remplisseurs"
+
+#~ msgid "The autofillers should be set in selected templates params."
+#~ msgstr ""
+#~ "Les autoremplisseurs doivent être indiquées dans les paramètres des "
+#~ "modèles."
+
+#~ msgid "Skip private values on sites, even when user is connected"
+#~ msgstr ""
+#~ "Ne pas afficher les valeurs privées sur les sites, même lorsque "
+#~ "l’utilisateur est connecté"
+
+#~ msgid "Use property display settings in admin board"
+#~ msgstr ""
+#~ "Utilise les paramètres d’affichage des propriétés dans la partie admin"
+
+#~ msgid "Medias"
+#~ msgstr "Médias"
+
+#~ msgid "Use for resources"
+#~ msgstr "Utiliser pour les ressources"
+
+#~ msgid "Require a class"
+#~ msgstr "Requiert une classe"
+
+#~ msgid "Limit to specified classes"
+#~ msgstr "Limiter aux classes listées"
+
+#~ msgid "Limit to specified properties"
+#~ msgstr "Limiter aux propriétés listées"
+
+#~ msgid "Allow quick creation of a resource"
+#~ msgstr "Autoriser la création rapide d’une ressource"
+
+#~ msgid "Autocomplete with existing values"
+#~ msgstr "Auto-compléter avec des valeurs existantes"
+
+#~ msgid "Starts with"
+#~ msgstr "Commence par"
+
+#~ msgid "Contains"
+#~ msgstr "Contient"
+
+#~ msgid "Languages for values"
+#~ msgstr "Langues pour les valeurs"
+
+#~ msgid "No language"
+#~ msgstr "Pas de langue"
+
+#~ msgid "Value Suggest: keep original label"
+#~ msgstr "Value Suggest : conserver le libellé original"
+
+#~ msgid "Value Suggest: require uri"
+#~ msgstr "Value Suggest : uri obligatoire"
+
+#~ msgid "Automatic values (on save)"
+#~ msgstr "Valeurs automatiques (lors de l’enregistrement)"
+
+#~ msgid "Select autofillers…"
+#~ msgstr "Choisir des remplisseurs…"
+
+#~ msgid "No configured autofiller."
+#~ msgstr "Aucun remplisseur configuré."
+
+#~ msgid "Manual selection (default)"
+#~ msgstr "Sélection manuelle (défaut)"
+
+#~ msgid "No value annotation"
+#~ msgstr "Aucune annotation de valeur"
+
+#~ msgid "Groups"
+#~ msgstr "Groupes"
+
+#~ msgid ""
+#~ "Allow to get properties by group for display. This is a list of group "
+#~ "names and properties for each of them. May need a specific theme template."
+#~ msgstr ""
+#~ "Permet de regrouper les propriétés pour l’affichage. Il s’agit d’une "
+#~ "liste de noms de groupes et de propriétés. Dans certains cas, le thème "
+#~ "doit être mis à jour."
+
+#~ msgid "Order of linked values (Omeka v4.1)"
+#~ msgstr "Tri des valeurs liées (Omeka v4.1)"
+
+#~ msgid ""
+#~ "The default order of the linked resources is the title. Another order can "
+#~ "be set for each linking property. For the default order when there is no "
+#~ "property, just skip the property term."
+#~ msgstr ""
+#~ "Le tri par défaut des ressources liées est le titre. Un autre ordre peut "
+#~ "être défini pour chaque propriété liante. Pour définir le tri par défaut "
+#~ "en l’absence de propriété, ne pas indiquer le terme."
+
+#~ msgid "More settings"
+#~ msgstr "Autres paramètres"
+
+#~ msgid ""
+#~ "Allow to pass some settings, usually for theme and generally via key-"
+#~ "value pairs or json."
+#~ msgstr ""
+#~ "Permet de passer certains paramètres généralement pour le thème et via "
+#~ "des paires clés-valeurs ou json."
+
+#~ msgid "Input control for literal (html pattern)"
+#~ msgstr "Contrôle de saisie pour les valeurs texte (motif html)"
+
+#~ msgid "Minimum length (characters)"
+#~ msgstr "Longueur minimale (caractères)"
+
+#~ msgid "Maximum length (characters)"
+#~ msgstr "Longueur maximale (caractères)"
+
+#~ msgid "Minimum number of values (when required)"
+#~ msgstr "Nombre minimal de valeurs (si requis)"
+
+#~ msgid "Maximum number of values"
+#~ msgstr "Nombre maximal de valeurs"
+
+#~ msgid "Default value"
+#~ msgstr "Valeur par défaut"
+
+#~ msgid "Automatic value (on save)"
+#~ msgstr "Valeur automatique (lors de l’enregistrement)"
+
+#~ msgid "Unique value among resources"
+#~ msgstr "Valeur unique parmi toutes les ressources"
+
+#~ msgid "Locked value once saved"
+#~ msgstr "Valeur bloquée une fois enregistrée"
+
+#~ msgid "Property disabled in form (editable only by api/job)"
+#~ msgstr ""
+#~ "Propriété désactivée dans le formulaire (éditable seulement par api/tâche)"
+
+#~ msgid "Separator to split a literal value"
+#~ msgstr "Séparateur pour éclater une valeur textuelle"
+
+#~ msgid "Order linked resources by properties"
+#~ msgstr "Trier les ressources liées par propriétés"
+
+#~ msgid "Filter linked resources with a query"
+#~ msgstr "Filtrer les ressources liées avec une requête"
+
+#~ msgid "Use url arguments of a standard advanced search query"
+#~ msgstr "Utiliser les arguments d’une url de recherche avancée standard"
+
+#~ msgid "Use template setting"
+#~ msgstr "Utiliser le paramètre du modèle"
+
+#~ msgid "Suggested languages"
+#~ msgstr "Langues suggérées"
+
+#~ msgid "Use language"
+#~ msgstr "Utilise la langue"
+
+#~ msgid "Custom vocab: open authority list"
+#~ msgstr "Vocabulaire personnalisé : liste d’autorité ouverte"
+
+#~ msgid "Display of property values"
+#~ msgstr "Affichage des valeurs de propriété"
+
+#~ msgid "Value as search"
+#~ msgstr "Valeur en recherche"
+
+#~ msgid "Value as advanced search (module or fallback)"
+#~ msgstr "Valeur en recherche avancée (module ou standard)"
+
+#~ msgid "Display linked resource as simple text"
+#~ msgstr "Afficher les ressources liées comme simple texte"
+
+#~ msgid "Display uri as simple text"
+#~ msgstr "Afficher les uris comme simple texte"
+
+#~ msgid "Prepend an icon for search link"
+#~ msgstr "Ajouter avant une icône de lien pour la recherche"
+
+#~ msgid "Prepend an icon for advanced search link (module or fallback)"
+#~ msgstr ""
+#~ "Ajouter avant une icône de lien pour la recherche avancée (module ou "
+#~ "standard)"
+
+#~ msgid "Prepend an icon for linked resource"
+#~ msgstr "Ajouter avant une icône pour les ressources liées"
+
+#~ msgid "Prepend an icon for external uri"
+#~ msgstr "Ajouter avant une icône pour les uris externes"
+
+#~ msgid "Append an icon for search link"
+#~ msgstr "Ajouter une icône de lien pour la recherche"
+
+#~ msgid "Append an icon for advanced search link (module or fallback)"
+#~ msgstr ""
+#~ "Ajouter une icône de lien pour la recherche avancée (module ou standard)"
+
+#~ msgid "Append an icon for linked resource"
+#~ msgstr "Ajouter une icône pour les ressources liées"
+
+#~ msgid "Append an icon for external uri"
+#~ msgstr "Ajouter une icône pour les uris externes"
+
+#~ msgid "Append an icon for search link, only in record"
+#~ msgstr ""
+#~ "Ajouter une icône de lien pour la recherche, seulement dans la notice"
+
+#~ msgid ""
+#~ "Append an icon for advanced search link, only in record (module or "
+#~ "fallback)"
+#~ msgstr ""
+#~ "Ajouter une icône de lien pour la recherche avancée, seulement dans la "
+#~ "notice (module ou standard)"
+
+#~ msgid "Append an icon for linked resource, only in record"
+#~ msgstr ""
+#~ "Ajouter une icône pour les ressources liées, seulement dans la notice"
+
+#~ msgid "Append an icon for external uri, only in record"
+#~ msgstr "Ajouter une icône pour les uris externes, seulement dans la notice"
+
+#~ msgid "Properties to display as search link (whitelist)"
+#~ msgstr "Propriétés à afficher en tant que lien de recherche (liste blanche)"
+
+#~ msgid "All properties"
+#~ msgstr "Toutes les propriétés"
+
+#~ msgid "Select properties…"
+#~ msgstr "Choisir des propriétés…"
+
+#~ msgid "Properties not to display as search link (blacklist)"
+#~ msgstr ""
+#~ "Propriétés à ne pas afficher en tant que lien de recherche (liste noire)"
+
+#~ msgid "Resource template file (json, csv, tsv)"
+#~ msgstr "Fichier du modèle de ressource (json, csv, tsv)"
+
+#~ msgid "Suggested classes"
+#~ msgstr "Classes suggérées"
+
+#~ msgid "Select classes"
+#~ msgstr "Sélectionner des classes"
+
+#~ msgid "The data type \"{data_type}\" is not available."
+#~ msgstr "Le type de données « {data_type} » n’est pas disponible."
+
+#~ msgid "Generic"
+#~ msgstr "Générique"
+
+#~ msgid "Geonames"
+#~ msgstr "Géonames"
+
+#~ msgid "IdRef"
+#~ msgstr "IdRef"
+
+#~ msgid "IdRef: Person names"
+#~ msgstr "IdRef : Noms de personnes"
+
+#~ msgid "IdRef: Collectivities"
+#~ msgstr "IdRef : Collectivités"
+
+#~ msgid "IdRef: Conferences"
+#~ msgstr "IdRef : Conférences"
+
+#~ msgid "IdRef: Subjects"
+#~ msgstr "IdRef : Sujets"
+
+#~ msgid "IdRef: Subjects Rameau"
+#~ msgstr "IdRef : Sujets Rameau"
+
+#~ msgid "IdRef: Subjects F-MeSH"
+#~ msgstr "IdRef : Sujets F-MeSH"
+
+#~ msgid "IdRef: Geography"
+#~ msgstr "IdRef : Géographie"
+
+#~ msgid "IdRef: Family names"
+#~ msgstr "IdRef : Noms de famille"
+
+#~ msgid "IdRef: Uniform titles"
+#~ msgstr "IdRef : Titres uniformes"
+
+#~ msgid "IdRef: Authors-Titles"
+#~ msgstr "IdRef : Auteurs-titres"
+
+#~ msgid "IdRef: Trademarks"
+#~ msgstr "IdRef : Marques de commerce"
+
+#~ msgid "IdRef: PPN id"
+#~ msgstr "IdRef : PPN"
+
+#~ msgid "IdRef: Library registry (RCR)"
+#~ msgstr "IdRef : Registre des centres de ressources (RCR)"
+
+#, php-format
+#~ msgid "%1$s: %2$s"
+#~ msgstr "%1$s : %2$s"
+
+#~ msgid "The remote service \"{service}\" seems unavailable."
+#~ msgstr "Le service distant « {service} » semble indisponible."
+
+#~ msgid "The service is empty."
+#~ msgstr "Le service est vide."
+
+#~ msgid "The template is empty."
+#~ msgstr "Le modèle est vide."
+
+#~ msgid "The template \"{template_id}\" is not available."
+#~ msgstr "Le modèle « {template_id} » n’est pas disponible."
+
+#~ msgid "The service \"{service}\" has no mapping."
+#~ msgstr "Le service « {service} » n’a pas de correspondances."
+
+#~ msgid "The service \"{service}\" is not available."
+#~ msgstr "Le service « {service} » n’est pas disponible."
+
+#~ msgid "Select resource templates"
+#~ msgstr "Choisir des modèles de ressources"
+
+#~ msgid ""
+#~ "The template has duplicate properties. They are mixed in the form, but "
+#~ "will be imported separately."
+#~ msgstr ""
+#~ "Le modèle contient des propriétés en double. Elles sont mélangées dans "
+#~ "cette page, mais seront importées séparément."
+
+#~ msgid "Wrong media type \"{media_type}\" for file."
+#~ msgstr "Média-type incorrect {media_type} pour le fichier."
+
+#~ msgid "The file does not contain any row."
+#~ msgstr "Le fichier ne contient aucune ligne."
+
+#~ msgid "There is no valid template properties."
+#~ msgstr "Il n’y a aucune propriété valide."
+
+#, php-format
+#~ msgid ""
+#~ "The alternative label for a duplicate property (%s) should be unique."
+#~ msgstr ""
+#~ "Le libellé alternatif pour la propriété en double (%s) doit être unique."
+
+#~ msgid "File cannot be checked or saved."
+#~ msgstr "Le fichier ne peut pas être vérifié ou enregistré."
+
+#~ msgid ""
+#~ "When multiple fields use the same property, only one field can be without "
+#~ "data type."
+#~ msgstr ""
+#~ "Quand plusieurs champs utilisent la même propriété, un seul champ peut "
+#~ "être sans type de données."
+
+#~ msgid ""
+#~ "When multiple fields use the same property, the data types must be unique "
+#~ "among them."
+#~ msgstr ""
+#~ "Quand plusieurs champs utilisent la même propriété, les types de données "
+#~ "doivent être uniques entre eux."
+
+#~ msgid "Missing autofiller configuration."
+#~ msgstr "Configuration des remplisseurs manquante."
+
+#~ msgid ""
+#~ "The block Metadata is appended for {resource_type}, but no metadata are "
+#~ "configured."
+#~ msgstr ""
+#~ "Le bloc Métadonnées a été ajouté pour {resource_type}, mais aucune "
+#~ "métadonnées n’est configurée."
+
+#~ msgid "New value"
+#~ msgstr "Nouvelle valeur"
+
+#~ msgid "No results"
+#~ msgstr "Pas de résultats"
+
+#~ msgid "No %s found."
+#~ msgstr "Aucun %s trouvé."
+
+#, php-format
+#~ msgid "This module requires the module \"%s\"."
+#~ msgstr "Ce module requiert le module \"%s\"."
+
+#, php-format
+#~ msgid "This module requires modules \"%s\"."
+#~ msgstr "Ce module requiert les modules \"%s\"."
+
+#~ msgid "This module has resources that cannot be installed."
+#~ msgstr "Ce module a des ressources qui ne peuvent pas être installées."
+
+#~ msgid ""
+#~ "This module cannot install its tables, because they exist already. Try to "
+#~ "remove them first."
+#~ msgstr ""
+#~ "Ce module ne peut pas installer ses tables car elles existent déjà. "
+#~ "Essayez de les supprimer manuellement."
+
+#, php-format
+#~ msgid "The module removed tables \"%s\" from a previous broken install."
+#~ msgstr ""
+#~ "Le module a supprimé les tables « %s » depuis une installation échouée."
+
+#, php-format
+#~ msgid ""
+#~ "The module \"%s\" was automatically deactivated because the dependencies "
+#~ "are unavailable."
+#~ msgstr ""
+#~ "Le module \"%s\" a été automatiquement désactivé car ses dépendances ne "
+#~ "sont plus disponibles."
+
+#~ msgid "annotation"
+#~ msgstr "annotation"
+
+#~ msgid "resource class"
+#~ msgstr "classe de ressource"
+
+#~ msgid "assets"
+#~ msgstr "fichiers"
+
+#~ msgid "items"
+#~ msgstr "contenus"
+
+#~ msgid "item sets"
+#~ msgstr "collections"
+
+#~ msgid "resources"
+#~ msgstr "ressources"
+
+#~ msgid "annotations"
+#~ msgstr "annotations"
+
+#~ msgid "vocabularies"
+#~ msgstr "vocabulaires"
+
+#~ msgid "resource classes"
+#~ msgstr "classes de ressource"
+
+#~ msgid ""
+#~ "Identifier \"{identifier}\" is not unique ({count} values). First is "
+#~ "resource #{id}."
+#~ msgstr ""
+#~ "L’identifiant « {identifier} » n’est pas unique ({count} valeurs). Le "
+#~ "premier est la ressource #{id}."
+
+#~ msgid "Duplicate identifiers are not allowed."
+#~ msgstr "Les identifiants en double ne sont pas autorisés."
+
+#~ msgid ""
+#~ "The {resource} #{id} has a linked resource or an annotation for property "
+#~ "{term} that is not available and cannot be serialized."
+#~ msgstr ""
+#~ "La {resource} #{id} a une ressource liée ou une annotation pour la "
+#~ "propriété {term} qui n’est pas disponible et ne peut pas être sérialisée."
+
+#~ msgid ""
+#~ "Error when saving \"{filename}\" (temp file: \"{tempfile}\"): {exception}"
+#~ msgstr ""
+#~ "Erreur lors de l’enregistrement de « {filename} » (fichier temporaire : "
+#~ "« {tempfile} ») : {exception}"
+
+#~ msgid ""
+#~ "Error when saving \"{filename}\" (temp file: \"{tempfile}\"): {error}"
+#~ msgstr ""
+#~ "Erreur lors de l’enregistrement de « {filename} » (fichier temporaire : "
+#~ "« {tempfile} ») : {error}"
+
+#~ msgid "Value annotations"
+#~ msgstr "Annotations de valeur"
+
+#~ msgid "Unique value"
+#~ msgstr "Valeur unique"
+
+#~ msgid "label"
+#~ msgstr "libellé"
+
+#~ msgid "List of autofillers to use for this template."
+#~ msgstr "Liste des remplisseurs à utiliser pour ce modèle."
+
+#~ msgid "Value languages for properties"
+#~ msgstr "Langues pour les valeurs des propriétés"
+
+#~ msgid "Export"
+#~ msgstr "Exporter"
+
+#~ msgid "Edit resource template"
+#~ msgstr "Modifier le modèle de ressource"
+
+#~ msgid "Class"
+#~ msgstr "Classe"
+
+#~ msgid "Original label"
+#~ msgstr "Libellé original"
+
+#~ msgid "Data types"
+#~ msgstr "Types de données"
+
+#~ msgid "Alternate comment"
+#~ msgstr "Commentaire alternatif"
+
+#~ msgid "Required?"
+#~ msgstr "Requis ?"
+
+#~ msgid "Private?"
+#~ msgstr "Privé ?"
+
+#~ msgid "Details"
+#~ msgstr "Détails"
+
+#~ msgid "Yes"
+#~ msgstr "Oui"
+
+#~ msgid "No"
+#~ msgstr "Non"
+
+#~ msgid "Close"
+#~ msgstr "Fermer"
+
+#~ msgid "Save"
+#~ msgstr "Enregistrer"
+
+#~ msgid "Delete"
+#~ msgstr "Supprimer"
+
+#~ msgid "Original"
+#~ msgstr "Original"
+
+#~ msgid "Alternate"
+#~ msgstr "Alternative"
+
+#~ msgid "Comment"
+#~ msgstr "Commentaire"
+
+#~ msgid "Other options"
+#~ msgstr "Autres options"
+
+#~ msgid "Private"
+#~ msgstr "Privé"
+
+#~ msgid "Set changes"
+#~ msgstr "Appliquer les modifications"
+
+#~ msgid "Edit property"
+#~ msgstr "Modifier la propriété"
+
+#~ msgid "Remove property"
+#~ msgstr "Supprimer la propriété"
+
+#~ msgid "Add"
+#~ msgstr "Ajouter"

@@ -1,0 +1,85 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, BibLibre
+# This file is distributed under the same license as the ItemSetParty
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ItemSetParty \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-20 14:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../index.rst:30
+msgid "Contents"
+msgstr "Contenus"
+
+#: ../../index.rst:2
+msgid "Introduction"
+msgstr ""
+
+#: ../../index.rst:5
+msgid "How does it work ?"
+msgstr "Comment cela fonctionne ?"
+
+#: ../../index.rst:7
+msgid ""
+"This module allows you to view a hierarchy of resources based on the item"
+" sets defined in its parameters. Resources are linked using the "
+"dcterms:hasPart property."
+msgstr "Ce module vous permet de voir une hiérarchie de ressources basée sur des collections définies dans sa configuration. Les ressources sont liées en utilisant la propriété `dcterms:hasPart`. "
+
+#: ../../index.rst:10
+msgid "No dependencies needed."
+msgstr "Aucune dépendance nécessaire."
+
+#: ../../index.rst:13
+msgid "Where is the configuration"
+msgstr "Où est la configuration ?"
+
+#: ../../index.rst:15
+msgid "Module can be configured in the following locations:"
+msgstr "Le module peut être configuré à ces endroits:"
+
+#: ../../index.rst:17
+msgid ""
+"configure button on the modules page (Admin > Modules > ItemSetParty > "
+"Configure button)"
+msgstr "le bouton de configuration sur la liste des modules (Admin > Modules > ItemSetParty > Bouton configurer)"
+
+#: ../../index.rst:18
+msgid ""
+"separate page accessible from the navigation menu (Admin > Sites > Edit "
+"'YourSite' > Navigation section > Add custom link 'Item Set Party')"
+msgstr "depuis le menu de navigation du site (Admin > Sites > Editer 'VotreSite' > Navigation > Ajouter un lien personnalisé 'Item Set Party')"
+
+#: ../../index.rst:19
+msgid ""
+"block page settings (Admin > Sites > Edit 'YourSite' > Pages > Edit "
+"'YourPage' > Add new block 'Item Set Party')"
+msgstr "bloc de page (Admin > Sites > Editer 'VotreSite' > Pages > Editer VotrePage' > Ajouter un nouveau bloc 'Item Set Party')"
+
+#: ../../index.rst:21
+msgid "More details on the :doc:`configuration` page."
+msgstr "Plus de détails sur la page de configuration :doc:`configuration`."
+
+#: ../../index.rst:24
+msgid "Similar modules"
+msgstr "Modules similaires"
+
+#: ../../index.rst:26
+msgid ""
+"ItemSetsTree_ is another module to view an item sets hierarchy based on "
+"configured parent item set."
+msgstr "ItemSetsTree_ est un autre module permettant de visualiser une hiérarchie de collection basée sur le parent de la collection défini."
+

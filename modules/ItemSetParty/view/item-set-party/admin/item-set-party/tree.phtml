@@ -1,0 +1,14 @@
+<?php $this->headScript()->appendFile($this->assetUrl('js/item-set-party.js', 'ItemSetParty'));?>
+
+<ul>
+    <?php foreach ($resourceRelations['dcterms:hasPart'] as $representation): ?>
+        <?php $valueResource = $representation->valueResource(); ?>
+        <?php $id = $valueResource->id(); ?>
+        <?php $resourceName = $valueResource->resourceName(); ?>
+        <li class="archival_list_element" data-resource-id="<?php echo $id?>" data-resource-type="<?php echo $resourceName?>">
+            <a id="resourceLink_<?php echo $id; ?>">
+                <?php echo $this->itemSetPartyResource('admin', $id, $resourceName); ?>
+            </a>
+        </li>
+    <?php endforeach; ?>
+</ul>

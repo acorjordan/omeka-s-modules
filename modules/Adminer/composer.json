@@ -1,0 +1,74 @@
+{
+    "name": "daniel-km/omeka-s-module-adminer",
+    "description": "Access to Omeka database through Adminer, a one-file full-featured database management tool.",
+    "type": "library",
+    "license": "CECILL-2.1",
+    "authors": [
+        {
+            "name": "Daniel Berthereau",
+            "email": "Daniel.git@Berthereau.net"
+        }
+    ],
+    "homepage": "https://gitlab.com/Daniel-KM/Omeka-S-module-Adminer",
+    "support": {
+        "issues": "https://gitlab.com/Daniel-KM/Omeka-S-module-Adminer/-/issues",
+        "forum": "https://forum.omeka.org/"
+    },
+    "keywords": [
+        "Omeka-S",
+        "module",
+        "admin",
+        "curation",
+        "adminer",
+        "mysql"
+    ],
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "adminerevo/adminerevo",
+                "version": "4.8.4",
+                "dist": {
+                    "type": "tar",
+                    "url": "https://github.com/adminerevo/adminerevo/archive/refs/tags/v4.8.4.tar.gz",
+                    "reference": "v4.8.4"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "adminerevo/adminerevo-externals",
+                "version": "4.8.4",
+                "dist": {
+                    "type": "tar",
+                    "url": "https://github.com/Daniel-KM/Omeka-S-module-Adminer/releases/download/3.4.4-4.8.4/adminerevo-externals.tar.gz"
+                }
+            }
+        }
+    ],
+    "require": {
+        "adminerevo/adminerevo": "^4.8",
+        "adminerevo/adminerevo-externals": "^4.8"
+    },
+    "scripts": {
+        "post-install-cmd": "@build",
+        "post-update-cmd": "@build",
+        "build": [
+            "mkdir -p asset/vendor/adminer",
+
+            "# Use a simple copy because git may not be installed to prepare submodules.",
+            "@composer install --working-dir=vendor/adminerevo/adminerevo",
+            "cp -r vendor/adminerevo/adminerevo-externals/* vendor/adminerevo/adminerevo/externals/",
+
+            "@php -f 'vendor/adminerevo/adminerevo/compile.php' -- mysql",
+            "mv $(ls adminer-*mysql.php) asset/vendor/adminer/adminer-mysql.phtml",
+
+            "@php -f 'vendor/adminerevo/adminerevo/compile.php' -- editor mysql",
+            "mv $(ls editor-*mysql.php) asset/vendor/adminer/editor-mysql.phtml",
+
+            "cp vendor/adminerevo/adminerevo/designs/ng9/adminer.css asset/vendor/adminer/adminer.css",
+            "echo 'Order allow,deny\n<FilesMatch \"\\.(css|js|gif|jpeg|jpg|png|webp)$\">\n    Order deny,allow\n</FilesMatch>' > asset/vendor/.htaccess"
+        ]
+    }
+}

@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-07 16:45+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/Controller/Site/NoteController.php:25
+msgid "Resource URL"
+msgstr ""
+
+#: src/Controller/Site/NoteController.php:26
+msgid "Notes"
+msgstr ""
+
+#: src/Site/BlockLayout/PersonalNotebook.php:21
+msgid "Personal Notebook"
+msgstr ""
+
+#: view/personal-notebook/admin/index/personal-notebook-panel.phtml:2
+msgid "Personal notebook"
+msgstr ""
+
+#: view/personal-notebook/admin/index/personal-notebook-panel.phtml:4
+msgid "Number of notes written:"
+msgstr ""
+
+#: view/personal-notebook/admin/index/personal-notebook-panel.phtml:8
+msgid "Number of users that wrote a note:"
+msgstr ""
+
+#: view/personal-notebook/block-layout/personal-notebook.phtml:7
+#: view/personal-notebook/common/personal-notebook-block.phtml:1
+msgid "Personal notes"
+msgstr ""
+
+#: view/personal-notebook/block-layout/personal-notebook.phtml:9
+msgid "Export all personal notes as CSV"
+msgstr ""
+
+#: view/personal-notebook/block-layout/personal-notebook.phtml:15
+msgid "Resource missing"
+msgstr ""
+
+#: view/personal-notebook/site/note/delete.phtml:13
+msgid "The following notes will be permanently deleted."
+msgstr ""
+
+#: view/personal-notebook/site/note/delete.phtml:16
+msgid "Confirm notes deletion"
+msgstr ""
+
+#: src/Form/NoteForm.php:23
+msgid "Personal notes..."
+msgstr ""
+
+#: src/Form/SiteSettingsFieldset.php:19
+msgid "Show on item page"
+msgstr ""
+
+#: src/Form/SiteSettingsFieldset.php:27
+msgid "Show on media page"
+msgstr ""
+
+#: src/Api/Adapter/NoteAdapter.php:140
+msgid "A note must have an owner."
+msgstr ""

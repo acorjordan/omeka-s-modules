@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-03 00:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: Module.php:42
+#, php-format
+msgid "The module %1$s should be upgraded to version %2$s or later."
+msgstr ""
+
+#: Module.php:53
+msgid ""
+"If present, the module requires module \"{module}\" version \"{version}\" or "
+"greater."
+msgstr ""
+
+#: Module.php:225 Module.php:265
+msgid "Is dynamic"
+msgstr ""
+
+#: view/common/advanced-search/item-set-is-dynamic.phtml:26
+msgid "Search dynamic item sets"
+msgstr ""
+
+#: Module.php:437
+msgid "The query to attach items cannot contain the item set itself."
+msgstr ""
+
+#: Module.php:461
+msgid ""
+"The query for the item set was changed: a job is run in background to detach "
+"and to attach items (job {link_job}#{job_id}{link_end}, {link_log}"
+"logs{link_end})."
+msgstr ""
+
+#: Module.php:547
+msgid "Query to attach items dynamically to this item set"
+msgstr ""
+
+#: view/common/advanced-search/item-set-is-dynamic.phtml:13
+msgid "Is dynamic item set"
+msgstr ""
+
+#: view/common/advanced-search/item-set-is-dynamic.phtml:17
+msgid "Is not dynamic"
+msgstr ""
+
+#: view/common/advanced-search/item-set-is-dynamic.phtml:19
+msgid "Any"
+msgstr ""
+
+#: src/Job/AttachItemsToItemSet.php:29
+msgid "No item set defined."
+msgstr ""
+
+#: src/Job/AttachItemsToItemSet.php:37
+msgid "The item set #{item_set_id} does not exist."
+msgstr ""
+
+#: src/Job/AttachItemsToItemSet.php:61
+msgid "{count}/{total} items detached from item set #{item_set_id}."
+msgstr ""
+
+#: src/Job/AttachItemsToItemSet.php:96
+msgid "{count}/{total} new items attached to item set #{item_set_id}."
+msgstr ""
+
+#: src/Job/AttachItemsToItemSet.php:103
+msgid ""
+"Process ended for item set #{item_set_id}: {count} items were attached, "
+"{count_2} items were detached, {count_3} new items were attached."
+msgstr ""

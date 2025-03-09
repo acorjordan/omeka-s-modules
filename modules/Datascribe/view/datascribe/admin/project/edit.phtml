@@ -1,0 +1,43 @@
+<?php
+$this->headScript()->appendFile($this->assetUrl('js/admin/project-form.js', 'Datascribe'));
+$this->htmlElement('body')->appendAttribute('class', 'datascribe project edit');
+$form->prepare();
+?>
+
+<?php echo $this->pageTitle($project->name(), 1, $this->translate('DataScribe: Project'), $this->translate('Edit')); ?>
+
+<?php echo $this->sectionNav([
+    'project-config' => $this->translate('Configuration'),
+    'project-users' => $this->translate('Users'),
+]); ?>
+
+<?php echo $this->form()->openTag($form); ?>
+
+<div id="page-actions">
+    <?php if ($project->isPublic()): ?>
+    <?php echo $this->hyperlink('', '#', [
+        'class' => 'o-icon-public button',
+        'title' => $this->translate('Make private'),
+    ]); ?>
+    <input type="hidden" name="o:is_public" value="1">
+    <?php else: ?>
+    <?php echo $this->hyperlink('', '#', [
+        'class' => 'o-icon-private button',
+        'title' => $this->translate('Make public'),
+    ]); ?>
+    <input type="hidden" name="o:is_public" value="0">
+    <?php endif; ?>
+    <?php echo $this->hyperlink($this->translate('Cancel'), $this->url('admin/datascribe-dataset', ['action' => 'browse'], true), ['class' => 'button']); ?>
+    <a href="#" class="delete button"><?php echo $this->translate('Delete'); ?></a>
+    <button><?php echo $this->translate('Save'); ?></button>
+</div>
+
+<div id="project-config" class="active section">
+    <?php echo $this->formCollection($form, false); ?>
+</div>
+
+<?php echo $this->partial('users-form'); ?>
+
+<?php echo $this->form()->closeTag(); ?>
+
+<?php echo $this->deleteConfirm($project, 'project'); ?>

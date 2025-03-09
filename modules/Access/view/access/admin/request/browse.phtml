@@ -1,0 +1,185 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var \Access\Api\Representation\AccessRequestRepresentation[] $accessRequests
+ * @var \Access\Api\Representation\AccessRequestRepresentation[] $resources
+ * @var \Omeka\Form\ConfirmForm $formDeleteSelected
+ * @var \Omeka\Form\ConfirmForm $formDeleteAll
+ * @var array $returnQuery
+ *
+ * @see view/common/access-request-list.phtml
+ */
+
+$plugins = $this->getHelperPluginManager();
+$url = $plugins->get('url');
+$escape = $plugins->get('escapeHtml');
+$assetUrl = $plugins->get('assetUrl');
+$translate = $plugins->get('translate');
+$hyperlink = $plugins->get('hyperlink');
+
+$allowIndividualRequests = (bool) array_intersect(['user', 'email', 'token'], $this->setting('access_modes', []));
+
+$this->headLink()
+    ->appendStylesheet($assetUrl('css/access-admin.css', 'Access'));
+$this->headScript()
+    ->appendFile($assetUrl('js/access-admin.js', 'Access'), 'text/javascript', ['defer' => 'defer']);
+
+$this->htmlElement('body')->appendAttribute('class', 'access-requests browse');
+?>
+
+<?= $this->pageTitle($translate('Access requests')) ?>
+
+<div class="browse-controls">
+    <?= $this->pagination() ?>
+    <?= $this->browse()->renderSortSelector('access_requests') ?>
+</div>
+
+<div id="page-actions">
+    <?php if ($allowIndividualRequests && $this->userIsAllowed(\Access\Entity\AccessRequest::class, 'create')): ?>
+        <?= $hyperlink($translate('Add new request'), $url('admin/access-request/default', ['action' => 'add']), ['class' => 'button']) ?>
+    <?php endif; ?>
+</div>
+
+<?php $this->trigger('view.browse.before'); ?>
+
+<?php if (count($accessRequests)): ?>
+<table class="tablesaw" data-tablesaw-mode="stack">
+    <thead>
+        <tr>
+            <th>
+                <?php /*
+                <input type="checkbox" class="select-all" aria-label="<?= $translate('Select all') ?>">
+                */ ?>
+                <?= $translate('Id') ?>
+            </th>
+            <th><?= $escape($translate('Requester')) ?></th>
+            <th><?= $escape($translate('Resources')) ?></th>
+            <th><?= $escape($translate('Recursive')) ?></th>
+            <th><?= $escape($translate('Status')) ?></th>
+            <th><?= $escape($translate('Dates')) ?></th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($accessRequests as $accessRequest): ?>
+        <tr>
+            <td>
+                <?php /*
+                <?php if ($this->userIsAllowed(\Access\Api\Adapter\AccessRequestAdapter::class, 'batch_update') && ($accessRequest->userIsAllowed('update') || $accessRequest->userIsAllowed('delete'))): ?>
+                <input type="checkbox" name="resource_ids[]" value="<?= $accessRequest->id() ?>" aria-label="<?= $translate('Select access request') ?>">
+                <?php endif; ?>
+                */ ?>
+                <?= sprintf($translate('#%s'), $accessRequest->id()) ?>
+                <ul class="actions">
+                    <?php if ($allowIndividualRequests && $accessRequest->userIsAllowed('update')): ?>
+                    <li><?= $accessRequest->link('', 'edit', [
+                        'class' => 'o-icon-edit',
+                        'title' => $translate('Edit'),
+                    ]) ?></li>
+                    <?php endif; ?>
+                    <?php if ($accessRequest->userIsAllowed('delete')): ?>
+                    <li><?= $hyperlink('', '#', [
+                        'data-sidebar-selector' => '#sidebar',
+                        'data-sidebar-content-url' => $accessRequest->url('delete-confirm'),
+                        'class' => 'o-icon-delete sidebar-content',
+                        'title' => $translate('Delete'),
+                    ]) ?></li>
+                    <?php endif; ?>
+                    <li><?= $hyperlink('', '#', [
+                        'data-sidebar-selector' => '#sidebar',
+                        'data-sidebar-content-url' => $accessRequest->url('show-details'),
+                        'class' => 'o-icon-more sidebar-content',
+                        'title' => $translate('Details'),
+                    ]) ?></li>
+                </ul>
+            </td>
+            <td><?= $accessRequest->displayRequester() ?></td>
+            <td><?= $accessRequest->displayResources() ?></td>
+            <td><?= $accessRequest->displayRecursive() ?></td>
+            <td><?= $accessRequest->displayStatus() ?></td>
+            <td><?= $accessRequest->displayTemporal() ?></td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+<?php $this->trigger('view.browse.after'); ?>
+<div class="browse-controls">
+    <?= $this->pagination() ?>
+</div>
+
+<div id="sidebar" class="sidebar">
+    <?= $hyperlink('', '#', [
+        'class' => 'sidebar-close o-icon-close',
+        'title' => $translate('Close'),
+    ]) ?>
+    <div class="sidebar-content"></div>
+</div>
+<div id="sidebar-delete-selected" class="sidebar">
+    <?= $hyperlink('', '#', [
+        'class' => 'sidebar-close o-icon-close',
+        'title' => $translate('Close'),
+    ]) ?>
+    <div class="sidebar-content">
+        <div id="sidebar-confirm">
+            <h3><?= $translate('Delete access requests'); ?></h3>
+            <p><?= $translate('Are you sure you would like to delete the selected access requests?') ?></p>
+            <p class="error"><?= sprintf(
+                $translate('%1$s: this action will permanently delete %2$s access requests and cannot be undone.'),
+                sprintf('<strong>%s</strong>', $translate('Warning')),
+                '<strong><span id="delete-selected-count"></span></strong>'
+            ) ?></p>
+            <?= $this->form($this->formDeleteSelected) ?>
+        </div>
+    </div>
+</div>
+<div id="sidebar-delete-all" class="sidebar">
+    <?= $hyperlink('', '#', [
+        'class' => 'sidebar-close o-icon-close',
+        'title' => $translate('Close'),
+    ]) ?>
+    <div class="sidebar-content">
+        <div id="sidebar-confirm">
+            <h3><?= $translate('Delete access requests') ?></h3>
+            <p><?= $translate('Are you sure you would like to delete all access requests on all pages of this result?') ?></p>
+            <p class="error"><?= sprintf(
+                $translate('%1$s: this action will permanently delete %2$s access requests and cannot be undone.'),
+                sprintf('<strong>%s</strong>', $translate('Warning')),
+                sprintf('<strong>%s</strong>', number_format($this->pagination()->getPaginator()->getTotalCount()))
+            ) ?></p>
+            <label><input type="checkbox" name="confirm-delete-all-check"> <?= $translate('Are you sure?') ?></label>
+            <?= $this->form($this->formDeleteAll) ?>
+        </div>
+    </div>
+</div>
+
+<script>
+// Complete the batch delete form after confirmation.
+$('#confirm-delete-selected, #confirm-delete-all').on('submit', function(e) {
+    var confirmForm = $(this);
+    if ('confirm-delete-all' === this.id) {
+        confirmForm.append($('.batch-query').clone());
+    } else {
+        $('#batch-form').find('input[name="resource_ids[]"]:checked').each(function() {
+            confirmForm.append($(this).clone().prop('disabled', false).attr('type', 'hidden'));
+        });
+    }
+});
+$('.delete-all').on('click', function(e) {
+    Omeka.closeSidebar($('#sidebar-delete-selected'));
+});
+$('.delete-selected').on('click', function(e) {
+    Omeka.closeSidebar($('#sidebar-delete-all'));
+    var inputs = $('input[name="resource_ids[]"]');
+    $('#delete-selected-count').text(inputs.filter(':checked').length);
+});
+$('#sidebar-delete-all').on('click', 'input[name="confirm-delete-all-check"]', function(e) {
+    $('#confirm-delete-all input[type="submit"]').prop('disabled', this.checked ? false : true);
+});
+</script>
+
+<?php else: ?>
+
+<div class="no-resources">
+    <p><?php echo $translate('No access requests.'); ?></p>
+</div>
+
+<?php endif; ?>

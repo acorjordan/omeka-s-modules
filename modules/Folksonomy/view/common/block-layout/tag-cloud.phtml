@@ -1,0 +1,29 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var \Omeka\Api\Representation\SitePageBlockRepresentation $block
+ * @var string $heading
+ * @var string $resourceName
+ * @var array $query
+ * @var int $maxClasses
+ * @var bool $tagNumbers
+ */
+
+?>
+
+<?php if ($heading = $block->dataValue('heading')): ?>
+<h2><?= $this->escapeHtml($heading) ?></h2>
+<?php endif; ?>
+
+<?= $this->partial('common/tag-cloud', [
+    'tags' => null,
+    'resourceName' => $resourceName,
+    'query' => $query,
+    // Never display "rejected" tags, in all cases.
+    // The "proposed" status may be filtered via the visibility filter.
+    'statuses' => ['allowed', 'approved', 'proposed'],
+    'orderBy' => 'tag.name',
+    'link' => true,
+    'maxClasses' => $maxClasses,
+    'tagNumbers' => $tagNumbers ? 'after': false,
+]) ?>

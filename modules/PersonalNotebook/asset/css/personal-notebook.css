@@ -1,0 +1,49 @@
+.personal-notebook-form {
+    position: relative;
+}
+
+.personal-notebook-form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.personal-notebook-save-result {
+    display: inline-block;
+    padding: 0 7.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.personal-notebook-save-result-success {
+    color: green;
+}
+
+.personal-notebook-save-result-error {
+    color: red;
+}
+
+.personal-notebook-save-result-progress {
+    width: 16px;
+    height: 16px;
+    border: 3px solid #ccc;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.personal-notebook-table {
+    width: 100%;
+}

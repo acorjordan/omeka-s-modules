@@ -1,0 +1,93 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var \Statistics\Form\StatisticsBySiteForm $form
+ * @var array $results
+ * @var string $type "site"
+ * @var string[] $resourceTypes
+ * @var int[] $years
+ * @var int $yearFilter
+ * @var int $monthFilter
+ * @var bool $hasAccess
+ * @var bool $hasAdvancedSearch
+ */
+
+$plugins = $this->getHelperPluginManager();
+$assetUrl = $plugins->get('assetUrl');
+$translate = $plugins->get('translate');
+$hyperlink = $plugins->get('hyperlink');
+$urlHelper = $plugins->get('url');
+$escapeAttr = $plugins->get('escapeHtmlAttr');
+
+$this->headLink()->prependStylesheet($assetUrl('css/statistics.css', 'Statistics'));
+
+$this->htmlElement('body')->appendAttribute('class', 'statistics browse');
+
+$isAdminRequest = $this->status()->isAdminRequest();
+$query = $this->params()->fromQuery();
+
+$currentUrl = $urlHelper(null, [], true);
+$currentQuery = $this->params()->fromQuery();
+$currentQueryNoSort = $currentQuery;
+unset($currentQueryNoSort['sort_by']);
+
+$submit = $form->get('submit');
+$form->remove('submit');
+
+$form->prepare();
+?>
+
+<?= $this->pageTitle($translate('By site'), 1, $isAdminRequest ? $translate('Statistics') : null) ?>
+
+<?= $this->partial('common/statistics-nav') ?>
+
+<?= $this->form($form) ?>
+
+<div id="page-actions">
+    <?= $this->formButton($submit) ?>
+</div>
+
+<?php if (count($results)): ?>
+
+<div class="browse-controls">
+    <?php //= $this->pagination() ?>
+    <div class="statistics-export">
+        <?= $hyperlink($translate('ODS'), $urlHelper('admin/statistics/default/output', ['output' => 'ods'], ['query' => $query], true)) ?>
+        <?= $hyperlink($translate('TSV'), $urlHelper('admin/statistics/default/output', ['output' => 'tsv'], ['query' => $query], true)) ?>
+        <?= $hyperlink($translate('CSV'), $urlHelper('admin/statistics/default/output', ['output' => 'csv'], ['query' => $query], true)) ?>
+    </div>
+</div>
+
+<table class="tablesaw statistics-table" data-tablesaw-mode="stack">
+    <thead>
+        <tr>
+            <th>
+                <a href="<?= $escapeAttr($currentUrl . '?' . http_build_query($currentQueryNoSort + ['sort_by' => 'site'], '', '&', PHP_QUERY_RFC3986)) ?>"><?= $translate('Site') ?></a>
+            </th>
+            <th>
+                <a href="<?= $escapeAttr($currentUrl . '?' . http_build_query($currentQueryNoSort + ['sort_by' => 'resources'], '', '&', PHP_QUERY_RFC3986)) ?>"><?= $translate('Resources') ?></a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+<?php foreach ($results as /* $position => */ $result): ?>
+        <tr class="statistics-stat">
+            <td class="statistics-field"><?= $result['label'] ?></td>
+            <td class="statistics-hits"><?= implode(' / ', $result['count']) ?></td>
+        </tr>
+<?php endforeach; ?>
+    </tbody>
+</table>
+
+<?php else: ?>
+
+    <br class="clear" />
+    <?php $totalResources = $plugins->get('apiResourcesTotalResults')(); ?>
+    <?php if (!$totalResources): ?>
+        <h2><?= $translate('There is no resource yet.') ?></h2>
+    <?php else: ?>
+        <p><?= sprintf($translate('The query searched %s resources and returned no results.'), $totalResources) ?></p>
+        <p><a href="<?= $urlHelper('admin/statistics/default', ['action' => 'by-site'], true) ?>"><?= $translate('See all statistics.') ?></a></p>
+    <?php endif; ?>
+
+<?php endif; ?>

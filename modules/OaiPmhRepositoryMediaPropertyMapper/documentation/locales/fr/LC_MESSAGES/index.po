@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, BibLibre
+# This file is distributed under the same license as the OaiPmhRepository
+# Media Property Mapper package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OaiPmhRepository Media Property Mapper\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-24 09:57+0100\n"
+"PO-Revision-Date: 2024-01-24 10:02+0100\n"
+"Last-Translator: Julian Maurice <julian.maurice@biblibre.com>\n"
+"Language-Team: fr <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Generated-By: Babel 2.12.1\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#: ../../index.rst:2
+msgid "Introduction"
+msgstr "Introduction"
+
+#: ../../index.rst:4
+msgid ""
+"OaiPmhRepository Media Property Mapper is a companion module for "
+"`OaiPmhRepository <https://omeka.org/s/modules/OaiPmhRepository/>`_. It "
+"allows to expose media properties as if they were part of the item."
+msgstr ""
+"OaiPmhRepository Media Property Mapper est un module compagnon pour "
+"`OaiPmhRepository <https://omeka.org/s/modules/OaiPmhRepository/>`_. Il "
+"permet d'exposer des propriétés des médias comme si elles faisaient "
+"partie du contenu."
+
+#: ../../index.rst:9
+msgid "How does it work ?"
+msgstr "Comment ça marche ?"
+
+#: ../../index.rst:11
+msgid ""
+"It uses the ``oaipmhrepository.values.pre`` event to add values to the "
+"set of values that will then be processed by OaiPmhRepository module. It "
+"means that:"
+msgstr ""
+"Ça utilise l'évènement ``oaipmhrepository.values.pre`` pour ajouter des "
+"valeurs à l'ensemble des valeurs qui seront ensuite traitées par le "
+"module OaiPmhRepository. Cela signifie que:"
+
+#: ../../index.rst:14
+msgid "Values can only be added. They do not replace existing values"
+msgstr ""
+"Les valeurs peuvent seulement être ajoutées. Elles ne remplacent pas de "
+"valeurs existantes"
+
+#: ../../index.rst:15
+msgid ""
+"Depending on the metadata format used (oai_dc, mets, ...), only a subset "
+"of these values will actually be exposed. For instance, ``oai_dc`` "
+"exposes only ``dcterms`` properties."
+msgstr ""
+"Selon le format de métadonnées utilisé (oai_dc, mets, ...), seul un sous-"
+"ensemble de ces valeurs sera réellement exposé. Par exemple, ``oai_dc`` "
+"expose uniquement les propriétés ``dcterms``."
+
+#: ../../index.rst:20
+msgid "Configuration"
+msgstr "Configuration"
+
+#: ../../index.rst:22
+msgid "Configuration can be found in the module configuration page."
+msgstr ""
+"La configuration est accessible depuis la page de configuration du "
+"module."
+
+#: ../../index.rst:24
+msgid "More details on the :doc:`configuration` page."
+msgstr "Plus de détails sur la page :doc:`configuration`."

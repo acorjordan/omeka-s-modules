@@ -1,0 +1,71 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var string $namePrefix
+ * @var bool $mainGroup
+ * @var array $availableFieldsOptions
+ * @var array $availableOperatorsOptions
+ * @var bool $proximitySetting
+ */
+?>
+<div class="search-form-standard-match-group">
+    <?php echo $this->formSelect((new \Laminas\Form\Element\Select($namePrefix . '[match]'))->setValueOptions([
+        'all' => $this->translate('Match all of the following criteria:'),
+        'any' => $this->translate('Match any of the following criteria:'),
+    ])->setValue(!empty($data) ? $data['match'] : '')); ?>
+
+    <?php if (!$mainGroup): ?>
+        <button type="button" class="o-icon-delete search-delete-filter"></button>
+    <?php endif; ?>
+
+    <div class="search-form-standard-match-group-items">
+        <?php if (!empty($data['queries'])): ?>
+            <?php foreach ($data['queries'] as $i => $query): ?>
+                <div class="search-form-standard-match-group-item">
+                    <?php if (isset($query['match'])): ?>
+                        <?php echo $this->partial('search/form/standard-match-group', [
+                            'availableFieldsOptions' => $availableFieldsOptions,
+                            'availableOperatorsOptions' => $availableOperatorsOptions,
+                            'data' => $query,
+                            'namePrefix' => $namePrefix . "[queries][$i]",
+                            'mainGroup' => false,
+                            'proximitySetting' => $proximitySetting,
+                        ]); ?>
+                    <?php else: ?>
+                        <?php echo $this->partial('search/form/standard-match-group-filter', [
+                            'availableFieldsOptions' => $availableFieldsOptions,
+                            'availableOperatorsOptions' => $availableOperatorsOptions,
+                            'query' => $query,
+                            'namePrefix' => $namePrefix . "[queries][$i]",
+                            'proximitySetting' => $proximitySetting,
+                        ]); ?>
+                    <?php endif; ?>
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <div class="search-form-standard-match-group-item">
+                <?php echo $this->partial('search/form/standard-match-group-filter', [
+                    'availableFieldsOptions' => $availableFieldsOptions,
+                    'availableOperatorsOptions' => $availableOperatorsOptions,
+                    'query' => [],
+                    'namePrefix' => $namePrefix . '[queries][0]',
+                    'proximitySetting' => $proximitySetting,
+                ]); ?>
+            </div>
+            <div class="search-form-standard-match-group-item">
+                <?php echo $this->partial('search/form/standard-match-group-filter', [
+                    'availableFieldsOptions' => $availableFieldsOptions,
+                    'availableOperatorsOptions' => $availableOperatorsOptions,
+                    'query' => [],
+                    'namePrefix' => $namePrefix . '[queries][1]',
+                    'proximitySetting' => $proximitySetting,
+                ]); ?>
+            </div>
+        <?php endif; ?>
+
+        <div class="search-form-standard-match-group-item">
+            <a href="#" class="button search-add-filter"><?php echo $this->translate('Add filter'); ?></a>
+            <a href="#" class="button search-add-group"><?php echo $this->translate('Add group'); ?></a>
+        </div>
+    </div>
+</div>

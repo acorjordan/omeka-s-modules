@@ -1,0 +1,26 @@
+    <?php foreach ($resources as $representation): ?>
+        <li class="o-icon-item-sets" data-resource-id="<?php echo $representation->id(); ?>">
+            <?php echo $this->hyperlink($representation->displayTitle(), $representation->url()); ?>
+            <?php if (isset($representation->values()["dcterms:hasPart"])): ?>
+                <?php $hasPartValues = $representation->values()["dcterms:hasPart"]['values']; ?>
+                <?php if ($hasPartValues) : ?>
+                    <ul>
+                    <?php foreach($hasPartValues as $hasPartValue) : ?>
+                        <?php $hasPartResourceRepresentation = $hasPartValue->valueResource(); ?>
+                        <?php $resourceIcon = "o-icon-" . str_replace('_', '-', $hasPartResourceRepresentation->resourceName()) ?>
+                        <li class="archival_list_element <?php echo $resourceIcon ?>" data-resource-id="<?php echo $hasPartResourceRepresentation->id(); ?>">
+                            <?php echo $this->hyperlink($hasPartResourceRepresentation->displayTitle(), $hasPartResourceRepresentation->url()); ?>
+                            <?php echo $this->partial('item-set-party/block-layout/item-set-party-child', [
+                                'childRepresentation' => $hasPartResourceRepresentation,
+                                'depth' => $depth,
+                            ]); ?>
+                        </li>
+                    <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+                <?php else : ?>
+                    <?php echo $this->translate('None hasPart resource'); ?>
+                <?php endif; ?>    
+        </li>
+    <?php endforeach; ?>
+</ul>

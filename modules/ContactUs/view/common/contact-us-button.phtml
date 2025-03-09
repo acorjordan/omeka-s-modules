@@ -1,0 +1,34 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var \Omeka\Api\Representation\AbstractResourceEntityRepresentation $resource
+ * @var \ContactUs\Form\ContactUsForm|\ContactUs\Form\NewsletterForm $form
+ * @var string $heading
+ * @var string $html Passed directly from the options.
+ * @var bool $asButton Passed directly from the options.
+ * @var ?\Common\Stdlib\PsrMessage $message Message of success or error to the user.
+ * @var string $status "success" or "error"
+ * @var string $contact "us" or "author"
+ */
+
+// Note: you may use css grid / flex to quick adapt the form and reorder fields.
+
+$plugins = $this->getHelperPluginManager();
+$partial = $plugins->get('partial');
+$assetUrl = $plugins->get('assetUrl');
+$translate = $plugins->get('translate');
+$headLink = $plugins->get('headLink');
+$escapeAttr = $plugins->get('escapeHtmlAttr');
+$headScript = $plugins->get('headScript');
+
+$headLink
+    ->appendStylesheet($assetUrl('css/contact-us.css', 'ContactUs'));
+$headScript
+    ->appendFile($assetUrl('js/contact-us.js', 'ContactUs'), 'text/javascript', ['defer' => 'defer']);
+?>
+
+<button class="contact-us-button contact-us-write"<?php if ($resource): ?> data-id="<?= $resource->id() ?>"<?php endif; ?>>
+    <span class="contact-us-write"><?= $escapeAttr($translate('Send a message')) ?></span>
+</button>
+
+<?= $partial('common/dialog/contact-us') ?>

@@ -1,0 +1,61 @@
+<h3><?php echo $this->translate('Record metadata'); ?></h3>
+<div class="meta-group">
+    <h4><?php echo $this->translate('Record #'); ?></h4>
+    <div class="value"><?php echo $record->link($record->id()); ?></div>
+</div>
+<div class="meta-group">
+    <h4><?php echo $this->translate('Primary value'); ?></h4>
+    <?php $primaryValue = $record->primaryValue(); ?>
+    <div class="value"><?php echo $primaryValue
+        ? $primaryValue->displayText([
+            'length' => 100,
+            'trim_marker' => '...',
+            'if_invalid_return' => sprintf('<span style="color: #ffcccc;">%s</span>', $this->translate('invalid')),
+            'if_empty_return' => sprintf('<span style="color: #e6e6e6;">%s</span>', $this->translate('empty')),
+            'if_null_return' => sprintf('<span style="color: #e6e6e6;">%s</span>', $this->translate('null')),
+            'if_unknown_return' => sprintf('<span style="color: #ffcccc;">%s</span>', $this->translate('unknown')),
+        ])
+        : $this->translate('[None]'); ?></div>
+</div>
+<div class="meta-group">
+    <h4><?php echo $this->translate('Created'); ?></h4>
+    <?php $createdBy = $record->createdBy(); ?>
+    <div class="value"><?php echo sprintf(
+        $this->translate('%s by %s'),
+        $this->i18n()->dateFormat($record->created(), 'medium', 'medium'),
+        $createdBy ? $createdBy->link($createdBy->name()) : $this->translate('[Unknown]')
+    ); ?></div>
+</div>
+<div class="meta-group">
+    <h4><?php echo $this->translate('Last modified'); ?></h4>
+    <?php
+    $modified = $record->modified();
+    $modifiedBy = $record->modifiedBy();
+    ?>
+    <div class="value"><?php
+    echo $modified
+        ? sprintf(
+            '%s by %s',
+            $this->i18n()->dateFormat($modified, 'medium', 'medium'),
+            null === $modifiedBy
+                ? $this->translate('[Unknown]')
+                : $modifiedBy->link($modifiedBy->name())
+        ) : $this->translate('[Not modified]');
+    ?></div>
+</div>
+<div class="meta-group">
+    <h4><?php echo $this->translate('Needs review'); ?></h4>
+    <div class="value"><?php echo $record->needsReview() ? $this->translate('Yes') : $this->translate('No'); ?></div>
+</div>
+<div class="meta-group">
+    <h4><?php echo $this->translate('Needs work'); ?></h4>
+    <div class="value"><?php echo $record->needsWork() ? $this->translate('Yes') : $this->translate('No'); ?></div>
+</div>
+<div class="meta-group">
+    <h4><?php echo $this->translate('Transcriber notes'); ?></h4>
+    <div class="value"><?php echo nl2br($record->transcriberNotes()); ?></div>
+</div>
+<div class="meta-group">
+    <h4><?php echo $this->translate('Reviewer notes'); ?></h4>
+    <div class="value"><?php echo nl2br($record->reviewerNotes()); ?></div>
+</div>

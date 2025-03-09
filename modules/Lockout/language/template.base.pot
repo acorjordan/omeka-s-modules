@@ -1,0 +1,16 @@
+# Copyright (C) 2017 Lockout
+# This file is distributed under the same license as the Lockout package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Omeka-S-module-Lockout 3.4.4\n"
+"Report-Msgid-Bugs-To: https://gitlab.com/Daniel-KM/Omeka-S-module-Lockout\n"
+"POT-Creation-Date: 2017-06-05 00:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: YE-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"

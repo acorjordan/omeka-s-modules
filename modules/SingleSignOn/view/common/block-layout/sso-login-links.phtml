@@ -1,0 +1,18 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var \Omeka\Api\Representation\SitePageBlockRepresentation $block
+ * @var bool $internal
+ * @var string $selector
+ */
+
+$plugins = $this->getHelperPluginManager();
+$ssoLoginLinks = $plugins->get('ssoLoginLinks');
+?>
+
+<div class="block block-sso-login-links">
+    <?= $ssoLoginLinks([
+        'internal' => (bool) $internal,
+        'selector' => $selector,
+    ]) ?>
+</div>

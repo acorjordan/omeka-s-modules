@@ -1,0 +1,62 @@
+# French translations for PACKAGE package.
+# Copyright (C) 2023 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-22 15:54+0000\n"
+"PO-Revision-Date: 2023-11-10 10:29+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: view/item-set-party/admin/error.phtml:3
+#: view/item-set-party/admin/index/index.phtml:1
+#: view/item-set-party/site/index/index.phtml:1
+msgid "Item Set Party"
+msgstr ""
+
+#: view/item-set-party/admin/error.phtml:20
+msgid "see configuration"
+msgstr "voir la configuration"
+
+#: view/item-set-party/block-layout/item-set-party.phtml:22
+msgid "None hasPart resource"
+msgstr ""
+
+#: view/item-set-party/site/index/index.phtml:15
+msgid ""
+"None \"hasPart\" relations for selected item set, see configuration form "
+"module"
+msgstr ""
+"Aucune relation \"a une partie\" n'existe pour la collection sélectionnée, "
+"voir le formulaire de configuration du module"
+
+#: src/Form/ConfigForm.php:18
+msgid "Select archival item sets"
+msgstr "Sélectionner les collections de type archivistique"
+
+#: src/Form/ConfigForm.php:21
+msgid "Archival item sets"
+msgstr "Collections archivistiques"
+
+#: src/Controller/Admin/IndexController.php:44
+#: src/Controller/Site/IndexController.php:44
+msgid "None relation found for this item set"
+msgstr "Aucune relation pour cette collection"
+
+#: src/Controller/Admin/IndexController.php:56
+#: src/Controller/Site/IndexController.php:56
+msgid "None archival item set configured on module"
+msgstr "Aucune collection de type archivistique définie dans le module"
+
+#: src/Site/BlockLayout/ItemSetParty.php:39
+msgid "Block title"
+msgstr "Titre du bloc"

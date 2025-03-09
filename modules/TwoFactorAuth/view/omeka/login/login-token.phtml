@@ -1,0 +1,28 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var \TwoFactorAuth\Form\TokenForm $form
+ */
+
+$plugins = $this->getHelperPluginManager();
+$url = $plugins->get('url');
+$translate = $plugins->get('translate');
+$hyperlink = $plugins->get('hyperlink');
+$pageTitle = $plugins->get('pageTitle');
+
+$this->htmlElement('body')->appendAttribute('class', 'login login-token');
+?>
+
+<?= $pageTitle($translate('Log in (2FA)')) ?>
+
+<div class="two-factor-auth-login">
+
+    <?= $this->messages() ?>
+
+    <?= $this->form($form) ?>
+
+    <p class="resend-token">
+        <?= $hyperlink($translate('Resend a code'), $url('login', [], ['query' => ['resend_token' => 1]], true), ['class' => 'resend-code']) ?>
+    </p>
+
+</div>

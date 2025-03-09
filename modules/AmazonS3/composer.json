@@ -1,0 +1,8 @@
+{
+    "require": {
+        "aws/aws-sdk-php": "^3.257"
+    },
+    "replace": {
+        "symfony/polyfill-mbstring": "*"
+    }
+}

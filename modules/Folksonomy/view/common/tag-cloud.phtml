@@ -1,0 +1,119 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var array $tags
+ * @var string $resourceName
+ * @var string $query
+ * @var array $statuses
+ * @var string $orderBy
+ * @var bool  $link
+ * @var string|int $maxClasses
+ * @var string $tagNumbers
+ * @var bool $usedOnly
+ */
+
+// Inspired from the function tag_cloud() of Omeka Classic.
+
+$plugins = $this->getHelperPluginManager();
+$escape = $plugins->get('escapeHtml');
+$translate = $plugins->get('translate');
+$this->headLink()->appendStylesheet($this->assetUrl('css/folksonomy.css', 'Folksonomy'));
+
+if (!empty($tags) || is_null($tags)) {
+    // Set default values.
+    $resourceName = empty($resourceName) ? '' : $resourceName;
+    $statuses = $statuses ?? ['allowed', 'approved'];
+    $orderBy = empty($orderBy) ? '' : $orderBy;
+    $usedOnly = !empty($usedOnly);
+    // Get the stats.
+    $tags = $this->tagCount($tags, $resourceName, $statuses, $usedOnly, $orderBy, false, $query);
+}
+
+if (empty($tags)): ?>
+<div class="no-resources">
+    <p><?= $translate('No tags are available.') ?></p>
+</div>
+<?php else: ?>
+<?php
+    // Browse resources or media are not supported in public.
+    $link = (empty($link) || in_array($resourceName, ['resources', 'media'])) ? null : $link;
+    $maxClasses = isset($maxClasses) ? max((int) $maxClasses, 1) : 9;
+    $tagNumbers = empty($tagNumbers) ? false : $tagNumbers;
+    $slug = $this->params()->fromRoute('site-slug');
+?>
+<div class="hTagcloud">
+    <ul class="popularity">
+    <?php
+    // Get the largest value in the tags array.
+    $largest = max(array_map(function ($v) { return $v['total']; }, $tags)) ?: 1;
+    if ($maxClasses > $largest) {
+        $maxClasses = $largest;
+    }
+
+    // Define the base of urls to avoid to repeat the whole process of url building.
+    $urls = [];
+    if ($link) {
+        // Resources are not supported.
+        $urls['resources'] = '';
+        $urls['item_sets'] = $this->url(
+            'site/tag-resource',
+            ['site-slug' => $slug, 'resource' => 'item-set', 'id' => '__FOLKSONOMY_TAGNAME__']
+        );
+        $urls['items'] = $this->url(
+            'site/tag-resource',
+            ['site-slug' => $slug, 'resource' => 'item', 'id' => '__FOLKSONOMY_TAGNAME__']
+        );
+        // Media are not supported in public views.
+        // $urls['media'] = $this->url(
+        //     'site/tag-resource',
+        //     ['site-slug' => $slug, 'resource' => 'media', 'id' => '__FOLKSONOMY_TAGNAME__']
+        // );
+        $urls['media'] = '';
+    }
+
+    foreach ($tags as $name => $tag):
+        $size = empty($tag['total'])
+            ? -1
+            // The check of the tag count and the "-1" avoid issues with round.
+            : (($largest == 1 || $maxClasses == 1 || $tag['total'] == 1)
+                ? 0
+                : (int) (($tag['total'] - 1) * $maxClasses / $largest));
+        $class = $size < 0 ? 'unused' : ($size ? str_repeat('v', $size) . '-' : '') . 'popular';
+        $mainUrl = $link && $resourceName && !empty($urls[$resourceName])
+            ? $escape(str_replace('__FOLKSONOMY_TAGNAME__', rawurlencode($name), $urls[$resourceName]))
+            : '';
+
+        $tagHtml = '';
+        if ($tagNumbers):
+            if ($link && !$resourceName):
+                foreach (['item_sets' => 'item-sets', 'items' => 'items'/*, 'media' => 'media' */] as $resName => $resClass):
+                    $tagHtml .= sprintf('<a href="%s">%s</a>',
+                        $escape(str_replace('__FOLKSONOMY_TAGNAME__', rawurlencode($name), $urls[$resName])),
+                        '<span class="' . $resClass . ' count">' . $tag[$resName] . '</span>'
+                    );
+                endforeach;
+                $tagHtml .= '<span class="media count">' . $tag['media'] . '</span>';
+            else:
+                $tagHtml .= '<span class="' . $resourceName . ' count">' . $tag['total'] . '</span>';
+            endif;
+        elseif ($link && !$resourceName):
+            foreach (['item_sets' => 'item-sets', 'items' => 'items'/*, 'media' => 'media'*/] as $resName => $resClass):
+                $tagHtml .= sprintf('<a href="%s">%s</a>',
+                    $escape(str_replace('__FOLKSONOMY_TAGNAME__', rawurlencode($name), $urls[$resName])),
+                    '<span class="' . $resClass . '"></span>'
+                );
+            endforeach;
+            $tagHtml .= '<span class="media"></span>';
+        endif;
+    ?>
+        <li class="<?= $class ?>"><?= sprintf('%s%s%s%s%s',
+            $mainUrl ? '<a href="' . $mainUrl . '">' : '',
+            $tagNumbers === 'before' ? $tagHtml : '',
+            $escape($name),
+            $tagHtml || $tagNumbers === 'after' ? $tagHtml : '',
+            $mainUrl ? '</a>' : ''
+        ) ?></li>
+    <?php endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>

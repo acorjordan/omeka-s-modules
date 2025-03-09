@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "build": "vite build",
+    "develop": "vite build -w --mode development"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.1.0",
+    "autoprefixer": "^10.4.16",
+    "postcss-input-range": "^5.0.0",
+    "postcss-minify": "^1.1.0",
+    "vite": "^4.4.11"
+  },
+  "dependencies": {
+    "classnames": "^2.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-player": "^2.13.0",
+    "videojs-vtt.js": "^0.15.5"
+  }
+}

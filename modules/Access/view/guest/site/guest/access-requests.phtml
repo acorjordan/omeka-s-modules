@@ -1,0 +1,12 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var \Access\Api\Representation\AccessRequestRepresentation[] $accessRequests
+ */
+
+echo $this->partial('access/site/request/browse', [
+    'accessRequests' => $accessRequests,
+    'modes' => $this->setting('access_modes'),
+    'access' => null,
+    'user' => $this->identity(),
+]);

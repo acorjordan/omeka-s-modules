@@ -1,0 +1,15 @@
+<?php $this->headScript()->appendFile($this->assetUrl('js/item-set-party.js', 'ItemSetParty'));?>
+
+<?php 
+    $resourceIcon = "o-icon-" . str_replace('_', '-', $resourceType);
+    $hasChilds = isset($resource->values()['dcterms:hasPart']) ? count($resource->values()['dcterms:hasPart']['values']) : 0;
+?>
+
+<span class="<?php echo $resourceIcon ?>" data-resource-id="<?php echo $resource->id() ?>" data-resource-type="<?php echo $resourceType ?>">
+    <a class="archival_resource <?php echo $hasChilds ? '' : 'archival_inactiveLink' ?>" href="#">
+        <?php echo $resource->title(); ?>
+    </a>
+    <a class="o-icon-more resource_details_view" href="#"></a>
+</span>
+
+<?php echo $this->itemSetPartySidebarResource(); ?>

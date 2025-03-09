@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, BibLibre
+# This file is distributed under the same license as the ItemSetParty
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ItemSetParty \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-10 10:36+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../features.rst:2
+msgid "Features"
+msgstr "Fonctionnalités"
+
+#: ../../features.rst:4
+msgid ""
+"This module creates a resource hierarchy based on one or more item sets "
+"defined in its configuration."
+msgstr ""
+"Ce module crée une hierarchie de ressources basée sur une ou plusieurs "
+"collections définie(s) dans sa configuration."
+
+#: ../../features.rst:7
+msgid "Admin side"
+msgstr "Côté admin"
+
+#: ../../features.rst:9
+msgid ""
+"Here you'll see a dynamic display, i.e. linked resources will appear when"
+" clicked on non-grayed resources (i.e. with 'hasPart' relationships)."
+msgstr ""
+"Sur la partie Admin, vous aurez une vue dynamique, en effet les "
+"ressources liées apparaîtront lorsque vous cliquez sur les ressources non"
+" grisées (qui ont des relations `a une partie`)."
+
+#: ../../features.rst:15
+msgid ""
+"The special feature on the admin side is the ability to load a sidebar "
+"with resource data."
+msgstr ""
+"Du côté Admin, vous avez une barre latérale pour visualiser les données "
+"de la ressource."
+
+#: ../../features.rst:20
+msgid "Site side"
+msgstr "Côté site"
+
+#: ../../features.rst:22
+msgid "There are two possibilities:"
+msgstr "Côté site, il y a deux possibilités:"
+
+#: ../../features.rst:24
+msgid ""
+"The first is a display through the navigation, rendered as the dynamic "
+"equivalent of the admin view."
+msgstr ""
+"La première est une vue au travers de la navigation, le rendu dynamique "
+"est équivalent à ce que vous retrouverez côté Admin (sans la barre "
+"latérale)."
+
+#: ../../features.rst:29
+msgid "The other, via the block, is a static rendering with a predefined depth."
+msgstr ""
+"L'autre, avec le bloc de page, est une vue plus statique puisque la "
+"profondeur s'appuie sur un paramètre défini."
+

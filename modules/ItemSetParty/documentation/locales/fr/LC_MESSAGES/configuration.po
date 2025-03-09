@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, BibLibre
+# This file is distributed under the same license as the ItemSetParty
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ItemSetParty \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-20 14:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../configuration.rst:2
+msgid "Configuration"
+msgstr ""
+
+#: ../../configuration.rst:5
+msgid "Module configuration"
+msgstr "Configuration du module"
+
+#: ../../configuration.rst:9
+msgid ""
+"Here you define the item sets to be used in the module and the "
+"corresponding views."
+msgstr "Ici vous définissez les collections utilisées par le module."
+
+#: ../../configuration.rst:12
+msgid "Navigation page"
+msgstr "Page de navigation"
+
+#: ../../configuration.rst:13
+msgid "Defining navigation to the dynamic hierarchy"
+msgstr "Définition de la navigation vers la hiérarchie dynamique"
+
+#: ../../configuration.rst:18
+msgid "Block page"
+msgstr "Bloc de page"
+
+#: ../../configuration.rst:20
+msgid ""
+"By adding an `ItemSetParty` block, you can define a static hierarchy "
+"based on depth parameter"
+msgstr "En ajoutant un bloc `ItemSetParty`, vous pouvez définir une profondeur pour la hiérarchie"
+

@@ -1,0 +1,39 @@
+<?php
+$this->headScript()->appendFile($this->assetUrl('js/index-properties.js', 'TypesenseSearch'));
+$this->headLink()->appendStylesheet($this->assetUrl('css/index-properties.css', 'TypesenseSearch'));
+
+$recreateIndexAction = $this->url('admin/recreate-index', ['controller' => 'SearchController', 'action' => 'recreateIndex'], true);
+$dropIndexAction = $this->url('admin/drop-index', ['controller' => 'SearchController', 'action' => 'dropIndex'], true);
+?>
+
+<?php echo $this->formCollection($form, false); ?>
+
+<fieldset>
+    <legend>Properties to index</legend>
+    <div id="index-properties-list" data-index-properties="<?php echo $this->escapeHtml(json_encode($this->indexProperties)); ?>">
+    </div>
+    <input type="hidden" name="ignore">
+    <?php echo $this->propertySelector(); ?>
+</fieldset>
+
+<fieldset>
+    <legend>Results</legend>
+    The format for composing the results displayed in the searchbox on the frontend. Only the fields selected above for indexing can be displayed in the results.
+    <br /><br />
+    <div class="field">
+        <div class="field-meta">
+            <label for="typesense_search_result_format">Result format</label>
+        </div>
+        <div class="inputs">
+            <input id="typesense_search_result_format" type="text" name="typesense_search_result_format" placeholder="{dcterms:title} ({dcterms:extent} pages) - {dcterms:creator}" value="<?php echo $this->escapeHtml($this->resultFormatting); ?>" required="required">
+        </div>
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend>Bulk actions</legend>
+    <div class="search-opts">
+        <button type="button" data-url="<?php echo $dropIndexAction; ?>" class="index-btn">Drop index</button>
+        <button type="button" data-url="<?php echo $recreateIndexAction; ?>" class="index-btn">Re-index all items</button>
+    </div>
+</fieldset>

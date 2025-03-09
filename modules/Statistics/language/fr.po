@@ -1,0 +1,1171 @@
+# # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Daniel Berthereau <Daniel.fr@Berthereau.net>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: Stats\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-22 00:00+0000\n"
+"PO-Revision-Date: 2024-01-22 00:00+0000\n"
+"Last-Translator: Daniel Berthereau <Daniel.fr@Berthereau.net>\n"
+"Language-Team: French <https://www.transifex.com/projects/p/omeka/>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#: Module.php:43
+#, php-format
+msgid ""
+"To compute access to files, you must add a rule in file .htaccess at the "
+"root of Omeka. See %sreadme%s."
+msgstr ""
+"Pour enregistrer les accès aux fichiers, vous devez ajouter une règle au "
+"fichier .htaccess à la racine d’Omeka. Voir %sreadme%s."
+
+#: Module.php:185 view/statistics/admin/analytics/index.phtml:22
+#: view/statistics/site/analytics/by-field.phtml:39
+#: view/statistics/site/analytics/by-hit.phtml:51
+#: view/statistics/site/analytics/by-item-set.phtml:36
+#: view/statistics/site/analytics/by-site.phtml:36
+#: view/statistics/site/analytics/by-stat.phtml:40
+#: view/statistics/site/analytics/by-value.phtml:50
+msgid "Analytics"
+msgstr "Statistiques web"
+
+#: Module.php:207
+#, php-format
+msgid "Views: %d (anonymous: %d / users: %d)"
+msgstr "Vues : %d (%d anonymes / %d utilisateurs identifiés)"
+
+#: Module.php:215
+#, php-format
+msgid "Position: %d (anonymous: %d / users: %d)"
+msgstr "Position : %d (%d anonymes / %d utilisateurs)"
+
+#: Module.php:252 view/statistics/site/statistics/by-site.phtml:40
+#: view/statistics/site/statistics/by-value.phtml:59
+#: view/statistics/site/statistics/index.phtml:21
+msgid "Statistics"
+msgstr "Statistiques"
+
+#: Module.php:261 view/statistics/site/analytics/index.phtml:28
+#, php-format
+msgid "Total Hits: %d"
+msgstr "Vues totales : %d"
+
+#: Module.php:263
+msgid "Last 30 days"
+msgstr "30 derniers jours"
+
+#: Module.php:264
+msgid "Last 7 days"
+msgstr "7 derniers jours"
+
+#: Module.php:265 src/Controller/AnalyticsController.php:81
+#: src/Controller/StatisticsController.php:124
+msgid "Last 24 hours"
+msgstr "Dernières 24 heures"
+
+#: Module.php:285 view/statistics/admin/analytics/index.phtml:76
+#: view/statistics/site/analytics/index.phtml:64
+msgid "Most viewed public pages"
+msgstr "Pages publiques les plus vues"
+
+#: Module.php:296 Module.php:315 Module.php:331
+#: view/common/analytics-most-frequents.phtml:21
+#: view/statistics/site/analytics/index.phtml:70
+#: view/statistics/site/analytics/index.phtml:88
+#: view/statistics/site/analytics/index.phtml:106
+#, php-format
+msgid "%s (%d views)"
+msgstr "%s (%d vues)"
+
+#: Module.php:307
+msgid "Most viewed public item"
+msgstr "Document public le plus vu"
+
+#: Module.php:323
+msgid "Most viewed public item set"
+msgstr "Collection publique la plus vue"
+
+#: Module.php:339
+msgid "Most downloaded file"
+msgstr "Fichier le plus téléchargé"
+
+#: Module.php:347 view/statistics/site/analytics/index.phtml:124
+#, php-format
+msgid "%s (%d downloads)"
+msgstr "%s (%d téléchagements)"
+
+#: Module.php:355
+msgid "Most frequent fields"
+msgstr "Champs les plus fréquents"
+
+#: Module.php:359
+msgid "Referrer"
+msgstr "Référent"
+
+#: Module.php:361
+msgid "User Agent"
+msgstr "Agent utilisateur"
+
+#: Module.php:363
+msgid "Accepted Language"
+msgstr "Langue acceptée"
+
+#: Module.php:368
+#, php-format
+msgid "%s: None"
+msgstr "%s : Aucun"
+
+#: src/Api/Representation/StatisticTrait.php:92
+msgid "[untitled]"
+msgstr "[sans titre]"
+
+#: src/Controller/AnalyticsController.php:52
+#: src/Controller/StatisticsController.php:83
+msgid "Last year"
+msgstr "Année dernière"
+
+#: src/Controller/AnalyticsController.php:56
+#: src/Controller/StatisticsController.php:90
+msgid "Last month"
+msgstr "Mois dernier"
+
+#: src/Controller/AnalyticsController.php:60
+#: src/Controller/StatisticsController.php:97
+msgid "Last week"
+msgstr "Semaine dernière"
+
+#: src/Controller/AnalyticsController.php:64
+#: src/Controller/StatisticsController.php:104
+msgid "Yesterday"
+msgstr "Hier"
+
+#: src/Controller/AnalyticsController.php:69
+#: src/Controller/StatisticsController.php:112
+msgid "This year"
+msgstr "Cette année"
+
+#: src/Controller/AnalyticsController.php:71
+#: src/Controller/StatisticsController.php:114
+msgid "This month"
+msgstr "Ce mois"
+
+#: src/Controller/AnalyticsController.php:73
+#: src/Controller/StatisticsController.php:116
+msgid "This week"
+msgstr "Cette semaine"
+
+#: src/Controller/AnalyticsController.php:75
+#: src/Controller/StatisticsController.php:118
+msgid "This day"
+msgstr "Ce jour"
+
+#: src/Controller/AnalyticsController.php:82
+#: src/Controller/StatisticsController.php:125
+#, php-format
+msgid "Last %s days"
+msgstr "Derniers %s jours"
+
+#: src/Controller/AnalyticsController.php:243
+#, php-format
+msgid "[Removed site #%d]"
+msgstr "[Site supprimé #%d]"
+
+#: src/Controller/AnalyticsController.php:801
+msgid "External Referrers"
+msgstr "Référents externes"
+
+#: src/Controller/AnalyticsController.php:804
+msgid "Queries"
+msgstr "Requêtes"
+
+#: src/Controller/AnalyticsController.php:807
+msgid "Browsers"
+msgstr "Navigateurs"
+
+#: src/Controller/AnalyticsController.php:810
+msgid "Full Accepted Languages"
+msgstr "Langues complètes acceptées"
+
+#: src/Controller/AnalyticsController.php:813
+msgid "Accepted Languages"
+msgstr "Langues acceptées"
+
+#: src/Controller/AnalyticsController.php:922
+#, php-format
+msgid "[Removed item set #%d]"
+msgstr "[Collection supprimée #%d]"
+
+#: src/View/Helper/Analytics.php:1289
+msgid "Annotation"
+msgstr "Annotation"
+
+#: src/View/Helper/Analytics.php:1320
+msgid "anonymous users"
+msgstr "utilisateurs anonymes"
+
+#: src/View/Helper/Analytics.php:1322
+msgid "identified users"
+msgstr "utilisateurs identifiés"
+
+#: src/View/Helper/Analytics.php:1325
+msgid "all users"
+msgstr "tous les utilisateurs"
+
+#: src/View/Helper/Analytics.php:1608
+msgid "None."
+msgstr "Aucune."
+
+#: view/common/analytics-nav.phtml:23 view/common/statistics-nav.phtml:25
+#: view/statistics/site/analytics/by-site.phtml:36
+#: view/statistics/site/statistics/by-site.phtml:40
+msgid "By site"
+msgstr "Par site"
+
+#: view/common/analytics-nav.phtml:24
+msgid "By page"
+msgstr "Par page"
+
+#: view/common/analytics-nav.phtml:25
+msgid "By resource"
+msgstr "Par ressource"
+
+#: view/common/analytics-nav.phtml:26
+msgid "By download"
+msgstr "Par téléchargement"
+
+#: view/common/analytics-nav.phtml:27
+msgid "By field"
+msgstr "Par champ"
+
+#: view/common/analytics-nav.phtml:28
+#: view/statistics/site/analytics/by-item-set.phtml:36
+msgid "By item set"
+msgstr "Par collection"
+
+#: view/common/analytics-nav.phtml:29 view/common/statistics-nav.phtml:26
+#: view/statistics/site/analytics/by-value.phtml:50
+#: view/statistics/site/statistics/by-value.phtml:59
+msgid "By value"
+msgstr "Par valeur"
+
+#: view/common/analytics-single.phtml:24
+msgid "No download"
+msgstr "Pas de téléchargement"
+
+#: view/common/analytics-single.phtml:25
+msgid "No view"
+msgstr "Pas de vue"
+
+#: view/common/analytics-single.phtml:28
+#, php-format
+msgid "%s downloads: %s [%s]"
+msgstr "%s téléchargements : %s [%s]"
+
+#: view/common/analytics-single.phtml:29
+#, php-format
+msgid "%s views: %s [%s]"
+msgstr "%s vues : %s [%s]"
+
+#: view/common/analytics-single.phtml:32
+msgid "No specific resource"
+msgstr "Pas de ressource spécifique"
+
+#: view/common/analytics-value.phtml:17
+msgid "Not downloaded"
+msgstr "Non téléchargé"
+
+#: view/common/analytics-value.phtml:19
+#, php-format
+msgid "Position: %s (%s downloads)"
+msgstr "Position : %s (%s téléchargements)"
+
+#: view/common/analytics-value.phtml:26
+msgid "Not viewed"
+msgstr "Pas de vue"
+
+#: view/common/analytics-value.phtml:28
+#, php-format
+msgid "Position: %s (%s views)"
+msgstr "Position : %s (%s vues)"
+
+#: view/statistics/admin/analytics/index.phtml:22
+#: view/statistics/site/statistics/index.phtml:21
+#, php-format
+msgid "Summary (%s total)"
+msgstr "Sommaire (%s total)"
+
+#: view/statistics/admin/analytics/index.phtml:26
+#, php-format
+msgid "Total Hits: %d [%d anonymous / %d identified]"
+msgstr "Total des vues : %d [%d anonymes / %d identifiés]"
+
+#: view/statistics/admin/analytics/index.phtml:31
+#, php-format
+msgid "Today: %d [%d / %d]"
+msgstr "Aujourd’hui : %d [%d / %d]"
+
+#: view/statistics/admin/analytics/index.phtml:40
+#: view/statistics/site/analytics/index.phtml:34
+#: view/statistics/site/statistics/index.phtml:49
+msgid "History"
+msgstr "Historique"
+
+#: view/statistics/admin/analytics/index.phtml:51
+#: view/statistics/site/analytics/index.phtml:43
+#: view/statistics/site/statistics/index.phtml:60
+msgid "Current"
+msgstr "Actuellement"
+
+#: view/statistics/admin/analytics/index.phtml:62
+#: view/statistics/site/analytics/index.phtml:52
+#: view/statistics/site/statistics/index.phtml:71
+msgid "Rolling Period"
+msgstr "Période glissante"
+
+#: view/statistics/admin/analytics/index.phtml:82
+#: view/statistics/admin/analytics/index.phtml:102
+#: view/statistics/admin/analytics/index.phtml:122
+#, php-format
+msgid "%s (%d views [%d / %d])"
+msgstr "%s (%d vues [%d / %d])"
+
+#: view/statistics/admin/analytics/index.phtml:96
+#: view/statistics/site/analytics/index.phtml:82
+msgid "Most viewed public records"
+msgstr "Notices publiques les plus vues"
+
+#: view/statistics/admin/analytics/index.phtml:116
+#: view/statistics/site/analytics/index.phtml:100
+msgid "Most viewed public collections"
+msgstr "Collections publiques les plus vues"
+
+#: view/statistics/admin/analytics/index.phtml:136
+#: view/statistics/site/analytics/index.phtml:118
+msgid "Most downloaded files"
+msgstr "Fichiers les plus téléchargés"
+
+#: view/statistics/admin/analytics/index.phtml:142
+#, php-format
+msgid "%s (%d downloads [%d / %d])"
+msgstr "%s (%d téléchargements [%d / %d])"
+
+#: view/statistics/admin/analytics/index.phtml:156
+#: view/statistics/site/analytics/index.phtml:136
+msgid "Most frequent external referrers"
+msgstr "Référents externes les plus fréquents"
+
+#: view/statistics/admin/analytics/index.phtml:157
+#: view/statistics/site/analytics/index.phtml:137
+msgid "Most frequent queries"
+msgstr "Requêtes les plus fréquentes"
+
+#: view/statistics/admin/analytics/index.phtml:158
+#: view/statistics/site/analytics/index.phtml:138
+msgid "Most frequent accepted languages"
+msgstr "Langues acceptées les plus fréquentes"
+
+#: view/statistics/admin/analytics/index.phtml:159
+#: view/statistics/site/analytics/index.phtml:139
+msgid "Most frequent languages"
+msgstr "Langues les plus fréquentes"
+
+#: view/statistics/admin/analytics/index.phtml:160
+#: view/statistics/site/analytics/index.phtml:140
+msgid "Most frequent browsers"
+msgstr "Navigateurs les plus fréquents"
+
+#: view/statistics/site/analytics/by-field.phtml:39
+#: view/statistics/site/analytics/by-hit.phtml:51
+#: view/statistics/site/analytics/by-stat.phtml:40
+#: view/statistics/site/analytics/index.phtml:24
+#, php-format
+msgid "Analytics (%s total)"
+msgstr "Statistiques web (%s total)"
+
+#: view/statistics/site/analytics/by-field.phtml:50
+#, php-format
+msgid "By %s (%s)"
+msgstr "Par %s (%s)"
+
+#: view/statistics/site/analytics/by-field.phtml:51
+#, php-format
+msgid "[%d filled values / %d total hits]"
+msgstr "[%d valeurs enregistrées / %d vues totales]"
+
+#: view/statistics/site/analytics/by-field.phtml:68
+#: view/statistics/site/analytics/by-item-set.phtml:55
+#: view/statistics/site/analytics/by-site.phtml:55
+#: view/statistics/site/analytics/by-stat.phtml:67
+#: view/statistics/site/analytics/by-value.phtml:82
+msgid "Hits"
+msgstr "Vues"
+
+#: view/statistics/site/analytics/by-field.phtml:71
+msgid "Percent"
+msgstr "Pour cent"
+
+#: view/statistics/site/analytics/by-field.phtml:95
+#: view/statistics/site/analytics/by-item-set.phtml:74
+#: view/statistics/site/analytics/by-site.phtml:74
+#: view/statistics/site/analytics/by-value.phtml:139
+msgid "There is no hit yet."
+msgstr "Il n’y a pas encore de vue."
+
+#: view/statistics/site/analytics/by-field.phtml:97
+#: view/statistics/site/analytics/by-item-set.phtml:76
+#: view/statistics/site/analytics/by-site.phtml:76
+#: view/statistics/site/analytics/by-value.phtml:141
+#, php-format
+msgid "The query searched %s hits and returned no results."
+msgstr "La requête a recherché dans %s vues et n’a trouvé aucun résultat."
+
+#: view/statistics/site/analytics/by-field.phtml:98
+#: view/statistics/site/analytics/by-hit.phtml:242
+#: view/statistics/site/analytics/by-item-set.phtml:77
+#: view/statistics/site/analytics/by-site.phtml:77
+#: view/statistics/site/analytics/by-stat.phtml:222
+#: view/statistics/site/analytics/by-value.phtml:142
+msgid "See all analytics."
+msgstr "Voir toutes les statistiques."
+
+#: view/statistics/site/analytics/by-hit.phtml:67
+#: view/statistics/site/statistics/by-site.phtml:55
+#: view/statistics/site/statistics/by-value.phtml:74
+msgid "ODS"
+msgstr "ODS"
+
+#: view/statistics/site/analytics/by-hit.phtml:68
+#: view/statistics/site/statistics/by-site.phtml:56
+#: view/statistics/site/statistics/by-value.phtml:75
+msgid "TSV"
+msgstr "TSV"
+
+#: view/statistics/site/analytics/by-hit.phtml:69
+#: view/statistics/site/statistics/by-site.phtml:57
+#: view/statistics/site/statistics/by-value.phtml:76
+msgid "CSV"
+msgstr "CSV"
+
+#: view/statistics/site/analytics/by-hit.phtml:167
+#: view/statistics/site/analytics/by-hit.phtml:170
+msgid "[no title]"
+msgstr "[pas de titre]"
+
+#: view/statistics/site/analytics/by-hit.phtml:239
+#: view/statistics/site/analytics/by-stat.phtml:219
+msgid "Omeka could not find any statistics."
+msgstr "Omeka ne trouve aucune statistiques."
+
+#: view/statistics/site/analytics/by-hit.phtml:241
+#: view/statistics/site/analytics/by-stat.phtml:221
+#, php-format
+msgid "The query searched %s rows and returned no results."
+msgstr "La requête a recherché dans %s lignes et n’a trouvé aucun résultat."
+
+#: view/statistics/site/analytics/by-stat.phtml:72
+msgid "Anonymous"
+msgstr "Anonymes"
+
+#: view/statistics/site/analytics/by-stat.phtml:77
+msgid "Identified"
+msgstr "Identifié"
+
+#: view/statistics/site/analytics/by-stat.phtml:82
+msgid "Dedicated resource"
+msgstr "Ressource dédiée"
+
+#: view/statistics/site/analytics/by-stat.phtml:114
+msgid "Last date"
+msgstr "Dernière date"
+
+#: view/statistics/site/analytics/by-value.phtml:62
+msgid "Select a property to get analytics on it."
+msgstr "Choisir une propriété pour obtenir des statistiques."
+
+#: view/statistics/site/analytics/by-value.phtml:66
+#: view/statistics/site/statistics/by-value.phtml:88
+msgid "Check the form."
+msgstr "Vérifier le formulaire."
+
+#: view/statistics/site/analytics/index.phtml:29
+#, php-format
+msgid "Today: %d"
+msgstr "Aujourd’hui : %d"
+
+#: view/statistics/site/statistics/by-site.phtml:87
+msgid "There is no resource yet."
+msgstr "Il n’y a aucune ressource."
+
+#: view/statistics/site/statistics/by-site.phtml:89
+#: view/statistics/site/statistics/by-value.phtml:194
+#, php-format
+msgid "The query searched %s resources and returned no results."
+msgstr "La requête a recherché dans %s lignes et n’a trouvé aucun résultat."
+
+#: view/statistics/site/statistics/by-site.phtml:90
+#: view/statistics/site/statistics/by-value.phtml:195
+msgid "See all statistics."
+msgstr "Voir toutes les statistiques."
+
+#: view/statistics/site/statistics/by-value.phtml:84
+msgid "Select a metadata to get statistics on it."
+msgstr "Choisir la métadonnée pour obtenir des statistiques."
+
+#: view/statistics/site/statistics/by-value.phtml:113
+#: view/statistics/site/statistics/by-value.phtml:157
+msgid "Totals"
+msgstr "Totaux"
+
+#: view/statistics/site/statistics/by-value.phtml:192
+msgid "There is no resources yet."
+msgstr "Il n’y a aucune ressource."
+
+#: view/statistics/site/statistics/index.phtml:25
+#, php-format
+msgid "Total ressources: %d [%d item sets / %d items / %d medias]"
+msgstr "Total des ressources: %d [%d collections / %d contenus / %d médias]"
+
+#: view/statistics/site/statistics/index.phtml:34
+#, php-format
+msgid ""
+"The module %1$sAdvanced Search%2$s is required to get many more statistics."
+msgstr ""
+"Le module %1$sRecherche Avancée%2$s est nécessaire pour avoir davantage de "
+"statistiques."
+
+#: view/statistics/site/statistics/index.phtml:39
+#, php-format
+msgid "Today: %d [%d / %d / %d]"
+msgstr "Aujourd’hui : %d [%d / %d / %d]"
+
+#: data/scripts/upgrade.php:34
+#, php-format
+msgid ""
+"To control access to files, you must add a rule in file .htaccess at the "
+"root of Omeka. See %sreadme%s."
+msgstr ""
+"Pour contrôler l’accès aux fichiers, vous devez ajouter une règle dans le "
+"fichier .htaccess à la racine d’Omeka. Voir le %sreadme%s."
+
+#: data/scripts/upgrade.php:162
+msgid "There are now analytics by period for properties."
+msgstr "Il y a désormais des statistiques par période pour les propriétés."
+
+#: data/scripts/upgrade.php:169
+msgid "There are now statistics about resources and values."
+msgstr "Il y a désormais des statistiques par ressources et valeurs."
+
+#: data/scripts/upgrade.php:226
+#, php-format
+msgid "The module %1$s should be upgraded to version %2$s or later."
+msgstr "Le module %1$s doit être mis à niveau à la version %2$s ou supérieure."
+
+#: Module.php:397
+msgid "Update of aggregated statistics: Start"
+msgstr "Mise à jour des statistiques agrégées : lancement"
+
+#: Module.php:401
+msgid "Update of aggregated statistics: Ended."
+msgstr "Mise à jour des statistiques agrégées : fin."
+
+#: src/Mvc/MvcListeners.php:156 src/Mvc/Controller/Plugin/LogCurrentUrl.php:134
+#, php-format
+msgid "Exception when storing hit/stat: %1$s"
+msgstr "Exception lors de l’enregistrement des hits/stats : %1$s"
+
+#: src/Form/AnalyticsByDownloadForm.php:40
+msgid "Large"
+msgstr "Large"
+
+#: src/Form/AnalyticsByDownloadForm.php:42
+msgid "Square"
+msgstr "Carré"
+
+#: src/Form/AnalyticsByDownloadForm.php:55 src/Form/AnalyticsByValueForm.php:53
+#: src/Form/AnalyticsBySiteForm.php:56 src/Form/AnalyticsByFieldForm.php:60
+#: src/Form/AnalyticsByResourceForm.php:56
+msgid "Resource query"
+msgstr "Requête pour les ressources"
+
+#: src/Form/AnalyticsByDownloadForm.php:56 src/Form/AnalyticsByValueForm.php:54
+#: src/Form/AnalyticsBySiteForm.php:57 src/Form/AnalyticsByFieldForm.php:61
+#: src/Form/AnalyticsByResourceForm.php:57
+msgid "Filter the resources"
+msgstr "Filtre des ressources"
+
+#: src/Form/AnalyticsByDownloadForm.php:72
+#: src/Form/AnalyticsByValueForm.php:117 src/Form/StatisticsByValueForm.php:119
+#: src/Form/AnalyticsBySiteForm.php:73 src/Form/AnalyticsByPageForm.php:65
+#: src/Form/StatisticsBySiteForm.php:65 src/Form/AnalyticsByResourceForm.php:73
+msgid "All years"
+msgstr "Toutes les années"
+
+#: src/Form/AnalyticsByDownloadForm.php:86
+#: src/Form/AnalyticsByValueForm.php:131 src/Form/StatisticsByValueForm.php:133
+#: src/Form/AnalyticsBySiteForm.php:87 src/Form/AnalyticsByPageForm.php:79
+#: src/Form/StatisticsBySiteForm.php:79 src/Form/AnalyticsByResourceForm.php:87
+msgid "All monthes"
+msgstr "Tous les mois"
+
+#: src/Form/SettingsFieldset.php:29
+msgid "Level of privacy for new hits"
+msgstr "Niveau de vie privée pour les nouveaux enregistrements"
+
+#: src/Form/SettingsFieldset.php:32
+msgid "Hashed IP"
+msgstr "IP hachée"
+
+#: src/Form/SettingsFieldset.php:33
+msgid "Partial IP (first hex)"
+msgstr "IP partielle (premier hex)"
+
+#: src/Form/SettingsFieldset.php:34
+msgid "Partial IP (first 2 hexs)"
+msgstr "IP partielle (deux premiers hexs)"
+
+#: src/Form/SettingsFieldset.php:35
+msgid "Partial IP (first 3 hexs)"
+msgstr "IP partielle (trois premiers hexs)"
+
+#: src/Form/SettingsFieldset.php:36
+msgid "Clear IP"
+msgstr "IP claire"
+
+#: src/Form/SettingsFieldset.php:49
+msgid "Include crawlers/bots"
+msgstr "Inclure les robots d’indexation"
+
+#: src/Form/SettingsFieldset.php:50
+msgid ""
+"By checking this box, all hits which user agent contains the term \"bot\", "
+"\"crawler\", \"spider\", etc. will be included."
+msgstr ""
+"En cochant cette case, toutes les vues dont l'agent utilisateur contient le "
+"terme \"bot\", \"crawler\", \"spider\", etc. seront inclus."
+
+#: src/Form/SettingsFieldset.php:62
+msgid "User status for admin pages"
+msgstr "Type d’utilisateur pour les pages admin"
+
+#: src/Form/SettingsFieldset.php:64 src/Form/SettingsFieldset.php:80
+msgid "Total hits"
+msgstr "Total des vues"
+
+#: src/Form/SettingsFieldset.php:66 src/Form/SettingsFieldset.php:82
+msgid "Identified users"
+msgstr "Utilisateurs identifiés"
+
+#: src/Form/SettingsFieldset.php:78
+msgid "User status for public pages"
+msgstr "Type d’utilisateur pour les pages publiques"
+
+#: src/Form/SettingsFieldset.php:94
+msgid "Results per page (admin)"
+msgstr "Résultats par page (admin)"
+
+#: src/Form/SettingsFieldset.php:106
+msgid "Results per page (public)"
+msgstr "Résultats par page (public)"
+
+#: src/Form/SettingsFieldset.php:119
+msgid "Allow public to access statistics"
+msgstr "Autoriser le public à accéder aux statistiques"
+
+#: src/Form/SettingsFieldset.php:131
+msgid "Allow public to access analytics summary"
+msgstr "Autoriser le public à accéder au sommaire des statistiques"
+
+#: src/Form/SettingsFieldset.php:142
+msgid "Allow public to access detailled analytics"
+msgstr "Autoriser le public à accéder aux statistiques détaillées"
+
+#: src/Form/AnalyticsByValueForm.php:39 src/Form/AnalyticsBySiteForm.php:41
+#: src/Form/AnalyticsByFieldForm.php:45 src/Form/AnalyticsByResourceForm.php:39
+msgid "By item"
+msgstr "Par contenu"
+
+#: src/Form/AnalyticsByValueForm.php:41 src/Form/AnalyticsBySiteForm.php:43
+#: src/Form/AnalyticsByFieldForm.php:47 src/Form/AnalyticsByResourceForm.php:41
+msgid "By media"
+msgstr "Par média"
+
+#: src/Form/AnalyticsByValueForm.php:102 src/Form/StatisticsByValueForm.php:104
+msgid "By year"
+msgstr "Par an"
+
+#: src/Form/AnalyticsByValueForm.php:103 src/Form/StatisticsByValueForm.php:105
+msgid "By month"
+msgstr "Par mois"
+
+#: src/Form/StatisticsByValueForm.php:44 src/Form/StatisticsBySiteForm.php:44
+msgid "Resource types"
+msgstr "Types de ressource"
+
+#: src/Form/StatisticsByValueForm.php:161
+msgid "Counts"
+msgstr "Totaux"
+
+#: src/Form/StatisticsByValueForm.php:162
+msgid "Repartition"
+msgstr "Répartition"
+
+#: src/Form/StatisticsByValueForm.php:163
+msgid "Evolution"
+msgstr "Évolution"
+
+#: src/Form/StatisticsByValueForm.php:164
+msgid "Variation"
+msgstr "Variation"
+
+#: src/Form/AnalyticsByPageForm.php:50
+msgid "Has resource or page"
+msgstr "A des ressources ou des pages"
+
+#: src/Form/AnalyticsByPageForm.php:51
+msgid "Has no resource"
+msgstr "Pas de ressource"
+
+#: src/Form/AnalyticsByFieldForm.php:26
+msgid "query"
+msgstr "requête"
+
+#: src/Form/AnalyticsByFieldForm.php:27
+msgid "User agent"
+msgstr "Navigateur (User agent)"
+
+#: src/Form/AnalyticsByFieldForm.php:28
+msgid "Accept language"
+msgstr "Langue acceptée"
+
+#: src/Api/Adapter/StatAdapter.php:173
+msgid ""
+"It is not possible to query stats on all resources types at the same time "
+"for now."
+msgstr ""
+"Il n'est pas possible de chercher les statistiques sur tous les types de "
+"ressources en même temps actuellement."
+
+#: src/Api/Adapter/StatAdapter.php:312
+msgid "The stat requires a url."
+msgstr "La statistique requiert une url."
+
+#: src/Api/Adapter/StatAdapter.php:315
+msgid "The stat requires a type."
+msgstr "La statistique requiert un type."
+
+#: src/Api/Adapter/StatAdapter.php:319
+msgid "The stat requires a type: \"page\", \"resource\", or \"download\"."
+msgstr ""
+"La statistique requiert un type : \"page\", \"resource\" ou \"download\"."
+
+#: src/Api/Adapter/StatAdapter.php:377
+msgid "A stat must have a type (\"page\", \"resource\" or \"download\")."
+msgstr ""
+"Une statistique doit avoir un type (\"page\", \"resource\" ou \"download\")."
+
+#: src/Api/Adapter/StatAdapter.php:380
+msgid "A stat must have a url."
+msgstr "Une statistique doit avoir une url."
+
+#: src/Api/Adapter/StatAdapter.php:382
+msgid "The type should be unique for the url."
+msgstr "Le type doit être unique pour l’url."
+
+#: src/Api/Adapter/HitAdapter.php:198
+msgid ""
+"It is not possible to query hits on all resources types at the same time for "
+"now."
+msgstr ""
+"Il n'est pas possible de chercher les vues sur tous les types de ressources "
+"en même temps actuellement."
+
+#: src/Entity/Stat.php:51
+msgid "api"
+msgstr "api"
+
+#: src/Entity/Stat.php:53
+msgid "resource"
+msgstr "ressource"
+
+#: src/Entity/Stat.php:54
+msgid "download"
+msgstr "téléchargement"
+
+#: src/Controller/StatisticsController.php:309
+#: src/Controller/AnalyticsController.php:1048
+msgid "A property is required to get statistics."
+msgstr "Une propriété est nécessaire pour obtenir des statistiques."
+
+#: src/Controller/StatisticsController.php:325
+#: src/Controller/AnalyticsController.php:1063
+msgid "A year is required to get details by month."
+msgstr "Une année est nécessaire pour avoir les détails par mois."
+
+#: src/Controller/StatisticsController.php:1038
+#: src/Controller/StatisticsTrait.php:182
+msgid "There is no results."
+msgstr "Il n’y a aucun résultats."
+
+#: src/Controller/StatisticsController.php:1086
+#: src/Controller/StatisticsTrait.php:233
+msgid "The format \"{format}\" is not supported to export statistics."
+msgstr "Le format « {format} » n'est pas géré pour exporter les statistiques."
+
+#: src/Controller/StatisticsTrait.php:189
+msgid "There is no headers."
+msgstr "Il n'y a pas d'entêtes."
+
+#: src/Controller/AnalyticsController.php:392
+#: src/Controller/AnalyticsController.php:547
+#: src/Controller/AnalyticsController.php:705
+msgid "Available"
+msgstr "Disponible"
+
+#, php-format
+#~ msgid "This module requires the module \"%s\"."
+#~ msgstr "Ce module requiert le module \"%s\"."
+
+#, php-format
+#~ msgid "This module requires modules \"%s\"."
+#~ msgstr "Ce module requiert les modules \"%s\"."
+
+#~ msgid "This module has resources that cannot be installed."
+#~ msgstr "Ce module a des ressources qui ne peuvent pas être installées."
+
+#~ msgid ""
+#~ "This module cannot install its tables, because they exist already. Try to "
+#~ "remove them first."
+#~ msgstr ""
+#~ "Ce module ne peut pas installer ses tables car elles existent déjà. "
+#~ "Essayez de les supprimer manuellement."
+
+#, php-format
+#~ msgid "The module removed tables \"%s\" from a previous broken install."
+#~ msgstr ""
+#~ "Le module a supprimé les tables \"%s\" depuis une installation échouée."
+
+#, php-format
+#~ msgid ""
+#~ "The module \"%s\" was automatically deactivated because the dependencies "
+#~ "are unavailable."
+#~ msgstr ""
+#~ "Le module %s\" a été automatiquement désactivé car ses dépendances ne "
+#~ "sont plus disponibles."
+
+#~ msgid "Quick filter"
+#~ msgstr "Filtre rapide"
+
+#~ msgid "View all"
+#~ msgstr "Tout voir"
+
+#~ msgid "Without resource"
+#~ msgstr "Sans ressource"
+
+#~ msgid "Referrers"
+#~ msgstr "Référents"
+
+#~ msgid "Languages"
+#~ msgstr "Langues"
+
+#~ msgid "Full Languages"
+#~ msgstr "Langues complètes"
+
+#~ msgid "January"
+#~ msgstr "Janvier"
+
+#~ msgid "February"
+#~ msgstr "Février"
+
+#~ msgid "March"
+#~ msgstr "Mars"
+
+#~ msgid "April"
+#~ msgstr "Avril"
+
+#~ msgid "May"
+#~ msgstr "Mai"
+
+#~ msgid "June"
+#~ msgstr "Juin"
+
+#~ msgid "July"
+#~ msgstr "Juillet"
+
+#~ msgid "August"
+#~ msgstr "Août"
+
+#~ msgid "September"
+#~ msgstr "Septembre"
+
+#~ msgid "October"
+#~ msgstr "Octobre"
+
+#~ msgid "November"
+#~ msgstr "Novembre"
+
+#~ msgid "December"
+#~ msgstr "Décembre"
+
+#~ msgid "Uri"
+#~ msgstr "Uri"
+
+#~ msgid "Medias"
+#~ msgstr "Médias"
+
+#~ msgid "Access resource"
+#~ msgstr "Accès à la ressource"
+
+#, php-format
+#~ msgid "Views: %d (position %d)"
+#~ msgstr "Vues : %d (position %d)"
+
+#~ msgid "hits"
+#~ msgstr "vues"
+
+#~ msgid "None"
+#~ msgstr "Aucune"
+
+#~ msgid "Deleted"
+#~ msgstr "Supprimé"
+
+#~ msgid "Most viewed public collection"
+#~ msgstr "Collection publique la plus vue"
+
+#, php-format
+#~ msgid "%s: %s (%d%%)"
+#~ msgstr "%s : %s (%d%%)"
+
+#~ msgid "This file doesn't exist."
+#~ msgstr "Ce fichier n’existe pas."
+
+#~ msgid "Url is required."
+#~ msgstr "L'Url est requise."
+
+#~ msgid "By Collection"
+#~ msgstr "Par collection"
+
+#~ msgid "Filter"
+#~ msgstr "Filtrer"
+
+#~ msgid "Hits (including sub-collections)"
+#~ msgstr "Vues (incluant les sous-collections)"
+
+#~ msgid "Page"
+#~ msgstr "Page"
+
+#~ msgid "Rights and Roles"
+#~ msgstr "Droits et rôles"
+
+#~ msgid "Table of Rights"
+#~ msgstr "Table des droits"
+
+#~ msgid "Select access rights for each stats page and each role."
+#~ msgstr "Choisir les droits d’accès pour chaque page et chaque rôle."
+
+#~ msgid ""
+#~ "If \"public\" is checked, all people will have access to the selected "
+#~ "data."
+#~ msgstr ""
+#~ "Si \"public\" est coché, tout le monde pourra accéder aux données "
+#~ "choisies."
+
+#~ msgid ""
+#~ "To get stats about direct download of original files, a line should be "
+#~ "added in \".htaccess\"."
+#~ msgstr ""
+#~ "Pour avoir les stats des téléchargements directs des fichiers originaux, "
+#~ "une ligne doit être ajoutée dans \".htaccess\"."
+
+#, php-format
+#~ msgid "%sWarning%s: Shortcodes, helpers and hooks don't follow any rule."
+#~ msgstr ""
+#~ "%sAttention%s : Les shortcodes, helpers et hooks (crochets) ne suivent "
+#~ "aucune règle."
+
+#~ msgid "View Summary"
+#~ msgstr "Voir le sommaire"
+
+#~ msgid "Browse by Page"
+#~ msgstr "Lister par page"
+
+#~ msgid "Browse by Record"
+#~ msgstr "Lister par notice"
+
+#~ msgid "Browse by Download"
+#~ msgstr "Lister par téléchargement"
+
+#~ msgid "Browse by Field"
+#~ msgstr "Lister par champ"
+
+#~ msgid "Browse by Collection"
+#~ msgstr "Parcourir par collection"
+
+#~ msgid "Browse Stats"
+#~ msgstr "Naviguer dans les stats"
+
+#~ msgid "These options allow to restrict stats according to status of users."
+#~ msgstr ""
+#~ "Ces options permettent de réstreindre les stats selon les utilisateurs."
+
+#~ msgid ""
+#~ "They are used with hooks, helpers and shortcodes, not with direct queries."
+#~ msgstr ""
+#~ "Elles sont utilisées avec les hooks (crochets), les helpers et les "
+#~ "shortcodes, mais pas avec les reqùêtes directes."
+
+#~ msgid "Choose the default status of users for stats in admin pages."
+#~ msgstr ""
+#~ "Choisir le type d’utilisateur par défaut pour les stats dans les pages "
+#~ "admin."
+
+#~ msgid "Choose the status of users to restrict stats in public pages."
+#~ msgstr ""
+#~ "Choisir le type d’utilisateur pour restreindre les stats dans les pages "
+#~ "publiques."
+
+#~ msgid "Display by Hooks"
+#~ msgstr "Affichage par les hooks (crochets)"
+
+#~ msgid "Pages where hits are shown via hooks"
+#~ msgstr "Pages où les stats sont affichées via les crochets"
+
+#~ msgid ""
+#~ "These options allow to parameter the pages where the htis are displayed."
+#~ msgstr ""
+#~ "Ces options permettent de paramêtrer les pages sur lesquelles les stats "
+#~ "sont affichées."
+
+#~ msgid ""
+#~ "In any case, this is the theme that manages last if hits are displayed or "
+#~ "not."
+#~ msgstr ""
+#~ "Dans tous les cas, c'est le thème qui gère en dernier lieu si les stats "
+#~ "sont affichées ou non."
+
+#~ msgid "Privacy"
+#~ msgstr "Vie privée"
+
+#~ msgid "Choose the level of privacy (default: hashed IP)."
+#~ msgstr "Choisir le niveau de vie privée (défaut : IP hachée)."
+
+#~ msgid "A change applies only to new hits."
+#~ msgstr "Le changement s'appliquera seulement aux nouvelles vues."
+
+#~ msgid "Misc"
+#~ msgstr "Divers"
+
+#~ msgid "Simple Page"
+#~ msgstr "Page simple"
+
+#~ msgid "Exhibit Page"
+#~ msgstr "Page d’exposition"
+
+#~ msgid "By Item"
+#~ msgstr "Par document"
+
+#~ msgid "By File"
+#~ msgstr "Par fichier"
+
+#~ msgid "By Simple Page"
+#~ msgstr "Par page simple"
+
+#~ msgid "By Exhibit"
+#~ msgstr "Par exposition"
+
+#~ msgid "By Exhibit Page"
+#~ msgstr "Par page d’exposition"
+
+#~ msgid "Summary"
+#~ msgstr "Sommaire"
+
+#~ msgid "By Page"
+#~ msgstr "Par page"
+
+#~ msgid "By Record"
+#~ msgstr "Par notice"
+
+#~ msgid "Never viewed"
+#~ msgstr "Jamais vue"
+
+#~ msgid "Record Type"
+#~ msgstr "Type de notice"
+
+#~ msgid "Date"
+#~ msgstr "Date"
+
+#~ msgid "By %s"
+#~ msgstr "Par %s"
+
+#~ msgid "Public"
+#~ msgstr "Public"
+
+#~ msgid ""
+#~ "Limit the number of results displayed per page in the administrative "
+#~ "interface."
+#~ msgstr ""
+#~ "Limite du nombre de résultats affichés par page dans l'interface "
+#~ "d'administration. "
+
+#~ msgid ""
+#~ "Limit the number of results displayed per page in the public interface."
+#~ msgstr ""
+#~ "Limite du nombre de résultats affichés par page dans l'interface "
+#~ "publique. "
+
+#~ msgid "Stats Summary"
+#~ msgstr "Stats - Sommaire"
+
+#~ msgid "Allow Public to Browse"
+#~ msgstr "Autoriser le public à consulter"
+
+#~ msgid "Allow everybody to browse stats."
+#~ msgstr "Autoriser tout le monde à naviguer dans les stats."
+
+#~ msgid "Roles that can Browse"
+#~ msgstr "Rôles qui peuvent consulter"
+
+#~ msgid "Most frequent user agents"
+#~ msgstr "Agents utilisateurs les plus fréquents"
+
+#~ msgid "User Agents"
+#~ msgstr "Agents utilisateurs"
+
+#~ msgid "Stat types"
+#~ msgstr "Types de stat"
+
+#~ msgid ""
+#~ "These options allow to set the default type of hits count that is "
+#~ "displayed."
+#~ msgstr ""
+#~ "Ces options permettent de définir un type par défaut pour le nombre de "
+#~ "vues qui est affiché."
+
+#~ msgid "This can be modified by the theme"
+#~ msgstr "Cela peut être modifié par le theme."
+
+#~ msgid "Keep stats of deleted records"
+#~ msgstr "Conserver les stats des notices supprimées"
+
+#~ msgid "Warning: if unchecked, all stats of deleted records will be removed."
+#~ msgstr ""
+#~ "Attention : si décoché, toutes les stats des notices supprimées seront "
+#~ "effacées."
+
+#~ msgid "undetermined"
+#~ msgstr "indéterminé"
+
+#~ msgid "Anonymous: %d (position %d)"
+#~ msgstr "Anonymes : %d (position %d)"
+
+#~ msgid "Identified: %d (position %d)"
+#~ msgstr "Utilisateurs identifiés : %d (position %d)"
+
+#~ msgid "none"
+#~ msgstr "aucune"

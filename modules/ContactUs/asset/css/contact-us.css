@@ -1,0 +1,27 @@
+@media all {
+    [hidden],
+    .hidden {
+        display: none;
+    }
+
+    .newsletter-block .error,
+    .contact-us-block .error {
+        color: red;
+    }
+    .newsletter-block .field.required .field-meta::after,
+    .contact-us-block .field.required .field-meta::after {
+        content: "*";
+        color: red;
+    }
+    .dialog-header {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .dialog-header-close-button {
+        display: block;
+        margin-left: auto;
+        padding: 0;
+        background-color: transparent;
+    }
+}

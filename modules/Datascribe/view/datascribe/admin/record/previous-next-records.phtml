@@ -1,0 +1,50 @@
+<?php if ($records): ?>
+<div class="tablesaw-swipe-wrapper collapsed <?php echo (isset($previousNext)) ? $previousNext : ''; ?>">
+<div class="previous-next-rows-header">
+    <?php echo ($heading) ? sprintf('<h3>%s</h3>', $heading) : ''; ?>
+    <a href="#" class="previous-next-toggle expand button" aria-label="<?php echo $this->translate('Expand'); ?>" title="<?php echo $this->translate('Expand'); ?>"></a>
+</div>
+<table class="tablesaw before-after-records" data-tablesaw-mode="swipe" data-tablesaw-swipe-media="(max-width: 2000px)" data-tablesaw-minimap>
+    <thead>
+        <tr>
+            <th><?php echo $this->translate('Record #'); ?></th>
+            <?php foreach ($dataset->fields() as $field): ?>
+            <th scope="col"<?php echo $field->isPrimary() ? ' class="primary-field"' : ''; ?>><?php echo $field->name([
+                'length' => 20,
+                'trim_marker' => '...',
+            ]); ?></th>
+            <?php endforeach; ?>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($records as $record): ?>
+        <?php $values = $record->values(); ?>
+        <tr>
+            <td><?php echo $record->id(); ?></td>
+            <?php foreach ($dataset->fields() as $field): ?>
+            <?php $value = $values[$field->id()] ?? null; ?>
+            <td<?php echo $field->isPrimary() ? ' class="primary-field"' : ''; ?>>
+                <?php if ($field->dataTypeIsUnknown()): ?>
+                <span style="color: #ffcccc;"><?php echo $this->translate('unknown'); ?></span>
+                <?php elseif ($field->isRequired() && (null === $value)): ?>
+                <span style="color: #ffcccc;"><?php echo $this->translate('invalid'); ?></span>
+                <?php elseif (null === $value): ?>
+                <span style="color: #e6e6e6;"><?php echo $this->translate('null'); ?></span>
+                <?php else: ?>
+                <?php echo $value->displayText([
+                    'length' => 50,
+                    'trim_marker' => '...',
+                    'if_invalid_return' => sprintf('<span style="color: #ffcccc;">%s</span>', $this->translate('invalid')),
+                    'if_empty_return' => sprintf('<span style="color: #e6e6e6;">%s</span>', $this->translate('empty')),
+                    'if_null_return' => sprintf('<span style="color: #e6e6e6;">%s</span>', $this->translate('null')),
+                    'if_unknown_return' => sprintf('<span style="color: #ffcccc;">%s</span>', $this->translate('unknown')),
+                ]); ?>
+                <?php endif; ?>
+            </td>
+            <?php endforeach; ?>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+</div>
+<?php endif; ?>

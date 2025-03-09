@@ -1,0 +1,26 @@
+<?php
+$translate = $this->plugin('translate');
+$escape = $this->plugin('escapeHtml');
+$roleIds = isset($data['role_based_navigation_role_ids']) ? $data['role_based_navigation_role_ids'] : null;
+$formId = uniqid('_rbn');
+?>
+<div id="<?php echo $formId?>" style="font-weight: normal;">
+	<label style="font-weight: bold;"><?php echo $translate('Roles filter'); ?></label>
+	<?php echo $this->navRoleSelect([
+            'name' => 'role_based_navigation_role_ids',
+            'attributes' => [
+                'id' => 'role_select' . $formId,
+                'class' => 'chosen-select',
+                'multiple' => 'multiple',
+                'value' => $roleIds,
+                'data-name' => 'role_based_navigation_role_ids',
+                'data-placeholder' => 'Select role…', // @translate
+                'data-collection-action' => 'replace'
+            ]
+        ]);
+    ?>
+    <script type="text/javascript">
+		registerSelector('#role_select<?php echo $formId; ?>');
+	    $('.jstree-editlink-container').css('overflow', 'visible');
+    </script>
+</div>

@@ -1,0 +1,77 @@
+/* Import: styles */
+
+@media all {
+    header nav .bulk-imports::before,
+    header nav .bulk-importers::before,
+    header nav .bulk-mappings::before,
+    .bulk-imports .subhead::before,
+    .bulk-importers .subhead::before,
+    .bulk-mappings .subhead::before,
+    .bulk-imports .no-resources:before,
+    .bulk-importers .no-resources:before,
+    .bulk-mappings .no-resources:before {
+        content: "";
+    }
+
+    .bulk-label-sub {
+        font-style: italic;
+        opacity: .5;
+        font-size: small;
+    }
+    /* Fix default css of tables in Omeka: space and no-break space. */
+    .bulk-label-sub:before {
+        content: '  ';
+    }
+
+    .bulk-imports.browse table td.process .tablesaw-cell-content {
+        display: block;
+    }
+
+    .bulk-imports .actions .dry-run {
+        font-style: italic;
+        font-size: 0.8em;
+        padding-right: 8px;
+    }
+
+    .bulk-imports .actions .no-action {
+        padding-right: 24px;
+        vertical-align: top;
+    }
+
+    .bulk-importers table.batch-edit .configure .o-icon-edit {
+        opacity: 0.5;
+        padding-left: 6px;
+    }
+    .bulk-importers table.batch-edit .configure .o-icon-edit:hover {
+        opacity: 1;
+    }
+
+    /* Edit mappings. */
+    .bulk-mappings #content form fieldset > .field:nth-of-type(2) .field-meta {
+        display: none;
+    }
+    .bulk-mappings #content form fieldset > .field:nth-of-type(2) .inputs {
+        width: 100%;
+    }
+    .bulk-mappings .CodeMirror {
+        font-family: inherit;
+        font-size: unset;
+        height: auto;
+    }
+    .bulk-mappings .inputs .CodeMirror {
+        font-family: inherit;
+        font-size: unset;
+        height: auto;
+        line-height: initial;
+    }
+    .bulk-mappings .CodeMirror {
+        border: 1px solid silver;
+        min-height: 70vh;
+    }
+    .bulk-mappings .CodeMirror-scroll {
+        min-height: 70vh;
+    }
+    .bulk-mappings .CodeMirror pre.CodeMirror-placeholder {
+        color: #999;
+    }
+}

@@ -1,0 +1,110 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var array $idps
+ * @var string $heading
+ * @var string $selector
+ * @var bool $internal
+ * @var string $redirectUrl
+ *
+ * And options passed to the helper.
+ *
+ * A similar template is available as common/guest-login-links.phtml in module Guest.
+ */
+
+$plugins = $this->getHelperPluginManager();
+$url = $plugins->get('url');
+$escape = $plugins->get('escapeHtml');
+$assetUrl = $plugins->get('assetUrl');
+$translate = $plugins->get('translate');
+$escapeAttr = $plugins->get('escapeHtmlAttr');
+$currentSite = $plugins->get('currentSite');
+$site = $currentSite();
+
+$this->headLink()->appendStylesheet($assetUrl('css/single-sign-on.css', 'SingleSignOn'));
+
+if ($internal) {
+    $urlLogin = $plugins->has('guestWidget') && $site ? $url('site/guest/anonymous', ['action' => 'login', 'site-slug' => $site->slug()], true) : $url('login');
+    $idps['default-login'] = [
+        'url' => $urlLogin,
+        'entity_name' => $translate('Direct login'),
+    ];
+}
+
+if ($selector === 'select') {
+    $this->headLink()
+        ->prependStylesheet($assetUrl('vendor/chosen-js/chosen.css', 'Omeka'));
+    $script = <<<'JS'
+        $(document).ready(function() {
+            $('#single-sign-on-select').on('change', function() {
+                window.location.assign($(this).val());
+            });
+        });
+        JS;
+    $this->headScript()
+        ->prependFile($assetUrl('js/chosen-options.js', 'Omeka'))
+        ->prependFile($assetUrl('vendor/chosen-js/chosen.jquery.js', 'Omeka'))
+        ->appendScript($script);
+}
+$options = ['force_canonical' => true];
+if ($redirectUrl) {
+    $options['query'] = ['redirect_url' => $redirectUrl];
+}
+?>
+
+<div class="single-sign-on-login">
+    <?php if ($heading): ?>
+        <h2><?= $escape($heading) ?></h2>
+    <?php endif; ?>
+
+    <?php if ($idps): ?>
+
+        <?php if ($selector === 'select'): ?>
+
+            <select id="single-sign-on-select" class="single-sign-on-select chosen-select" name="idp" data-placeholder="<?= $escapeAttr($translate('Select your identity provider…')) ?>">
+                <option class="single-sign-on-idp" value=""></option>
+                <?php foreach ($idps as $idp):
+                    $idpName = $idp['entity_short_id'];
+                    $urlLogin = $idp['url'] ?? $url('sso', ['action' => 'login', 'idp' => $idpName], $options, true);
+                    $idpName = $idp['entity_name'] ?: $idp['entity_id'];
+                    ?>
+                <option class="single-sign-on-idp <?= $escapeAttr(str_replace(['.', ':'], '-', $idpName)) ?>" value="<?= $escapeAttr($urlLogin) ?>"><?= $escape($idpName) ?></option>
+                <?php endforeach; ?>
+            </select>
+
+        <?php elseif ($selector === 'button'): ?>
+
+            <ul id="single-sign-on-buttons" class="single-sign-on-buttons">
+                <?php foreach ($idps as $idp):
+                    $idpName = $idp['entity_short_id'];
+                    $urlLogin = $idp['url'] ?? $url('sso', ['action' => 'login', 'idp' => $idpName], $options, true);
+                    $idpName = $idp['entity_name'] ?: $idp['entity_id'];
+                    ?>
+                    <li class="single-sign-on-button">
+                        <a class="single-sign-on-idp button <?= $escapeAttr(str_replace(['.', ':'], '-', $idpName)) ?>" href="<?= $escapeAttr($urlLogin) ?>"><?= $escape($idpName) ?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+
+        <?php else: ?>
+
+            <ul id="single-sign-on-links" class="single-sign-on-links">
+                <?php foreach ($idps as $idp):
+                    $idpName = $idp['entity_short_id'];
+                    $urlLogin = $idp['url'] ?? $url('sso', ['action' => 'login', 'idp' => $idpName], $options, true);
+                    $idpName = $idp['entity_name'] ?: $idp['entity_id'];
+                    ?>
+                    <li class="single-sign-on-link">
+                        <a class="single-sign-on-idp <?= $escapeAttr(str_replace(['.', ':'], '-', $idpName)) ?>" href="<?= $escapeAttr($urlLogin) ?>"><?= $escape($idpName) ?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+
+        <?php endif; ?>
+
+    <?php else: // Simple list of links. ?>
+
+        <p><?= $translate('No identity provider is available.') ?></p>
+
+    <?php endif; ?>
+</div>

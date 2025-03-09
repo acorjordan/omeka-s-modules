@@ -1,0 +1,308 @@
+<?php
+$this->htmlElement('body')->appendAttribute('class', 'datascribe record browse');
+$this->headLink()->appendStylesheet('https://cdn.jsdelivr.net/npm/tablesaw@3.1.2/dist/tablesaw.css');
+$this->headScript()->appendFile('https://cdn.jsdelivr.net/npm/tablesaw@3.1.2/dist/tablesaw.jquery.js');
+$this->headScript()->appendFile($this->assetUrl('js/admin/record-browse.js', 'Datascribe'));
+$canViewBatchActions = $item->userIsAllowed('datascribe_view_record_batch_actions');
+$filters = [
+    [
+        'label' => $this->translate('Records that need review'),
+        'value' => 'needs_review',
+    ],
+    [
+        'label' => $this->translate('Records that need work'),
+        'value' => 'needs_work',
+    ],
+    [
+        'label' => $this->translate('Records with values marked as invalid'),
+        'value' => 'has_invalid_values',
+    ],
+];
+$sortBy = [
+    [
+        'label' => $this->translate('Position'),
+        'value' => 'position',
+    ],
+    [
+        'label' => $this->translate('Record #'),
+        'value' => 'id',
+    ],
+    [
+        'label' => $this->translate('Record created'),
+        'value' => 'created',
+    ],
+];
+foreach ($fields as $field) {
+    $sortBy[] = [
+        'label' => $field->name(),
+        'value' => $field->id(),
+    ];
+}
+?>
+
+<?php echo $this->pageTitle($oItem->title(), 1, $this->translate('DataScribe: Item'), $this->translate('Records')); ?>
+
+<?php echo $this->datascribe()->breadcrumbs(); ?>
+
+<div class="browse-controls">
+    <?php echo $this->pagination(); ?>
+    <?php echo $this->hyperlink($this->translate('Advanced search'), $this->url(null, ['action' => 'search'], ['query' => $this->params()->fromQuery()], true)); ?>
+    <?php echo $this->sortSelector($sortBy); ?>
+    <?php echo $this->filterSelector($filters); ?>
+</div>
+
+<?php if ($records): ?>
+
+<form method="post" id="batch-form" class="disable-unsaved-warning">
+
+<?php if ($canViewBatchActions): ?>
+<div class="batch-inputs">
+    <select class="batch-actions-select" aria-label="<?php echo $this->translate('Batch actions'); ?>">
+        <option value="default"><?php echo $this->translate('Batch actions'); ?></option>
+        <option value="update-selected" disabled="true"><?php echo $this->translate('Edit selected'); ?></option>
+        <option value="update-all"><?php echo $this->translate('Edit all'); ?></option>
+        <option value="delete-selected" disabled="true"><?php echo $this->translate('Delete selected'); ?></option>
+        <option value="delete-all"><?php echo $this->translate('Delete all'); ?></option>
+    </select>
+    <div class="batch-actions">
+        <button type="button" class="default active" disabled="true"><?php echo $this->translate('Go'); ?></button>
+        <input type="submit" class="update-selected" name="update_selected" value="<?php echo $this->translate('Go'); ?>" formaction="<?php echo $this->escapeHtml($this->url(null, ['action' => 'batch-edit'], true)); ?>">
+        <input type="submit" class="update-all" name="update_all" value="<?php echo $this->translate('Go'); ?>" formaction="<?php echo $this->escapeHtml($this->url(null, ['action' => 'batch-edit-all'], true)); ?>">
+        <input type="hidden" name="query" class="batch-query" value="<?php echo $this->escapeHtml(json_encode($this->params()->fromQuery())); ?>">
+        <a class="delete button sidebar-content delete-selected" data-sidebar-selector="#sidebar-delete-selected"><?php echo $this->translate('Go'); ?></a>
+        <a class="delete button sidebar-content delete-all" data-sidebar-selector="#sidebar-delete-all"><?php echo $this->translate('Go'); ?></a>
+    </div>
+</div>
+<?php endif; ?>
+
+<div class="tablesaw-swipe-wrapper">
+<table class="tablesaw batch-edit" data-tablesaw-mode="swipe"  data-tablesaw-minimap>
+    <thead>
+        <tr>
+            <th scope="col" class="row-select" data-tablesaw-priority="persist">
+                <div class="record-number-cell">
+                    <?php if ($canViewBatchActions): ?>
+                    <input type="checkbox" class="select-all" aria-label="<?php echo $this->translate('Select all'); ?>">
+                    <?php endif; ?>
+                    <span class="record-number"><?php echo $this->translate('Record #'); ?></span>
+                </div>
+            </th>
+            <th class="record-meta"><?php echo $this->translate('Created by'); ?></th>
+            <th class="record-meta last"><?php echo $this->translate('Created'); ?></th>
+            <?php foreach ($fields as $field): ?>
+            <th scope="col"<?php echo $field->isPrimary() ? ' class="primary-field"' : ''; ?>><?php echo $field->name([
+                'length' => 20,
+                'trim_marker' => '...',
+            ]); ?></th>
+            <?php endforeach; ?>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($records as $record): ?>
+        <?php
+        $values = $record->values();
+        $createdBy = $record->createdBy();
+        $hasInvalidValues = $record->hasInvalidValues();
+        $needsReview = $record->needsReview();
+        $needsWork = $record->needsWork();
+        ?>
+        <tr>
+            <td>
+                <div class="record-number-cell">
+                <?php if ($canViewBatchActions): ?>
+                <input type="checkbox" name="record_ids[]" value="<?php echo $record->id(); ?>" aria-label="<?php echo $this->translate('Select records'); ?>">
+                <?php endif; ?>
+                <?php if ($hasInvalidValues || $needsReview || $needsWork): ?>
+                <?php $alertString = sprintf(
+                    "%s\n%s\n%s",
+                    $hasInvalidValues ? $this->translate('Has invalid values') : null,
+                    $needsReview ? $this->translate('Needs review') : null,
+                    $needsWork ? $this->translate('Needs work') : null
+                ); ?>
+                <span class="alert" title="<?php echo $alertString; ?>"><?php echo $alertString; ?></span>
+                <?php endif; ?>
+                <span class="record-number"><?php echo $record->link($record->id(), '', ['aria-label' => $this->translate('View record values'), 'title' => $this->translate('View record values')]); ?></span>
+                <ul class="actions">
+                    <?php if ($record->userIsAllowed('update')): ?>
+                    <li><?php echo $record->link('', 'edit', [
+                        'class' => 'o-icon-edit',
+                        'title' => $this->translate('Edit'),
+                    ]) ?></li>
+                    <?php endif; ?>
+                    <li><?php echo $this->hyperlink('', '#', [
+                        'data-sidebar-content-url' => $record->url('show-details'),
+                        'class' => 'o-icon-more sidebar-content',
+                        'data-sidebar-selector' => '#show-details',
+                        'title' => $this->translate('Details'),
+                    ]); ?></li>
+                </ul>
+                </div>
+            </td>
+            <td class="record-meta"><?php echo $createdBy ? $createdBy->link($createdBy->name()) : ''; ?></td>
+            <td class="record-meta last"><?php echo $this->i18n()->dateFormat($record->created()); ?></td>
+
+            <?php foreach ($fields as $field): ?>
+            <?php $value = $values[$field->id()] ?? null; ?>
+            <td<?php echo $field->isPrimary() ? ' class="primary-field"' : ''; ?>>
+                <?php if ($field->dataTypeIsUnknown()): ?>
+                <span style="color: #ffcccc;"><?php echo $this->translate('unknown'); ?></span>
+                <?php elseif ($field->isRequired() && (null === $value)): ?>
+                <span style="color: #ffcccc;"><?php echo $this->translate('invalid'); ?></span>
+                <?php elseif (null === $value): ?>
+                <span style="color: #e6e6e6;"><?php echo $this->translate('null'); ?></span>
+                <?php else: ?>
+                <?php echo $value->displayText([
+                    'length' => 50,
+                    'trim_marker' => '...',
+                    'if_invalid_return' => sprintf('<span style="color: #ffcccc;">%s</span>', $this->translate('invalid')),
+                    'if_empty_return' => sprintf('<span style="color: #e6e6e6;">%s</span>', $this->translate('empty')),
+                    'if_null_return' => sprintf('<span style="color: #e6e6e6;">%s</span>', $this->translate('null')),
+                    'if_unknown_return' => sprintf('<span style="color: #ffcccc;">%s</span>', $this->translate('unknown')),
+                ]); ?>
+                <?php endif; ?>
+            </td>
+            <?php endforeach; ?>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+</div>
+</form>
+
+<div class="browse-controls">
+    <?php echo $this->pagination(); ?>
+</div>
+
+<?php else: ?>
+<div class="no-resources">
+    <p><?php echo $this->translate('No records found.'); ?></p>
+</div>
+<?php endif; ?>
+
+<?php echo $this->form()->openTag($form); ?>
+<?php echo $this->formElement($form->get('csrf')); ?>
+
+<div id="page-actions">
+    <?php if ($item->userIsAllowed('datascribe_add_record')): ?>
+    <?php echo $this->hyperlink($this->translate('Add new record'), $this->url(null, ['action' => 'add'], true), ['class' => 'button']); ?>
+    <?php endif; ?>
+    <?php if ($item->userIsAllowed('update')): ?>
+    <button><?php echo $this->translate('Save'); ?></button>
+    <?php endif; ?>
+</div>
+
+<div class="sidebar always-open">
+    <button type="button" class="sidebar-drawer collapse" aria-label="<?php echo $this->translate('Collapse'); ?>"></button>
+    <h3><?php echo $this->translate('Item actions'); ?></h3>
+    <div class="action-group">
+        <div class="status-row">
+            <h4><?php echo $this->translate('Item status:'); ?></h4>
+            <div class="value"><?php echo $this->translate($item->statusLabel()); ?></div>
+        </div>
+    </div>
+    <div class="action-group">
+        <?php $itemLocked = $item->locked(); ?>
+        <div class="status-row">
+            <h4><?php echo $this->translate('Lock status:'); ?></h4>
+            <div class="value"><?php echo ($itemLocked) ? $this->translate('Locked') : $this->translate('Unlocked'); ?></div>
+        </div>
+        <?php if ($itemLocked): ?>
+            <div class="value">
+            <?php $lockedBy = $item->lockedBy(); ?>
+            <?php echo sprintf(
+                $this->translate('Last locked to %s on %s'),
+                $lockedBy ? $lockedBy->link($lockedBy->name()) : $this->translate('[Unknown]'),
+                $this->i18n()->dateFormat($item->locked(), 'medium', 'medium')
+            ); ?>
+            </div>
+        <?php endif; ?>
+        <?php if ($item->userIsAllowed('datascribe_edit_lock_action')): ?>
+            <div class="value"><?php echo $this->formElement($form->get('lock_action')); ?></div>
+        <?php endif; ?>
+    </div>
+    <div class="action-group">
+        <?php $itemSubmitted = $item->submitted(); ?>
+        <div class="status-row">
+            <h4><?php echo $this->translate('Submission status:'); ?></h4>
+            <div class="value"><?php echo ($itemSubmitted) ? $this->translate('Submitted') : $this->translate('Not submitted'); ?></div>
+        </div>
+        <?php if ($itemSubmitted): ?>
+            <div class="value">
+            <?php $submittedBy = $item->submittedBy(); ?>
+            <?php echo sprintf(
+                $this->translate('Last submitted by %s on %s'),
+                $submittedBy ? $submittedBy->link($submittedBy->name()) : $this->translate('[Unknown]'),
+                $this->i18n()->dateFormat($item->submitted(), 'medium', 'medium')
+            ); ?>
+            </div>
+        <?php endif; ?>
+        <?php if ($item->userIsAllowed('datascribe_edit_submit_action')): ?>
+            <div class="value"><?php echo $this->formElement($form->get('submit_action')); ?></div>
+        <?php endif; ?>
+    </div>
+    <div class="action-group">
+        <?php $itemReviewed =  $item->reviewed(); ?>
+        <div class="status-row">
+            <h4><?php echo $this->translate('Review status:'); ?></h4>
+            <div class="value"><?php echo ($itemReviewed) ? $this->translate('Reviewed') : $this->translate('Not reviewed'); ?></div>
+        </div>
+        <?php if ($itemReviewed): ?>
+            <div class="value">
+            <?php $reviewedBy = $item->reviewedBy(); ?>
+            <?php echo sprintf(
+                $this->translate('Last reviewed by %s on %s'),
+                $reviewedBy ? $reviewedBy->link($reviewedBy->name()) : $this->translate('[Unknown]'),
+                $this->i18n()->dateFormat($item->reviewed(), 'medium', 'medium')
+            ); ?>
+            </div>
+        <?php endif; ?>
+        <?php if ($item->userIsAllowed('datascribe_edit_review_action')): ?>
+            <div class="value"><?php echo $this->formElement($form->get('review_action')); ?></div>
+        <?php endif; ?>
+    </div>
+    <div class="action-group">
+        <?php $itemPrioritized = $item->prioritized(); ?>
+        <div class="status-row">
+            <h4><?php echo $this->translate('Priority status:'); ?></h4>
+            <div class="value"><?php echo ($itemPrioritized) ? $this->translate('Prioritized') : $this->translate('Not prioritized'); ?></div>
+        </div>
+        <?php if ($itemPrioritized): ?>
+            <div class="value">
+            <?php $prioritizedBy = $item->prioritizedBy(); ?>
+            <?php echo sprintf(
+                $this->translate('Last prioritized by %s on %s'),
+                $prioritizedBy ? $prioritizedBy->link($prioritizedBy->name()) : $this->translate('[Unknown]'),
+                $this->i18n()->dateFormat($item->prioritized(), 'medium', 'medium')
+            ); ?>
+            </div>
+        <?php endif; ?>
+        <?php if ($item->userIsAllowed('datascribe_edit_priority_action')): ?>
+            <div class="value"><?php echo $this->formElement($form->get('priority_action')); ?></div>
+        <?php endif; ?>
+    </div>
+    <?php if ($form->has('o-module-datascribe:transcriber_notes')): ?>
+    <div class="action-group">
+        <h4><?php echo $this->translate('Transcriber notes'); ?></h4>
+        <div class="value"><?php echo $this->formElement($form->get('o-module-datascribe:transcriber_notes')); ?></div>
+    </div>
+    <?php endif; ?>
+    <?php if ($form->has('o-module-datascribe:reviewer_notes')): ?>
+    <div class="action-group">
+        <h4><?php echo $this->translate('Reviewer notes'); ?></h4>
+        <div class="value"><?php echo $this->formElement($form->get('o-module-datascribe:reviewer_notes')); ?></div>
+    </div>
+    <?php endif; ?>
+    <?php echo $this->partial('datascribe/admin/item/show-details'); ?>
+</div>
+
+<?php echo $this->form()->closeTag(); ?>
+
+<div id="show-details" class="sidebar">
+    <?php echo $this->hyperlink('', '#', [
+        'class' => 'sidebar-close o-icon-close',
+        'title' => $this->translate('Close'),
+    ]); ?>
+    <div class="sidebar-content"></div>
+</div>
+
+<?php echo $this->partial('datascribe/admin/record/form-sidebars.phtml'); ?>

@@ -1,0 +1,16 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/Form/ConfigForm.php:16
+msgid "Configuration"
+msgstr ""
+
+#: src/Form/ConfigForm.php:17
+msgid ""
+"Configure which media property should go into which item property. One "
+"mapping per line"
+msgstr ""

@@ -1,0 +1,8 @@
+<?php
+/**
+ * @var Omeka\Api\Representation\ItemRepresentation $item
+ */
+?>
+<div class="octopusviewer-wrapper">
+    <?= $this->octopusViewer()->viewer(['item_id' => $item->id()], $item->displayTitle()); ?>
+</div>

@@ -1,0 +1,17 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ */
+
+$plugins = $this->getHelperPluginManager();
+$translate = $plugins->get('translate');
+$urlHelper = $plugins->get('url');
+$hyperlink = $plugins->get('hyperlink');
+?>
+
+<ul>
+    <li>
+        <?php $url = $urlHelper('site/guest/access-request', [], true); ?>
+        <?= $hyperlink($translate('Dashboard'), $url) ?>
+    </li>
+</ul>

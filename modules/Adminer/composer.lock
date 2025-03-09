@@ -1,0 +1,38 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "da38c8881472f3fcc64bab95a9ca30bf",
+    "packages": [
+        {
+            "name": "adminerevo/adminerevo",
+            "version": "4.8.4",
+            "dist": {
+                "type": "tar",
+                "url": "https://github.com/adminerevo/adminerevo/archive/refs/tags/v4.8.4.tar.gz",
+                "reference": "v4.8.4"
+            },
+            "type": "library"
+        },
+        {
+            "name": "adminerevo/adminerevo-externals",
+            "version": "4.8.4",
+            "dist": {
+                "type": "tar",
+                "url": "https://github.com/Daniel-KM/Omeka-S-module-Adminer/releases/download/3.4.4-4.8.4/adminerevo-externals.tar.gz"
+            },
+            "type": "library"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

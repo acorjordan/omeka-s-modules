@@ -1,0 +1,24 @@
+<?php $isGlobalAdmin = $this->identity() ? $this->identity()->getRole() === "global_admin" : null;?>
+
+<?php echo $this->pageTitle($this->translate('Item Set Party')); ?>
+<?php if (isset($itemSets)) : ?>
+    <?php foreach($itemSets as $id => $itemSetRepresentation) :?>
+    <div>
+        <a class="o-icon-item-sets" href="<?php echo $itemSetRepresentation->url()?>">
+            <?php echo $itemSetRepresentation->title(); ?>
+        </a>
+    </div>
+    <span>
+        <?php echo $this->translate($message);?>
+    </span>
+    <?php endforeach; ?>
+<?php else: ?>
+    <span>
+        <?php echo $this->translate($message);?>
+        <?php if($isConfigError && $isGlobalAdmin) : ?>
+            <a href="/admin/module/configure?id=ItemSetParty" target="_blank">
+                <?php echo $this->translate("see configuration")?>
+            </a>
+        <?php endif; ?>
+    </span>
+<?php endif; ?>

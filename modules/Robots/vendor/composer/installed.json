@@ -1,0 +1,27 @@
+{
+    "packages": [
+        {
+            "name": "daniel-km/omeka-s-module-common",
+            "version": "master",
+            "version_normalized": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/Daniel-KM/Omeka-S-module-Common.git",
+                "reference": "master"
+            },
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-4": {
+                    "Common\\": [
+                        "",
+                        "src/"
+                    ]
+                }
+            },
+            "install-path": "../daniel-km/omeka-s-module-common"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

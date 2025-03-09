@@ -1,0 +1,7 @@
+<?php
+    $this->headScript()->appendFile($this->assetUrl('scripts/toggle.js', 'AnyCloud'));
+    $this->headLink()->appendStylesheet($this->assetUrl('styles/anycloud.css', 'AnyCloud'));
+    $form->prepare();
+    echo $this->formCollection($form);
+
+?>

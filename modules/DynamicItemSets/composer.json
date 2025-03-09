@@ -1,0 +1,23 @@
+{
+    "name": "daniel-km/omeka-s-module-dynamic-item-sets",
+    "description": "Module for Omeka S to attach items to item sets automatically with a standard query.",
+    "type": "library",
+    "license": "CECILL-2.1",
+    "authors": [
+        {
+            "name": "Daniel Berthereau",
+            "email": "Daniel.git@Berthereau.net"
+        }
+    ],
+    "homepage": "https://gitlab.com/Daniel-KM/Omeka-S-module-DynamicItemSets",
+    "support": {
+        "issues": "https://gitlab.com/Daniel-KM/Omeka-S-module-DynamicItemSets/-/issues",
+        "forum": "https://forum.omeka.org/"
+    },
+    "keywords": [
+        "Omeka S",
+        "Omeka S module",
+        "resource edition",
+        "curation"
+    ]
+}

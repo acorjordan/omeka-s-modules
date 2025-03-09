@@ -1,0 +1,11 @@
+<?php echo $this->pageTitle($this->translate('Item Set Party')); ?>
+    <?php foreach ($resources as $resourceId => $resourcesRelations): ?>
+        <div class="archival_tree">
+            <div class="archival_tree_head">
+                <?php echo $this->itemSetPartyResource('admin', $resourceId, $resourceType); ?></a>
+            </div>
+            <div class="archival_tree_childs">
+                <?php echo $this->itemSetPartyTree('admin', $resourcesRelations); ?>
+            </div>
+        </div>
+    <?php endforeach; ?>

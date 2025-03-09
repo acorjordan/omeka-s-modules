@@ -1,0 +1,20 @@
+<ul>
+    <?php if (isset($childRepresentation->values()["dcterms:hasPart"])): ?>
+        <?php $hasPartValues = $childRepresentation->values()["dcterms:hasPart"]['values']; ?>
+        <?php if ($hasPartValues && $depth > 1) : ?>
+            <ul>
+            <?php foreach($hasPartValues as $hasPartValue) : ?>
+                <?php $hasPartResourceRepresentation = $hasPartValue->valueResource(); ?>
+                <?php $resourceIcon = "o-icon-" . str_replace('_', '-', $hasPartResourceRepresentation->resourceName()) ?>
+                <li class="archival_list_element <?php echo $resourceIcon ?>" data-resource-id="<?php echo $hasPartResourceRepresentation->id(); ?>">
+                    <?php echo $this->hyperlink($hasPartResourceRepresentation->displayTitle(), $hasPartResourceRepresentation->url()); ?>
+                    <?php echo $this->partial('item-set-party/block-layout/item-set-party-child', [
+                        'childRepresentation' => $hasPartResourceRepresentation,
+                        'depth' => $depth - 1,
+                    ]); ?>
+                </li>
+            <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
+    <?php endif; ?>
+</ul>

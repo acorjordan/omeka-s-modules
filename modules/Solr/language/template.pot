@@ -1,0 +1,434 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-25 11:07+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/Adapter.php:110
+msgid "Relevance"
+msgstr ""
+
+#: src/Adapter.php:115
+msgid "Asc"
+msgstr ""
+
+#: src/Adapter.php:116
+msgid "Desc"
+msgstr ""
+
+#: src/Adapter.php:172
+msgid "contains any word"
+msgstr ""
+
+#: src/Adapter.php:177
+msgid "contains all words"
+msgstr ""
+
+#: src/Adapter.php:182
+msgid "contains expression"
+msgstr ""
+
+#: src/Adapter.php:187
+msgid "matches pattern"
+msgstr ""
+
+#: src/Controller/Admin/MappingController.php:241
+#, php-format
+msgid "%d mappings were found and imported"
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:92
+msgid "Resource name field"
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:93
+msgid ""
+"Name of Solr field that will contain the resource name (or resource type, e."
+"g. \"items\", \"item_sets\", ...). It must be a single-valued, string-based "
+"field. WARNING: Changing this will require a complete reindexation."
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:104
+msgid "Sites field"
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:105
+msgid ""
+"Name of Solr field that will contain the sites ids. It must be a single-"
+"valued, integer-based field. WARNING: Changing this will require a complete "
+"reindexation."
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:116
+msgid "Is Public field"
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:117
+msgid ""
+"Name of the Solr field that will contain the isPublic flag. It must be a "
+"single-valued, boolean-based field. WARNING: Changing this will require a "
+"complete reindexation."
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:138
+msgid "Query fields"
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:139
+msgid "qf parameter that will be added to the query"
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:147
+msgid "Minimum should match"
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:148
+msgid "mm parameter that will be added to the query"
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:165
+msgid "Highlighting"
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:166
+msgid "Enable extract retrieval in relation to search terms"
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:174
+msgid "Highlight fields"
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:175
+msgid "Fields used for highligthing feature (use \"*\" for all fields)."
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:183
+msgid "Highlight fragment size"
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:184
+msgid ""
+"Define number of caracters for the fragment size of highlight, 0 will show "
+"the entire field value."
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:192
+msgid "Highlight snippets"
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:193
+msgid ""
+"Define the number of fragments where the search terms were found in the same "
+"field."
+msgstr ""
+
+#: src/Form/Admin/SolrSearchFieldForm.php:51
+msgid ""
+"The name will be used internally before being translated to the Solr field "
+"name. It will also be available in queries to search on this specific field. "
+"It should contain only alphanumeric characters and underscore, and should "
+"not start with a digit."
+msgstr ""
+
+#: src/Form/Admin/SolrSearchFieldForm.php:63
+msgid "The label is the human-friendly version of the name"
+msgstr ""
+
+#: src/Form/Admin/SolrSearchFieldForm.php:74
+#: view/solr/admin/search-field/browse.phtml:60
+#: view/solr/admin/search-field/browse.phtml:72
+msgid "Text fields"
+msgstr ""
+
+#: src/Form/Admin/SolrSearchFieldForm.php:75
+msgid ""
+"A space-separated list of Solr fields which will be used when a search needs "
+"to be performed on text fields. Leave empty to forbid text search on this "
+"field."
+msgstr ""
+
+#: src/Form/Admin/SolrSearchFieldForm.php:83
+#: view/solr/admin/search-field/browse.phtml:61
+#: view/solr/admin/search-field/browse.phtml:73
+msgid "String fields"
+msgstr ""
+
+#: src/Form/Admin/SolrSearchFieldForm.php:84
+msgid ""
+"A space-separated list of Solr fields which will be used when a search needs "
+"to be performed on string fields. Leave empty to forbid string search on "
+"this field."
+msgstr ""
+
+#: src/Form/Admin/SolrSearchFieldForm.php:92
+#: view/solr/admin/search-field/browse.phtml:62
+#: view/solr/admin/search-field/browse.phtml:74
+msgid "Facet field"
+msgstr ""
+
+#: src/Form/Admin/SolrSearchFieldForm.php:93
+msgid ""
+"The Solr field which will be used for faceting. Leave empty to forbid "
+"faceting on this field."
+msgstr ""
+
+#: src/Form/Admin/SolrSearchFieldForm.php:101
+#: view/solr/admin/search-field/browse.phtml:63
+#: view/solr/admin/search-field/browse.phtml:75
+msgid "Sort field"
+msgstr ""
+
+#: src/Form/Admin/SolrSearchFieldForm.php:102
+msgid ""
+"The Solr field which will be used for sorting. Leave empty to forbid sorting "
+"on this field."
+msgstr ""
+
+#: view/solr/admin/mapping/add.phtml:30
+msgid "Add Solr mapping"
+msgstr ""
+
+#: view/solr/admin/mapping/browse-resource.phtml:34
+#, php-format
+msgid "Solr mapping for %s"
+msgstr ""
+
+#: view/solr/admin/mapping/browse-resource.phtml:44
+msgid "Add new mapping"
+msgstr ""
+
+#: view/solr/admin/mapping/browse-resource.phtml:49
+msgid "Back to resources list"
+msgstr ""
+
+#: view/solr/admin/mapping/browse-resource.phtml:61
+#: view/solr/admin/mapping/browse-resource.phtml:70
+#: view/solr/admin/mapping/show-details.phtml:4
+msgid "Solr field"
+msgstr ""
+
+#: view/solr/admin/mapping/browse-resource.phtml:111
+msgid "There is no mappings defined yet."
+msgstr ""
+
+#: view/solr/admin/mapping/browse.phtml:34
+msgid "Solr mapping"
+msgstr ""
+
+#: view/solr/admin/mapping/browse.phtml:42
+msgid "Import mappings"
+msgstr ""
+
+#: view/solr/admin/mapping/browse.phtml:47
+#: view/solr/admin/search-field/browse.phtml:48
+msgid "Back to nodes list"
+msgstr ""
+
+#: view/solr/admin/mapping/browse.phtml:71
+msgid "Rules"
+msgstr ""
+
+#: view/solr/admin/mapping/edit.phtml:30
+msgid "Edit Solr mapping"
+msgstr ""
+
+#: view/solr/admin/mapping/import.phtml:2
+msgid "Solr mapping import"
+msgstr ""
+
+#: view/solr/admin/mapping/show-details.phtml:1
+msgid "Mapping details"
+msgstr ""
+
+#: view/solr/admin/mapping/show-details.phtml:17
+msgid "Transformations"
+msgstr ""
+
+#: view/solr/admin/node/add.phtml:32
+msgid "Add Solr node"
+msgstr ""
+
+#: view/solr/admin/node/browse.phtml:33
+msgid "Solr configuration"
+msgstr ""
+
+#: view/solr/admin/node/browse.phtml:36
+msgid "Add new node"
+msgstr ""
+
+#: view/solr/admin/node/browse.phtml:68
+msgid "Configure indexation fields"
+msgstr ""
+
+#: view/solr/admin/node/browse.phtml:77
+msgid "Configure search fields"
+msgstr ""
+
+#: view/solr/admin/node/edit.phtml:32
+msgid "Edit Solr node"
+msgstr ""
+
+#: view/solr/admin/search-field/add.phtml:30
+msgid "Add search field"
+msgstr ""
+
+#: view/solr/admin/search-field/browse.phtml:34
+#, php-format
+msgid "Search fields (%s)"
+msgstr ""
+
+#: view/solr/admin/search-field/browse.phtml:71
+msgid "Label (name)"
+msgstr ""
+
+#: view/solr/admin/search-field/browse.phtml:112
+msgid "There is no fields defined yet."
+msgstr ""
+
+#: view/solr/admin/search-field/edit.phtml:30
+msgid "Edit search field"
+msgstr ""
+
+#: view/solr/admin/transformations/transformation-edit-sidebar.phtml:5
+#: view/solr/admin/transformations/transformation-row.phtml:11
+msgid "Configure transformation"
+msgstr ""
+
+#: view/solr/admin/transformations/transformation-edit-sidebar.phtml:19
+msgid "Save transformation"
+msgstr ""
+
+#: view/solr/admin/transformations/transformation-row.phtml:5
+msgid "Transformation to be removed"
+msgstr ""
+
+#: view/solr/admin/transformations/transformation-row.phtml:15
+msgid "Remove transformation"
+msgstr ""
+
+#: view/solr/admin/transformations/transformation-row.phtml:19
+msgid "Restore transformation"
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:72
+msgid "Username"
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:73
+msgid "The username used for HTTP Authentication, if any"
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:82
+msgid "The HTTP Authentication password"
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:128
+msgid "Groups field"
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:129
+msgid ""
+"Name of the Solr field that will contain the groups ids. It must be a multi-"
+"valued, integer-based field.<br>Only useful if the module Group is "
+"enabled<br><strong>WARNING: Changing this will require a complete "
+"reindexation</strong>"
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:201
+msgid "Maximum characters analyzed"
+msgstr ""
+
+#: src/Form/Admin/SolrNodeForm.php:202
+msgid ""
+"Set the value of hl.maxAnalyzedChars parameter. Great values can have impact "
+"on performance"
+msgstr ""
+
+#: src/Form/Admin/SolrMappingImportForm.php:45
+msgid ""
+"URL of a JSON-LD representation of Solr mappings, like returned by Omeka S "
+"REST API (eg. https://omeka-s/api/solr_mappings?solr_node_id=1)"
+msgstr ""
+
+#: src/Form/Admin/SolrMappingImportForm.php:56
+msgid "Delete existing mappings"
+msgstr ""
+
+#: src/Form/Admin/SolrMappingImportForm.php:57
+msgid "Delete all existing mappings for this Solr node before importing"
+msgstr ""
+
+#: src/Controller/Admin/NodeController.php:59
+msgid "Solr node created."
+msgstr ""
+
+#: src/Controller/Admin/NodeController.php:86
+msgid "Solr node updated."
+msgstr ""
+
+#: src/Transformation/Format.php:20
+msgid "Format (deprecated)"
+msgstr ""
+
+#: src/Transformation/Format.php:32
+msgid "Formatter"
+msgstr ""
+
+#: src/Transformation/StripHtmlTags.php:9
+msgid "Strip HTML tags"
+msgstr ""
+
+#: src/Transformation/ConvertResourceToString.php:14
+msgid "Convert resource to string"
+msgstr ""
+
+#: src/Transformation/ConvertResourceToString.php:20
+msgid "Resource field"
+msgstr ""
+
+#: src/Transformation/ConvertToSolrDateRange.php:11
+msgid "Convert to Solr date range"
+msgstr ""
+
+#: src/Transformation/ConvertToSolrDateRange.php:18
+msgid "Exclude unmatching values"
+msgstr ""
+
+#: src/Transformation/Filter/DataType.php:20
+msgid "Filter by data type"
+msgstr ""
+
+#: src/Transformation/Filter/DataType.php:29
+msgid ""
+"Only selected data types will be used. Selecting none is the same as "
+"selecting all. Only relevant when the source is a property."
+msgstr ""
+
+#: src/Transformation/Filter/ResourceClass.php:24
+msgid "Filter resources by class"
+msgstr ""
+
+#: src/Transformation/Filter/ResourceClass.php:35
+msgid "Resource classes"
+msgstr ""
+
+#: src/Api/Adapter/SolrNodeAdapter.php:105
+msgid "The URI cannot be empty"
+msgstr ""
+
+#: src/Api/Adapter/SolrNodeAdapter.php:109
+msgid "Another Solr node already uses this URI"
+msgstr ""

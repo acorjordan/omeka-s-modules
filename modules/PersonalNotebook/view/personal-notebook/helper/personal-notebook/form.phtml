@@ -1,0 +1,18 @@
+<?php
+/**
+ * @var $note \PersonalNotebook\Api\Representation\NoteRepresentation|null
+ * @var $resource \Omeka\Api\Representation\AbstractResourceEntityRepresentation|null
+ * @var $form \PersonalNotebook\Form\NoteForm
+ */
+?>
+
+<?php
+$this->headLink()->appendStylesheet($this->assetUrl('css/personal-notebook.css', 'PersonalNotebook'));
+$this->headScript()->appendFile($this->assetUrl('js/personal-notebook.js', 'PersonalNotebook'));
+?>
+
+<?php $form->prepare(); ?>
+<?php echo $this->form()->openTag($form); ?>
+    <?php echo $this->formCollection($form, false); ?>
+    <span class="personal-notebook-save-result"></span>
+<?php echo $this->form()->closeTag(); ?>

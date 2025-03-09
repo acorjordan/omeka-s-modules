@@ -1,0 +1,26 @@
+<?php
+if ($tags):
+    $translate = $this->plugin('translate');
+    $escape = $this->plugin('escapeHtml');
+    $resourceName = $resource->getControllerName();
+    $updateRight = $this->userIsAllowed(\Folksonomy\Entity\Tagging::class, 'update');
+?>
+<div class="meta-group folksonomy">
+    <h4><?= $translate('Tags') ?></h4>
+    <?php foreach ($tags as $tag): ?>
+    <?php $tagging = $taggings[$tag->name()]; ?>
+    <div class="value tag"><?= $this->hyperlink($tag->name(), $tag->urlResources($resourceName)) ?>
+    <?php if ($updateRight): ?>
+    <span class="single actions"><a href="#"
+        class="status-toggle o-icon-<?= $tagging->status() ?: 'undefined' ?>"
+        data-status-toggle-url="<?= $escape($tagging->url('toggle-status')) ?>"
+        data-status="<?= $tagging->status() ?>"
+        aria-label="<?= $escape($translate('Toggle status')) ?>"
+        title="<?= $escape($translate('Toggle status')) ?>"></a></span>
+    <?php else: ?>
+    <span class="no-action o-icon-<?= $tagging->status() ?: 'undefined' ?>"></span>
+    <?php endif; ?>
+    </div>
+    <?php endforeach; ?>
+</div>
+<?php endif; ?>

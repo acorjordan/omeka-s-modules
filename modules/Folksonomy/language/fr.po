@@ -1,0 +1,766 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-13 00:00+0000\n"
+"PO-Revision-Date: 2021-12-13 00:00+0000\n"
+"Last-Translator: Daniel Berthereau <Daniel.fr@Berthereau.net>\n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: Module.php:81
+#, php-format
+msgid ""
+"I agree with %sterms of use%s and I accept to free my contribution under the "
+"licence %sCC&nbsp;BY-SA%s."
+msgstr ""
+"J'approuve les %sconditions générales d'utilisation%s et j'accepte de "
+"libérer ma contribution sous licence %sCC&nbsp;BY-SA%s."
+
+#: Module.php:502
+msgid ""
+"It is recommended to create tag clouds with the blocks of the site pages."
+msgstr ""
+"Il est recommandé de créer des nuages de mots-clés avec les blocs des pages "
+"de site."
+
+#: Module.php:503
+msgid ""
+"So first options are used only to create global pages, that are not provided "
+"by Omeka yet."
+msgstr ""
+"Les premières options sont utilisées seulement pour créer des pages "
+"globales, elles ne sont pas encore fournies par Omeka."
+
+#: Module.php:965
+msgid "Has tags"
+msgstr "A des mots-clés"
+
+#: Module.php:966
+msgid "true"
+msgstr "vrai"
+
+#: Module.php:970 view/common/admin/folksonomy-mapping-sidebar.phtml:11
+#: view/common/admin/tagging-form.phtml:25
+#: view/folksonomy/admin/tag/browse.phtml:11
+#: view/folksonomy/admin/tag/browse.phtml:77
+#: view/folksonomy/admin/tag/show-details.phtml:9
+#: view/folksonomy/admin/tagging/browse.phtml:23
+#: view/folksonomy/admin/tagging/browse.phtml:99
+#: view/folksonomy/admin/tagging/show-details.phtml:16
+msgid "Tag"
+msgstr "Taguer"
+
+#: src/Generic/AbstractModule.php:66
+#, php-format
+msgid "This module requires the module \"%s\"."
+msgstr "Ce module requiert le module \"%s\"."
+
+#: src/Generic/AbstractModule.php:73
+#, php-format
+msgid "This module requires modules \"%s\"."
+msgstr "Ce module requiert les modules \"%s\"."
+
+#: src/Generic/AbstractModule.php:80
+msgid "This module has resources that cannot be installed."
+msgstr "Ce module a des ressources qui ne peuvent pas être installées."
+
+#: src/Generic/AbstractModule.php:725
+#, php-format
+msgid ""
+"The module \"%s\" was automatically deactivated because the dependencies are "
+"unavailable."
+msgstr ""
+"Le module \"%s\" a été automatiquement désactivé car ses dépendances ne sont "
+"plus disponibles."
+
+#: view/common/admin/folksonomy-mapping-sidebar.phtml:6
+#: view/folksonomy/site/tag/browse.phtml:13
+msgid "Folksonomy"
+msgstr "Folksonomie"
+
+#: view/common/admin/folksonomy-mapping-sidebar.phtml:9
+#: view/folksonomy/admin/tagging/browse.phtml:46
+msgid "Taggings"
+msgstr "Taguages"
+
+#: view/common/admin/folksonomy-mapping-sidebar.phtml:10
+msgid "Select below"
+msgstr "Choisir ci-dessous"
+
+#: view/common/admin/tag-resource-list.phtml:9
+#: view/common/admin/tagging-form.phtml:66
+msgid "There are no tags for this resource."
+msgstr "Il n'y a pas de mot-clé pour cette ressource."
+
+#: view/common/admin/tag-resource-list.phtml:26
+#: view/common/admin/tag-resource-list.phtml:27
+#: view/common/admin/tag-resource.phtml:18
+#: view/common/admin/tag-resource.phtml:19
+#: view/common/admin/tagging-form.phtml:47
+#: view/common/admin/tagging-form.phtml:48
+#: view/folksonomy/admin/tagging/browse.phtml:142
+#: view/folksonomy/admin/tagging/browse.phtml:143
+msgid "Toggle status"
+msgstr "Inverser le statut"
+
+#: view/common/admin/tag-resource.phtml:9
+#: view/common/admin/tagging-form.phtml:21
+#: view/common/site/tag-resource.phtml:18
+#: view/folksonomy/admin/tag/browse.phtml:39
+msgid "Tags"
+msgstr "Mots-clés"
+
+#: view/common/admin/tagging-form.phtml:6
+msgid "Remove tag"
+msgstr "Supprimer le mot-clé"
+
+#: view/common/admin/tagging-form.phtml:68
+msgid ""
+"Add existing ones using the interface to the right or add new ones in the "
+"field below."
+msgstr ""
+"Ajouter les mots-clés existants en utilisant l’interface à droite ou ajouter "
+"de nouveaux mots-clés avec le champ ci-dessous."
+
+#: view/common/admin/tagging-form.phtml:73
+msgid "Add one or multiple comma-separated new tags"
+msgstr "Ajouter un ou plusieurs nouveaux mots-clés séparés par des virgules"
+
+#: view/common/admin/tagging-form.phtml:76
+msgid "Add a tag"
+msgstr "Ajouter un mot-clé"
+
+#: view/common/tag-cloud.phtml:34
+msgid "No tags are available."
+msgstr "Aucun mot-clé n’est disponible."
+
+#: view/common/tag-selector.phtml:20
+msgid "Close Me"
+msgstr "Fermer"
+
+#: view/common/tag-selector.phtml:21
+msgid "Click on a tag to add it to the edit panel."
+msgstr "Cliquer sur un mot-clé pour l’ajouter au panneau d’édition."
+
+#: view/common/tag-selector.phtml:22
+msgid "Filter tags"
+msgstr "Filtrer les mots-clés"
+
+#: view/common/tag-selector.phtml:24
+msgid "All tags"
+msgstr "Tous les mots-clés"
+
+#: view/common/tagging-quick-form.phtml:19
+msgid "New Tags"
+msgstr "Nouveau mots-clés"
+
+#: view/folksonomy/admin/tag/batch-delete-confirm.phtml:5
+msgid "Delete tags"
+msgstr "Supprimer"
+
+#: view/folksonomy/admin/tag/batch-delete-confirm.phtml:6
+msgid "Are you sure you would like to delete the selected tags?"
+msgstr "Êtes-vous sûr de supprimer ces mots-clés ?"
+
+#: view/folksonomy/admin/tag/batch-delete-confirm.phtml:7
+msgid "WARNING: This will delete the associated taggings."
+msgstr "Attention : cela va supprimer les taguages associés."
+
+#: view/folksonomy/admin/tag/browse.phtml:15
+#: view/folksonomy/admin/tag/browse.phtml:79
+msgid "Total count"
+msgstr "Nombre total"
+
+#: view/folksonomy/admin/tag/browse.phtml:19
+msgid "Total item sets"
+msgstr "Total des collections"
+
+#: view/folksonomy/admin/tag/browse.phtml:23
+msgid "Total items"
+msgstr "Total des contenus"
+
+#: view/folksonomy/admin/tag/browse.phtml:27
+msgid "Total media"
+msgstr "Total des médias"
+
+#: view/folksonomy/admin/tag/browse.phtml:31
+msgid "Recent"
+msgstr "Récent"
+
+#: view/folksonomy/admin/tag/browse.phtml:66
+#: view/folksonomy/site/tag/browse.phtml:16
+msgid "There are no tags."
+msgstr "Il n'y a encore aucun mot-clé."
+
+#: view/folksonomy/admin/tag/browse.phtml:104
+#: view/folksonomy/admin/tag/browse.phtml:105
+msgid "Edit name"
+msgstr "Modifier le nom"
+
+#: view/folksonomy/admin/tag/show-details.phtml:15
+msgid "Internal id"
+msgstr "Id interne"
+
+#: view/folksonomy/admin/tag/show-details.phtml:21
+msgid "Stats"
+msgstr "Statistiques"
+
+#: view/folksonomy/admin/tag/show-details.phtml:23
+msgid "Total"
+msgstr "Total"
+
+#: view/folksonomy/admin/tag/show-details.phtml:35
+msgid "Medias"
+msgstr "Médias"
+
+#: view/folksonomy/admin/tagging/batch-delete-confirm.phtml:11
+msgid "Delete taggings"
+msgstr "Supprimer les taguages"
+
+#: view/folksonomy/admin/tagging/batch-delete-confirm.phtml:12
+msgid "Are you sure you would like to delete the selected taggings?"
+msgstr "Êtes-vous sûr de supprimer ces taguages ?"
+
+#: view/folksonomy/admin/tagging/batch-delete-confirm.phtml:13
+#, php-format
+msgid "Note: This won’t delete tags: check the %stags page%s to manage them."
+msgstr ""
+"Note : cela ne supprimera pas les mots-clés : vérifiez la %spage des mots-"
+"clés%s pour les gérer."
+
+#: view/folksonomy/admin/tagging/browse.phtml:31
+#: view/folksonomy/admin/tagging/browse.phtml:103
+#: view/folksonomy/admin/tagging/show-details.phtml:45
+msgid "Tagger"
+msgstr "Tagueur"
+
+#: view/folksonomy/admin/tagging/browse.phtml:35
+#: view/folksonomy/admin/tagging/browse.phtml:104
+msgid "Date tagged"
+msgstr "Date d'ajout"
+
+#: view/folksonomy/admin/tagging/browse.phtml:65
+#: view/folksonomy/admin/tagging/browse.phtml:66
+msgid "Approve"
+msgstr "Approuver"
+
+#: view/folksonomy/admin/tagging/browse.phtml:71
+#: view/folksonomy/admin/tagging/browse.phtml:72
+msgid "Reject"
+msgstr "Rejeter"
+
+#: view/folksonomy/admin/tagging/browse.phtml:87
+msgid "There are no taggings."
+msgstr "Il n'y a encore aucun taguage."
+
+#: view/folksonomy/admin/tagging/browse.phtml:131
+#: view/folksonomy/admin/tagging/browse.phtml:168
+#: view/folksonomy/admin/tagging/show-details.phtml:39
+msgid "Removed"
+msgstr "Supprimé"
+
+#: view/folksonomy/admin/tagging/show-details.phtml:14
+#, php-format
+msgid "Tagging #%d"
+msgstr "Taguage #%d"
+
+#: view/folksonomy/admin/tagging/show-details.phtml:22
+msgid "[Removed]"
+msgstr "[Supprimé]"
+
+#: data/scripts/upgrade.php:67
+msgid ""
+"It’s now possible to limit tag cloud to the current site or with a query."
+msgstr ""
+"Il est désormais possible de limiter le nuage de mots-clés au site en cours "
+"ou avec une requête."
+
+#: data/scripts/upgrade.php:71
+msgid ""
+"The key for the count of tags has been renamed from \"count\" to \"total\". "
+"Check your theme if you modified the template."
+msgstr ""
+"La clé pour le nombre de tags a été renommée de \"count\" à \"total\". "
+"Vérifiez votre thème si vous l’avez personnalisé."
+
+#: src/Form/TaggingForm.php:65
+msgid "Add tags"
+msgstr "Ajouter des mots-clés"
+
+#: src/Form/TaggingForm.php:77
+msgid "Proposed tag cannot be empty."
+msgstr "Le mot-clé proposé ne peut pas être vide."
+
+#: src/Form/TaggingForm.php:79
+#, php-format
+msgid "Proposed tags cannot be longer than %d characters."
+msgstr "La proposition de mot-clés ne peut pas avoir plus de %d caractères."
+
+#: src/Form/TaggingForm.php:111
+msgid "Terms of service"
+msgstr "Termes et conditions"
+
+#: src/Form/TaggingForm.php:125
+msgid "You must agree to the terms and conditions."
+msgstr "Vous devez approuver les conditions générales d'utilisation."
+
+#: src/Form/TaggingForm.php:137
+msgid "String to check"
+msgstr "Chaîne à vérifier"
+
+#: src/Form/TaggingForm.php:140
+msgid "Set the string to check"
+msgstr "Indiquer la chaîne à vérifier"
+
+#: src/Form/TaggingForm.php:165
+msgid "Tag it!"
+msgstr "Taguez-le !"
+
+#: src/Form/TagCloudFieldset.php:18
+msgid "Block title"
+msgstr "Titre du bloc"
+
+#: src/Form/TagCloudFieldset.php:29
+msgid "Browse links are available only for item sets and items."
+msgstr ""
+"Parcourir les liens n’est possible que pour les collections et les contenus."
+
+#: src/Form/TagCloudFieldset.php:31 src/Form/ConfigForm.php:29
+msgid "All resources (separately)"
+msgstr "Toutes les ressources (séparément)"
+
+#: src/Form/TagCloudFieldset.php:32 src/Form/ConfigForm.php:30
+msgid "All resources (together)"
+msgstr "Toutes les ressources (ensemble)"
+
+#: src/Form/TagCloudFieldset.php:47
+msgid ""
+"Display resources using this search query. The query is limited to items "
+"when resources are selected."
+msgstr ""
+"Afficher les ressources en utilisant une requête de recherche. La requête "
+"est limitée aux contenus quand les ressources sont sélectionnées."
+
+#: src/Form/TagCloudFieldset.php:59 src/Form/ConfigForm.php:44
+msgid "Max classes"
+msgstr "Max. classes"
+
+#: src/Form/TagCloudFieldset.php:71 src/Form/ConfigForm.php:56
+msgid "Display tag numbers"
+msgstr "Afficher le total des mots-clés"
+
+#: src/Form/SearchForm.php:24
+msgid "Search by tag"
+msgstr "Rechercher par mot-clé"
+
+#: src/Form/Element/TagSelect.php:58
+msgid "Select tags"
+msgstr "Choisir les mots-clés"
+
+#: src/Form/ConfigForm.php:18
+msgid "Tag cloud page"
+msgstr "Page du nuage des mots-clés"
+
+#: src/Form/ConfigForm.php:67
+msgid "Public rights"
+msgstr "Droits publics"
+
+#: src/Form/ConfigForm.php:75
+msgid "Allow public to tag"
+msgstr "Autoriser le public à taguer"
+
+#: src/Form/ConfigForm.php:85
+msgid "Require approbation for public tags"
+msgstr "Modération obligatoire pour les tags publics"
+
+#: src/Form/ConfigForm.php:95
+msgid "Notify by email for public tagging"
+msgstr "Notifier par mail pour les taguages publics"
+
+#: src/Form/ConfigForm.php:106
+msgid "Tagging form"
+msgstr "Formulaire de taguage"
+
+#: src/Form/ConfigForm.php:117
+msgid "Max length of a proposed tag"
+msgstr "Longueur maximale d’un mot-clé"
+
+#: src/Form/ConfigForm.php:118
+msgid "The maximum for the database is 190 characters."
+msgstr "La longueur maximale pour la base de données est de 190 caractères."
+
+#: src/Form/ConfigForm.php:128
+msgid "Max length for all proposed tags"
+msgstr "Longueur maximale d’un mot-clé"
+
+#: src/Form/ConfigForm.php:129
+msgid "Multiple tags can be proposed in one time, separated by comma."
+msgstr ""
+"Plusieurs mots-clés peuvent être proposés en une fois, séparés par des "
+"virgules."
+
+#: src/Form/ConfigForm.php:139
+msgid "Message to invite to tag"
+msgstr "Message pour inviter à taguer"
+
+#: src/Form/ConfigForm.php:140
+msgid ""
+"The text to click to display the tag form (a simple \"+\" by default, "
+"customizable in the theme)."
+msgstr ""
+"Le texte à cliquer pour afficher le formulaire de taguage (un simple \"+\" "
+"par défaut, personnalisable dans le thème)."
+
+#: src/Form/ConfigForm.php:150
+msgid "Legal agreement"
+msgstr "Conditions d'utilisation"
+
+#: src/Form/ConfigForm.php:151
+msgid ""
+"This text will be shown beside the legal checkbox. Let empty if you don’t "
+"want to use a legal agreement."
+msgstr ""
+"Ce texte sera affiché à côté de la case à cocher des conditions. Laisser "
+"vide si vous ne voulez pas afficher de conditions d'utilisation."
+
+#: src/Controller/Site/TaggingController.php:81
+msgid "SERVER_ADDR"
+msgstr "SERVER_ADDR"
+
+#: src/Controller/Site/TaggingController.php:82
+#, php-format
+msgid "[%s] New public tags"
+msgstr "[%s] Nouveau mots-clés publics"
+
+#: src/Controller/Site/TaggingController.php:87
+#, php-format
+msgid "%d tag added to resource #%d (%s): \"%s\"."
+msgstr "%d mot-clé ajouté à la ressource #%d (%s) : \"%s\"."
+
+#: src/Controller/Site/TaggingController.php:89
+#, php-format
+msgid "%d tags added to resource #%d (%s): \"%s\"."
+msgstr "%d mots-clés ajoutés à la ressource #%d (%s) : \"%s\"."
+
+#: src/Controller/Site/TaggingController.php:104
+msgid "Unable to send an email after tagging."
+msgstr "Impossible d’envoyer un mail après taguage."
+
+#: src/Controller/Site/TaggingController.php:112 config/module.config.php:271
+msgid "You should accept the legal agreement."
+msgstr "Vous devez accepter les conditions d’utilisation."
+
+#: src/Controller/Site/TaggingController.php:119
+#: src/Controller/Admin/TagController.php:172
+msgid "No tags submitted."
+msgstr "Aucun mot-clé soumis."
+
+#: src/Controller/Site/TaggingController.php:126
+#: src/Controller/Admin/TaggingController.php:229
+msgid "Submitted tags are already set."
+msgstr "Les mots-clés soumis sont déjà mis."
+
+#: src/Controller/Site/TaggingController.php:133
+#: src/Controller/Admin/TagController.php:186
+#: src/Controller/Admin/TaggingController.php:236
+msgid "Unauthorized access."
+msgstr "Accès interdit."
+
+#: src/Controller/Site/TaggingController.php:140
+msgid "Resource not found."
+msgstr "Ressource non trouvée."
+
+#: src/Controller/Admin/TagController.php:52
+msgid "Tag successfully deleted."
+msgstr "Mot-clé supprimé avec succès."
+
+#: src/Controller/Admin/TagController.php:104
+msgid "You must select at least one tag to batch delete."
+msgstr "Vous devez choisir au moins un mot-clé à supprimer en lot."
+
+#: src/Controller/Admin/TagController.php:113
+msgid "Tags successfully deleted."
+msgstr "Mots-clés supprimés avec succès."
+
+#: src/Controller/Admin/TagController.php:123
+msgid "Delete of all tags is not supported currently."
+msgstr ""
+"La suppression de tous les mots-clés n’est pas disponible actuellement."
+
+#: src/Controller/Admin/TagController.php:179
+msgid ""
+"This tag is invalid: it is a duplicate or it contains forbidden characters."
+msgstr ""
+"Ce mot-clé est invalide : c’est un doublon ou il contient des caractères "
+"interdits."
+
+#: src/Controller/Admin/TagController.php:193
+msgid "Tag not found."
+msgstr "Mot-clé non trouvé."
+
+#: src/Controller/Admin/TagController.php:200
+#: src/Controller/Admin/TaggingController.php:250
+msgid "An internal error occurred."
+msgstr "Une erreur interne s’est produite."
+
+#: src/Controller/Admin/TaggingController.php:101
+msgid "Tagging successfully deleted."
+msgstr "Taguage supprimé avec succès."
+
+#: src/Controller/Admin/TaggingController.php:133
+msgid "You must select at least one tagging to batch delete."
+msgstr "Vous devez choisir au moins un taguage à supprimer en lot."
+
+#: src/Controller/Admin/TaggingController.php:142
+msgid "Taggings successfully deleted."
+msgstr "Taguages supprimés avec succès."
+
+#: src/Controller/Admin/TaggingController.php:152
+msgid "Delete of all taggings is not supported currently."
+msgstr "La suppression de tous les taguages n’est pas disponible actuellement."
+
+#: src/Controller/Admin/TaggingController.php:222
+msgid "No taggings submitted."
+msgstr "Pas de taguage."
+
+#: src/Controller/Admin/TaggingController.php:243
+msgid "Tagging not found."
+msgstr "Aucun taguage trouvé."
+
+#: src/View/Helper/TagSelect.php:28
+msgid "Select tag…"
+msgstr "Choisir un mot-clé…"
+
+#: src/Api/Representation/TaggingRepresentation.php:17
+#: config/module.config.php:267
+msgid "Proposed"
+msgstr "Proposé"
+
+#: src/Api/Representation/TaggingRepresentation.php:18
+#: config/module.config.php:268
+msgid "Allowed"
+msgstr "Autorisé"
+
+#: src/Api/Representation/TaggingRepresentation.php:19
+#: config/module.config.php:269
+msgid "Approved"
+msgstr "Approuvé"
+
+#: src/Api/Representation/TaggingRepresentation.php:20
+#: config/module.config.php:270
+msgid "Rejected"
+msgstr "Rejeté"
+
+#: src/Api/Representation/TaggingRepresentation.php:83
+msgid "Undefined"
+msgstr "Indéfini"
+
+#: src/Api/Adapter/TaggingAdapter.php:125
+msgid "The name of the tag must be set."
+msgstr "Le nom du mot-clé doit être indiqué."
+
+#: src/Api/Adapter/TaggingAdapter.php:130
+msgid "The tagged resource must be set."
+msgstr "La ressource taguée doit être définie."
+
+#: src/Api/Adapter/TaggingAdapter.php:154
+#, php-format
+msgid "The user #%d has already added the tag \"%s\" on the resource #%d."
+msgstr ""
+"L’utilisateur #%d a déjà ajouté le mot-clé \"%s\" sur la ressource #%d."
+
+#: src/Api/Adapter/TaggingAdapter.php:166
+#, php-format
+msgid "The status \"%s\" is unknown."
+msgstr "Le statut \"%s\" est inconnu."
+
+#: src/Api/Adapter/TagAdapter.php:78
+#, php-format
+msgid "The tag \"%s\" is already taken."
+msgstr "Le mot-clé \"%s\" est déjà pris."
+
+#: src/Api/Adapter/TagAdapter.php:97
+#, php-format
+msgid "The tag \"%s\" contains forbidden characters."
+msgstr "Le mot-clé \"%s\" contient des caractères interdits."
+
+#: src/Api/Adapter/TagAdapter.php:103
+msgid "A tag must have a name."
+msgstr "Un mot-clé doit avoir un nom."
+
+#: src/Entity/Tagging.php:113
+msgid "Invalid tagging status."
+msgstr "Statut du taguage invalide."
+
+#: src/Site/BlockLayout/TagCloud.php:22
+msgid "Tag cloud"
+msgstr "Nuage de mots-clés"
+
+#: src/Site/Navigation/Link/BrowseTags.php:12
+msgid "Browse tags"
+msgstr "Parcourir les mots-clés"
+
+#: config/module.config.php:272
+msgid "Data were added to the resource."
+msgstr "Des données ont été ajoutées à la ressource."
+
+#: config/module.config.php:273
+msgid "They will be displayed definitely when approved."
+msgstr "Ils seront affichés lorsqu’ils auront été approuvés."
+
+#: config/module.config.php:274
+msgid "Reload page to see new tags."
+msgstr "Recharger la page pour voir les nouveaux mots-clés."
+
+#: config/module.config.php:275
+msgid "Request too long to process."
+msgstr "Requête trop longue à traiter."
+
+#: config/module.config.php:276
+msgid "The resource or the tag doesn’t exist."
+msgstr "La ressource du mot-clé n’existe pas."
+
+#: config/module.config.php:307
+msgid "Tagging [Tag]"
+msgstr "Taguage de [Tag]"
+
+#: config/module.config.php:313
+msgid "Tagging []"
+msgstr "Taguage []"
+
+#~ msgid "Heading for the block, if any."
+#~ msgstr "Entête du bloc."
+
+#~ msgid "No proposed taggings"
+#~ msgstr "Aucune proposition de mots-clés"
+
+#~ msgid "Taggings: %d proposed (%d not moderated)"
+#~ msgstr "Taguages : %d proposés (%d non modérés)"
+
+#~ msgid "Taggings:"
+#~ msgstr "Taguages :"
+
+#~ msgid "This record does not accept tags."
+#~ msgstr "Cette notice n'accepte pas les mots-clés."
+
+#~ msgid "Record does not exist."
+#~ msgstr "Cette notice n'existe pas."
+
+#~ msgid "A proposed tag cannot be longer than %d characters."
+#~ msgstr "Un mot-clé ne peut pas avoir plus de %d caractères."
+
+#~ msgid "Proposed tags \"%s\" have been approved."
+#~ msgstr "Les mots-clés proposés \"%s\" n'ont pas été approuvés."
+
+#~ msgid ""
+#~ "Your proposition \"%s\"  is already proposed or is not correctly "
+#~ "formatted."
+#~ msgstr ""
+#~ "Votre proposition \"%s\" a déjà été proposée ou n'est pas correctement "
+#~ "formatée."
+
+#~ msgid "Your proposition \"%s\" is awaiting approbation."
+#~ msgstr "Votre proposition \"%s\" est en attente d'approbation."
+
+#~ msgid "Your tags \"%s\" have been added."
+#~ msgstr "Vos mots-clés \"%s\" ont été ajoutés."
+
+#~ msgid "Separe multiple tags with a \"%s\"."
+#~ msgstr "Séparer les mots-clés avec \"%s\"."
+
+#~ msgid "Please verify you're a human"
+#~ msgstr "Merci de vérifier que vous êtes une personne."
+
+#~ msgid "Can't leave an empty tag!"
+#~ msgstr "Impossible d'enregistrer un mot-clé vide."
+
+#~ msgid "This status is not authorized."
+#~ msgstr "Ce statut n'est pas autorisé."
+
+#~ msgid "Record type cannot be empty."
+#~ msgstr "Le type de notice ne peut pas être vide."
+
+#~ msgid "Record id cannot be empty."
+#~ msgstr "L'identifiant de notice ne peut pas être vide."
+
+#~ msgid "Anonymous"
+#~ msgstr "Anonyme"
+
+#~ msgid "Taggings (%d total)"
+#~ msgstr "Taguages (%d total)"
+
+#~ msgid "security settings"
+#~ msgstr "paramètres de sécurité"
+
+#~ msgid ""
+#~ "You have not entered your %s API keys under %s. We recommend adding these "
+#~ "keys, or the tagging form will be vulnerable to spam."
+#~ msgstr ""
+#~ "Vous n'avez pas indiqué vos clés API %s sous %s. Nous recommandons "
+#~ "d'ajouter ces clés, ou le taguage sera vulnérable au spam."
+
+#~ msgid "Use <a href=\"%s\">items page</a> to manage taggings by item."
+#~ msgstr ""
+#~ "Utiliser la <a href=\"%s\">page des documents</a> pour gérer les taguages "
+#~ "par document."
+
+#~ msgid "Title"
+#~ msgstr "Titre"
+
+#~ msgid "User"
+#~ msgstr "Utilisateur"
+
+#~ msgid "The query searched %d items and returned no results."
+#~ msgstr ""
+#~ "La requête a cherché parmi %d éléments et n'a retourné aucun résultat."
+
+#~ msgid "Class to add to the form"
+#~ msgstr "Classe à ajouter au formulaire"
+
+#~ msgid "Proposed Tagging"
+#~ msgstr "Taguages proposés"
+
+#~ msgid "Max length of the proposition of tagging"
+#~ msgstr "Longueur maximale d'une proposition de tags"
+
+#~ msgid "This text will be shown beside the legal checkbox."
+#~ msgstr ""
+#~ "Ce texte sera montré à côté de la case à cocher d'acceptation des "
+#~ "conditions d'utilisation."
+
+#~ msgid "Roles"
+#~ msgstr "Roles"
+
+#~ msgid "Roles that can tag"
+#~ msgstr "Roles qui peuvent taguer"
+
+#~ msgid "Roles that require moderation"
+#~ msgstr "Roles qui requièrent une modération"
+
+#~ msgid "Roles that can moderate"
+#~ msgstr "Roles qui peuvent modérer"
+
+#~ msgid "Quick Filter"
+#~ msgstr "Filtre rapide"
+
+#~ msgid "View All"
+#~ msgstr "Tout voir"
+
+#~ msgid "Not moderated"
+#~ msgstr "Non modérés"
+
+#~ msgid "Moderated"
+#~ msgstr "Modérés"
+
+#~ msgid "Add"
+#~ msgstr "Ajouter"

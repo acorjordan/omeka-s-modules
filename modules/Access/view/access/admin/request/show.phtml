@@ -1,0 +1,85 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var \Access\Api\Representation\AccessRequestRepresentation $resource
+ * @var \Access\Api\Representation\AccessRequestRepresentation $accessRequest
+ */
+
+$plugins = $this->getHelperPluginManager();
+$i18n = $plugins->get('i18n');
+$escape = $plugins->get('escapeHtml');
+$assetUrl = $plugins->get('assetUrl');
+$translate = $plugins->get('translate');
+
+$allowIndividualRequests = (bool) array_intersect(['user', 'email', 'token'], $this->setting('access_modes', []));
+
+$this->headLink()
+    ->appendStylesheet($assetUrl('css/access-admin.css', 'Access'));
+$this->headScript()
+    ->appendFile($assetUrl('js/access-admin.js', 'Access'), 'text/javascript', ['defer' => 'defer']);
+
+$this->htmlElement('body')->appendAttribute('class', 'access-requests show');
+?>
+
+<?= $this->pageTitle('#' . $escape($accessRequest->id()), 1, $translate('Access requests')) ?>
+
+<div id="page-actions">
+    <?php if ($allowIndividualRequests && $accessRequest->userIsAllowed('update')): ?>
+        <a class="button" href="<?= $escape($accessRequest->url('edit')) ?>"><?= $translate('Edit access request') ?></a>
+    <?php endif; ?>
+</div>
+
+<?php $this->trigger('view.show.before'); ?>
+<dl>
+    <div class="property">
+        <dt><?= $translate('Requester') ?></dt>
+        <dd class="value"><?= $accessRequest->displayRequester() ?></dd>
+    </div>
+    <div class="property">
+        <dt><?= $translate('Resources') ?></dt>
+        <dd class="value"><?= $accessRequest->displayResources() ?></dd>
+    </div>
+    <div class="property">
+        <dt><?= $translate('Recursive') ?></dt>
+        <dd class="value"><?= $accessRequest->displayRecursive() ?></dd>
+    </div>
+    <div class="property">
+        <dt><?= $translate('Status') ?></dt>
+        <dd class="value"><?= $accessRequest->displayStatus() ?></dd>
+    </div>
+    <?php if ($temporal = $accessRequest->displayTemporal()): ?>
+    <div class="property">
+        <dt><?= $translate('Dates') ?></dt>
+        <dd class="value"><?= $temporal ?></dd>
+    </div>
+    <?php endif; ?>
+    <?php if ($name = $accessRequest->name()): ?>
+    <div class="property">
+        <dt><?= $translate('Name') ?></dt>
+        <dd class="value"><?= $escape($name) ?></dd>
+    </div>
+    <?php endif; ?>
+    <?php if ($message = $accessRequest->message()): ?>
+    <div class="property">
+        <dt><?= $translate('Message') ?></dt>
+        <dd class="value"><?= $escape($message) ?></dd>
+    </div>
+    <?php endif; ?>
+    <?php if ($fields = $accessRequest->fields()): ?>
+    <div class="property">
+        <dt><?= $translate('Fields') ?></dt>
+        <dd class="value"><?= json_encode($fields, 448) ?></dd>
+    </div>
+    <?php endif; ?>
+    <div class="property">
+        <dt><?= $translate('Created') ?></dt>
+        <dd class="value"><?=  $i18n->dateFormat($accessRequest->created()) ?></dd>
+    </div>
+    <?php if ($modified = $accessRequest->modified()): ?>
+    <div class="property">
+        <dt><?= $translate('Modified') ?></dt>
+        <dd class="value"><?=  $i18n->dateFormat($modified) ?></dd>
+    </div>
+    <?php endif; ?>
+</dl>
+<?php $this->trigger('view.show.after'); ?>

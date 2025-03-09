@@ -1,0 +1,31 @@
+{
+    "packages": [
+        {
+            "name": "adminerevo/adminerevo",
+            "version": "4.8.4",
+            "version_normalized": "4.8.4.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://github.com/adminerevo/adminerevo/archive/refs/tags/v4.8.4.tar.gz",
+                "reference": "v4.8.4"
+            },
+            "type": "library",
+            "installation-source": "dist",
+            "install-path": "../adminerevo/adminerevo"
+        },
+        {
+            "name": "adminerevo/adminerevo-externals",
+            "version": "4.8.4",
+            "version_normalized": "4.8.4.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://github.com/Daniel-KM/Omeka-S-module-Adminer/releases/download/3.4.4-4.8.4/adminerevo-externals.tar.gz"
+            },
+            "type": "library",
+            "installation-source": "dist",
+            "install-path": "../adminerevo/adminerevo-externals"
+        }
+    ],
+    "dev": false,
+    "dev-package-names": []
+}

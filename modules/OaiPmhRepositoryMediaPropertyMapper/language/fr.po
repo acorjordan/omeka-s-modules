@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Julian Maurice <julian.maurice@biblibre.com>\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#: src/Form/ConfigForm.php:16
+msgid "Configuration"
+msgstr "Configuration"
+
+#: src/Form/ConfigForm.php:17
+msgid ""
+"Configure which media property should go into which item property. One "
+"mapping per line"
+msgstr ""
+"Configurez dans quelles propriétés doivent être exposées chaque "
+"propriété des médias. Une correspondance par ligne"

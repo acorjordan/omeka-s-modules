@@ -1,0 +1,22 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var \Omeka\Api\Representation\SitePageBlockRepresentation $block
+ * @var \Omeka\Api\Representation\AbstractResourceEntityRepresentation $resource
+ *
+ * @see \Access\View\Helper\AccessRequest
+ */
+
+// Display the access request form of a resource.
+
+// By default, this check is done by the view helper too.
+// if (!$isAccessRequestable) return;
+
+$options = [
+    'template' => 'common/access-request-block',
+];
+?>
+
+<div class="block access-request-block">
+    <?= $this->accessRequest($resource, $options) ?>
+</div>

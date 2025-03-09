@@ -1,0 +1,30 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var \Omeka\Form\LoginForm $form
+ *
+ * Copy of omeka view template, with a check to disable form when local login is disabled.
+ * Furthermore, the event "view.login.after" is triggered.
+ */
+
+$plugins = $this->getHelperPluginManager();
+$url = $plugins->get('url');
+$api = $plugins->get('api');
+$translate = $plugins->get('translate');
+$hyperlink = $plugins->get('hyperlink');
+
+// The main config is not easy to get from the view without deprecation warning.
+$config = $api->read('vocabularies', 1)->getContent()->getServiceLocator()->get('Config');
+$allowLocalLogin = empty($config['authentication']['forbid_local_login']);
+
+$this->htmlElement('body')->appendAttribute('class', 'login');
+?>
+
+<h1><?= $translate('Log in') ?></h1>
+
+<?php if ($allowLocalLogin): ?>
+<?= $this->form($form) ?>
+<p class="forgot-password"><?= $hyperlink($translate('Forgot password?'), $url('forgot-password')) ?></p>
+<?php endif; ?>
+
+<?php $this->trigger('view.login.after'); ?>

@@ -1,0 +1,16 @@
+<?php echo $this->pageTitle($this->translate('Item Set Party')); ?>
+
+<?php if (!empty($resources)) : ?>
+    <?php foreach ($resources as $resourceId => $resourcesRelations): ?>
+        <div class="archival_tree">
+            <div class="archival_tree_head">
+                <?php echo $this->itemSetPartyResource('site', $resourceId, $resourceType); ?></a>
+            </div>
+            <div class="archival_tree_childs">
+                <?php echo $this->itemSetPartyTree('site', $resourcesRelations); ?>
+            </div>
+        </div>
+    <?php endforeach; ?>
+<?php else: ?>
+    <p><?php echo $this->translate('None "hasPart" relations for selected item set, see configuration form module');?></p>
+<?php endif; ?>

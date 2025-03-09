@@ -1,0 +1,33 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var array $tags
+ * @var array $options
+ */
+
+$translate = $this->plugin('translate');
+
+$this->htmlElement('body')->appendAttribute('class', 'folksonomy tags browse');
+?>
+
+<?= $this->pageTitle($translate('Folksonomy'), 2) ?>
+<?php if (empty($tags)): ?>
+<div class="no-resources">
+    <p><?= $translate('There are no tags.') ?></p>
+</div>
+<?php else: ?>
+<?php $this->trigger('view.browse.before'); ?>
+<?= $this->partial('common/tag-cloud', [
+    'tags' => $tags,
+    'resourceName' => $options['resourceName'] ?? null,
+    'query' => $options['query'] ?? [],
+    // Never display "rejected" tags in public view, in all cases.
+    // The "proposed" status may be filtered via the visibility filter.
+    'statuses' => ['allowed', 'approved', 'proposed'],
+    'orderBy' => 'tag.name',
+    'link' => true,
+    'maxClasses' => (int) ($options['maxClasses'] ?? 0),
+    'tagNumbers' => !empty($options['tagNumbers']),
+]) ?>
+<?php $this->trigger('view.browse.after'); ?>
+<?php endif; ?>

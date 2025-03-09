@@ -1,0 +1,14 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var string $policy
+ */
+
+$translate = $this->plugin('translate');
+?>
+<?php $title = $translate('Ark Policy Statement'); ?>
+
+<div id="content" role="main">
+    <?= $this->pageTitle($title, 2) ?>
+    <?= nl2br($policy) ?>
+</div>

@@ -1,0 +1,51 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var \Access\Api\Representation\AccessRequestRepresentation $resource
+ * @var \Access\Api\Representation\AccessRequestRepresentation $accessRequest
+ * @var \Access\Form\Admin\AccessRequestForm $form
+ */
+
+$plugins = $this->getHelperPluginManager();
+$url = $plugins->get('url');
+$assetUrl = $plugins->get('assetUrl');
+$translate = $plugins->get('translate');
+$hyperlink = $plugins->get('hyperlink');
+
+$this->headLink()
+    ->appendStylesheet($assetUrl('css/access-admin.css', 'Access'));
+$this->headScript()
+    ->appendFile($assetUrl('js/access-admin.js', 'Access'), 'text/javascript', ['defer' => 'defer']);
+
+$this->htmlElement('body')->appendAttribute('class', 'access-requests edit');
+
+$deleteButton = ($accessRequest && $accessRequest->userIsAllowed('delete'))
+    ? '<a href="javascript: void(0)" class="delete button">' . $translate('Delete') . '</a>'
+    : null;
+?>
+
+<?php
+    if ($accessRequest):
+        echo $this->pageTitle($accessRequest->displayTitle(), 1, $translate('Access requests'), $translate('Edit'));
+    else:
+        echo $this->pageTitle($translate('New access request'), 1, $translate('Access requests'), $translate('Add'));
+    endif;
+?>
+
+<div id="page-actions">
+    <?php
+        if ($accessRequest):
+            echo $deleteButton;
+        endif;
+        echo $hyperlink($translate('Cancel'), $url('admin/access-request'), ['class' => 'button']);
+    ?>
+    <button type="submit" name="submit" form="form-access-request"><?= $translate('Save') ?></button>
+</div>
+
+<?php $this->trigger('view.edit.before'); ?>
+
+<?= $this->form($form->remove('submit')) ?>
+
+<?= $accessRequest ? $this->deleteConfirm($accessRequest, 'accessRequest') : '' ?>
+
+<?php $this->trigger('view.edit.after'); ?>

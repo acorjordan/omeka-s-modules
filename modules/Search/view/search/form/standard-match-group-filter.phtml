@@ -1,0 +1,53 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var string $namePrefix
+ * @var array $availableFieldsOptions
+ * @var array $availableOperatorsOptions
+ * @var bool $proximitySetting
+ */
+?>
+<?php
+    $fieldSelect = new \Laminas\Form\Element\Select($namePrefix . '[field]');
+    $fieldSelect->setValueOptions($availableFieldsOptions);
+    if (isset($query['field'])) {
+        $fieldSelect->setValue($query['field']);
+    }
+    $fieldSelect->setAttribute('class', 'search-form-standard-filter-field');
+    echo $this->formSelect($fieldSelect);
+?>
+
+<?php
+    $operatorSelect = new \Laminas\Form\Element\Select($namePrefix . '[operator]');
+    $operatorSelect->setValueOptions($availableOperatorsOptions);
+    if (isset($query['operator'])) {
+        $operatorSelect->setValue($query['operator']);
+    }
+    $operatorSelect->setAttribute('class', 'search-form-standard-filter-operator');
+    echo $this->formSelect($operatorSelect);
+?>
+
+<?php
+    if ($proximitySetting) {
+        $proximityNumber = new \Laminas\Form\Element\Text($namePrefix . '[proximity]');
+        $proximityNumber->setAttribute('class', 'search-form-standard-filter-proximity');
+        $proximityNumber->setAttribute('pattern', '\d+');
+        $proximityNumber->setAttribute('title', $this->translate('Proximity option (e.g. 2)'));
+        $proximityNumber->setAttribute('placeholder', $this->translate('prox.'));
+        if (isset($query['proximity'])) {
+            $proximityNumber->setValue($query['proximity']);
+        }
+        echo $this->formText($proximityNumber);
+    }
+?>
+
+<?php
+    $termText = new \Laminas\Form\Element\Text($namePrefix . '[term]');
+    if (isset($query['term'])) {
+        $termText->setValue($query['term']);
+    }
+    $termText->setAttribute('class', 'search-form-standard-filter-term');
+    echo $this->formText($termText);
+?>
+
+<button type="button" class="o-icon-delete search-delete-filter"></button>

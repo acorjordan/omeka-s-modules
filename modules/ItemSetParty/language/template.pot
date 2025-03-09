@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-22 15:54+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: view/item-set-party/admin/error.phtml:3
+#: view/item-set-party/admin/index/index.phtml:1
+#: view/item-set-party/site/index/index.phtml:1
+msgid "Item Set Party"
+msgstr ""
+
+#: view/item-set-party/admin/error.phtml:20
+msgid "see configuration"
+msgstr ""
+
+#: view/item-set-party/block-layout/item-set-party.phtml:22
+msgid "None hasPart resource"
+msgstr ""
+
+#: view/item-set-party/site/index/index.phtml:15
+msgid ""
+"None \"hasPart\" relations for selected item set, see configuration form "
+"module"
+msgstr ""
+
+#: src/Form/ConfigForm.php:18
+msgid "Select archival item sets"
+msgstr ""
+
+#: src/Form/ConfigForm.php:21
+msgid "Archival item sets"
+msgstr ""
+
+#: src/Controller/Admin/IndexController.php:44
+#: src/Controller/Site/IndexController.php:44
+msgid "None relation found for this item set"
+msgstr ""
+
+#: src/Controller/Admin/IndexController.php:56
+#: src/Controller/Site/IndexController.php:56
+msgid "None archival item set configured on module"
+msgstr ""
+
+#: src/Site/BlockLayout/ItemSetParty.php:39
+msgid "Block title"
+msgstr ""

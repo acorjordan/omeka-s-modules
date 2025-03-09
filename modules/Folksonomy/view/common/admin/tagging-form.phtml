@@ -1,0 +1,79 @@
+<?php
+$translate = $this->plugin('translate');
+$escape = $this->plugin('escapeHtml');
+$this->headLink()->appendStylesheet($this->assetUrl('css/folksonomy-admin.css', 'Folksonomy'));
+$this->headScript()->appendFile($this->assetUrl('js/folksonomy-admin.js', 'Folksonomy'), 'text/javascript', ['defer' => 'defer']);
+$removeStr = $escape($translate('Remove tag'));
+$tagTemplate = '
+<tr>
+    <td class="tag-name"></td>
+    <td>
+        <ul class="actions">
+            <li>
+                <a href="#" class="o-icon-delete" title="' . $removeStr . '" aria-label="' . $removeStr . '"></a>
+            </li>
+        </ul>
+        <input type="hidden" name="o-module-folksonomy:tag[]">
+    </td>
+</tr>';
+?>
+<fieldset id="tags" class="section folksonomy" aria-labelledby="tags-label">
+    <legend id="tags-legend"><?= $translate('Tags') ?></legend>
+    <table id="resource-tags" data-tablesaw-mode="stack" class="tablesaw tablesaw-stack <?= ($resource && $tags) ? '' : 'empty' ?>">
+        <thead>
+        <tr>
+            <th><?= $translate('Tag') ?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        if ($resource && $tags):
+            $resourceName = $resource->getControllerName();
+            $tag = reset($tags);
+            $updateRight = $tag->userIsAllowed('update');
+        ?>
+        <?php foreach ($tags as $tag): ?>
+        <?php $tagging = $taggings[$tag->name()]; ?>
+        <tr>
+            <td>
+                <span><?= $this->hyperlink($tag->name(), $tag->urlResources($resourceName)) ?></span>
+                <ul class="actions">
+                    <li>
+                    <?php if ($updateRight): ?>
+                    <span class="single actions"><a href="#"
+                        class="status-toggle o-icon-<?= $tagging->status() ?: 'undefined' ?>"
+                        data-status-toggle-url="<?= $escape($tagging->url('toggle-status')) ?>"
+                        data-status="<?= $tagging->status() ?>"
+                        aria-label="<?= $escape($translate('Toggle status')) ?>"
+                        title="<?= $escape($translate('Toggle status')) ?>"></a></span>
+                    <?php else: ?>
+                    <span class="no-action o-icon-<?= $tagging->status() ?>"></span>
+                    <?php endif; ?>
+                    </li>
+                    <li>
+                        <a href="#" class="o-icon-delete" title="<?= $removeStr ?>" aria-label="<?= $removeStr ?>"></a>
+                    </li>
+                </ul>
+                <input type="hidden" name="o-module-folksonomy:tag[]" value="<?= $escape($tag->name()) ?>">
+            </td>
+        </tr>
+        <?php endforeach; ?>
+        <?php endif; ?>
+        </tbody>
+    </table>
+    <div class="no-resources">
+        <p>
+            <?= $translate('There are no tags for this resource.') ?>
+            <br />
+            <?= $translate('Add existing ones using the interface to the right or add new ones in the field below.') ?>
+        </p>
+    </div>
+    <div class="field">
+        <div class="inputs">
+            <input name="o-module-folksonomy:tag-new" value="" placeholder="<?= $translate('Add one or multiple comma-separated new tags') ?>" class="touched" type="text">
+        </div>
+    </div>
+    <button id="tag-selector-button" class="mobile-only"><?= $translate('Add a tag') ?></button>
+    <span id="tag-template" data-template="<?= $escape($tagTemplate) ?>"></span>
+    <?= $this->tagSelector() ?>
+</fieldset>

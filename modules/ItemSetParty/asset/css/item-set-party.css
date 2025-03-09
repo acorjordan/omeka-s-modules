@@ -1,0 +1,13 @@
+header nav .item-set-party::before {
+    content: "\f0e8";
+}
+
+.archival_inactiveLink {
+    pointer-events: none;
+    cursor: default;
+    color: grey !important;
+ }
+
+ .archival_list_element {
+    list-style: "\221F";
+ }

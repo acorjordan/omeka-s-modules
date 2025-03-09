@@ -1,0 +1,48 @@
+<?php
+$translate = $this->plugin('translate');
+$escape = $this->plugin('escapeHtml');
+?>
+<div class="resource-details" data-resource-values="<?php echo $escape($values); ?>">
+    <?php if ($linkTitle): ?>
+    <h3 class="o-title"><?php echo $resource->link($resource->displayTitle()); ?></h3>
+    <?php else: ?>
+    <h3 class="o-title"><?php echo $escape($resource->displayTitle()); ?></h3>
+    <?php endif; ?>
+    <div class="o-description"><?php echo $escape($resource->displayDescription()); ?></div>
+    <div class="meta-group">
+        <h4><?php echo $translate('ID'); ?></h4>
+        <div class="value"><?php echo $escape($resource->id()); ?></div>
+    </div>
+    <div class="meta-group">
+        <h4><?php echo $translate('Code'); ?></h4>
+        <div class="value"><?php echo $escape($resource->code()); ?></div>
+    </div>
+    <div class="meta-group">
+        <h4><?php echo $escape($translate('Visibility')); ?></h4>
+        <div class="value"><?php echo ($resource->isPublic()) ? $translate('Public') : $translate('Private'); ?></div>
+    </div>
+    <div class="meta-group">
+        <h4><?php echo $translate('Taxonomy'); ?></h4>
+        <div class="value"><?php echo $this->hyperlink($resource->taxonomy()->displayTitle(), $resource->taxonomy()->url()); ?></div>
+    </div>
+    <div class="meta-group">
+        <h4><?php echo $translate('Parent term'); ?></h4>
+        <?php $parent = $resource->parent(); ?>
+        <div class="value">
+            <?php if ($parent): ?>
+                <?php echo $this->hyperlink($parent->displayTitle(), $parent->url()); ?>
+            <?php else: ?>
+                <?php echo $translate('[None]'); ?>
+            <?php endif; ?>
+        </div>
+    </div>
+    <div class="meta-group">
+        <h4><?= $translate ('Children') ?></h4>
+        <div class="value"><?= $this->hyperlink($resource->childrenCount(), $this->url('admin/taxonomy-term', [], ['query' => ['parent_id' => $resource->id()]])) ?></div>
+    </div>
+    <div class="meta-group">
+        <h4><?php echo $translate('Linked resources'); ?></h4>
+        <div class="value"><?= $this->hyperlink($resource->subjectValueTotalCountCompat(), $resource->adminUrl() . '#resources-linked'); ?></div>
+    </div>
+    <?php $this->trigger('view.details', array('entity' => $resource)); ?>
+</div>

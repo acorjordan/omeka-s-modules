@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, BibLibre
+# This file is distributed under the same license as the OaiPmhRepository
+# Media Property Mapper package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OaiPmhRepository Media Property Mapper\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-24 09:57+0100\n"
+"PO-Revision-Date: 2024-01-24 10:05+0100\n"
+"Last-Translator: Julian Maurice <julian.maurice@biblibre.com>\n"
+"Language-Team: fr <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Generated-By: Babel 2.12.1\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#: ../../configuration.rst:2
+msgid "Configuration"
+msgstr "Configuration"
+
+#: ../../configuration.rst:4
+msgid ""
+"Configuration can be found in the module configuration page. Log in to "
+"the admin interface, go to the \"Modules\" page, find OaiPmhRepository "
+"Media Property Mapper and click on the \"Configure\" button."
+msgstr ""
+"La configuration est accessible depuis la page de configuration du "
+"module. Connectez-vous à l'interface d'administration, allezz sur la "
+"page \"Modules\", trouvez OaiPmhRepository Media Property Mapper et "
+"cliquez sur le bouton \"Configurer\"."
+
+#: ../../configuration.rst:-1
+msgid ""
+"The configuration form, containing a single text area with a "
+"configuration example"
+msgstr ""
+"Le formulaire de configuration, contenant une seule zone de texte avec "
+"un exemple de configuration"
+
+#: ../../configuration.rst:11
+msgid ""
+"Here you can configure which media properties will be exposed, and how "
+"they will be exposed. The configuration format is simple. It is a list "
+"of mappings, one per line, where each mapping is in the form ``source = "
+"destination``. ``source`` is the media property and ``destination`` is "
+"the property in which it will be exposed."
+msgstr ""
+"Vous pouvez ici configurer quelles propriétés des médias seront "
+"exposées, et comment elles seront exposées. Le format de configuration "
+"est simple. C'est une liste de correspondances, une par ligne, où chaque "
+"correspondance est de la forme ``source = destination``. ``source`` est "
+"la propriété du média et ``destination`` est la propriété dans laquelle "
+"elle sera exposée."
+
+#: ../../configuration.rst:15
+msgid ""
+"For instance, ``dcterms:title = dcterms:alternative`` means the media "
+"title will be exposed as the item alternative title."
+msgstr ""
+"Par exemple, ``dcterms:title = dcterms:alternative`` signifie que le "
+"titre du média sera exposé comme un titre alternatif du contenu."

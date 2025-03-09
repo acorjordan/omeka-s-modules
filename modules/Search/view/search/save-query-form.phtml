@@ -1,0 +1,13 @@
+<?php
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var \Laminas\Form\Form $form
+ */
+?>
+<?php $form->prepare(); ?>
+<?php echo $this->form()->openTag($form); ?>
+<?php echo $this->formCollection($form, false); ?>
+<div>
+    <button><?php echo $this->translate('Save this query'); ?></button>
+</div>
+<?php echo $this->form()->closeTag(); ?>

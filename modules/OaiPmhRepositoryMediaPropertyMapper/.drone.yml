@@ -1,0 +1,27 @@
+---
+kind: 'pipeline'
+type: 'docker'
+name: 'documentation'
+steps:
+  - name: 'build'
+    image: 'python:3'
+    commands:
+      - 'sh .drone/documentation-build.sh'
+  - name: 'push'
+    image: 'alpine'
+    commands:
+      - 'apk add git openssh'
+      - 'sh .drone/documentation-push.sh'
+    environment:
+      GH_DEPLOY_KEY:
+        from_secret: 'GH_DEPLOY_KEY'
+trigger:
+  branch:
+    - 'master'
+  event:
+    - 'push'
+---
+kind: signature
+hmac: a9076a303a7841a027fa73f8297ee0e2145761d123a8cae1ebb8183c8918af21
+
+...

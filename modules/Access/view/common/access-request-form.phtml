@@ -1,0 +1,76 @@
+<?php
+
+/**
+ * @var \Laminas\View\Renderer\PhpRenderer $this
+ * @var \Omeka\Api\Representation\AbstractResourceRepresentation $resource
+ * @var \Access\Api\Representation\AccessStatusRepresentation|null $accessStatus
+ * @var \Access\Form\Admin\AccessRequestForm $requestForm
+ */
+
+$plugins = $this->getHelperPluginManager();
+$assetUrl = $plugins->get('assetUrl');
+$translate = $plugins->get('translate');
+
+$level = $accessStatus ? $accessStatus->level() : 'free';
+$resourceName = $resource->resourceName();
+$allowIndividualRequests = (bool) array_intersect(['user', 'email', 'token'], $this->setting('access_modes', []));
+
+if ($level !== 'forbidden')  {
+    $this->headLink()
+        ->appendStylesheet($assetUrl('css/access-admin.css', 'Access'));
+    $this->headScript()
+        ->appendFile($assetUrl('js/access-admin.js', 'Access'), 'text/javascript', ['defer' => 'defer']);
+}
+?>
+
+<div class="access access-request">
+
+    <?php // Quick form to add access. ?>
+    <?php // Displayed in all cases except forbidden or without individual access. A free item may have reserved media. ?>
+
+    <div>
+        <h4><?= $translate('Give access') ?></h4>
+
+        <?php if ($level ===  'free' && $resourceName === 'media'): ?>
+
+        <div class="no-resources">
+            <p><?= $translate('Free access') ?></p>
+        </div>
+
+        <?php elseif ($level ===  'forbidden'): ?>
+
+        <div class="no-resources">
+            <p><?= $translate('Forbidden access') ?></p>
+        </div>
+
+    <?php elseif (!$allowIndividualRequests): ?>
+
+        <div class="no-resources">
+            <p><?= $translate("Access settings don't allow individual requests.") ?></p>
+        </div>
+
+    <?php else: ?>
+
+         <?php if ($level ===  'free'): ?>
+            <?php if ($resourceName === 'items'): ?>
+            <div>
+                <p><?= $translate('The access to this item is free, so the request should include medias.') ?></p>
+            </div>
+            <?php elseif ($resourceName === 'item_sets'): ?>
+            <div>
+                <p><?= $translate('The access to this item set is free, so the request should include items and medias.') ?></p>
+            </div>
+            <?php endif; ?>
+        <?php endif; ?>
+
+        <?php /* // TODO Use the user selector in the form instead of the select.
+        <button id="user-selector-button"><?= $translate('Select user') ?></button>
+        <?= $this->userSelector($translate('Click on a user to select it.'), false) ?>
+        */ ?>
+        <?= $this->form($requestForm) ?>
+
+    <?php endif; ?>
+
+    </div>
+
+</div>
